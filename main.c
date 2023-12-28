@@ -47,8 +47,7 @@
 */
 #include "mcc_generated_files/system.h"
 #include "mcc_generated_files/pin_manager.h"
-#include "mcc_generated_files/examples/mqtt_example.h"
-//#include "mcc_generated_files/examples/winc_example.h"
+#include "mcc_generated_files/examples/comm_module.h"
 #include "mcc_generated_files/uart1.h"
 #include "mcc_generated_files/delay.h"
 #include "mcc_generated_files/drivers/timeout.h"
@@ -64,14 +63,12 @@ int main(void)
 
     //app_mqttExampleInit();
     LED_SetLow();
-    app_mqttExampleInit();
+    app_commModuleInit();
     
     
     while (1)
     {
         // Add your application code
-        //printf("%d\n\r", 100);
-        //printf("debug");
         DELAY_milliseconds(200);
         app_mqttScheduler();
     }

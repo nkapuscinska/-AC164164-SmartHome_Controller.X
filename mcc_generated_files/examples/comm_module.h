@@ -15,10 +15,21 @@
     EXCEED AMOUNT OF FEES, IF ANY, YOU PAID DIRECTLY TO MICROCHIP FOR THIS SOFTWARE. 
 */
 
-#ifndef EXAMPLE_MQTT_CLIENT_H
-#define	EXAMPLE_MQTT_CLIENT_H
+#ifndef COMM_MODULE_H
+#define	COMM_MODULE_H
 
-void app_mqttExampleInit(void);
+typedef struct appSendData_t{
+    uint8_t temp;
+}appSendData_t;
+
+typedef struct mqttData_t{
+    uint8_t * publishTopic;
+    appSendData_t Data;
+}mqttData_t;
+
+mqttData_t commMqttData;
+
+void app_commModuleInit(void);
 void app_mqttScheduler(void);
 
-#endif	/* EXAMPLE_MQTT_CLIENT_H */
+#endif	/* COMM_MODULE_H */
