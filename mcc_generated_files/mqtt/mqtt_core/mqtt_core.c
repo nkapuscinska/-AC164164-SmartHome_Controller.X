@@ -884,7 +884,7 @@ static mqttCurrentState mqttProcessSuback(mqttContext *mqttConnectionPtr)
    else 
    {
       // ToDo remove hardcoding
-      MQTT_ExchangeBufferRead(&mqttConnectionPtr->mqttDataExchangeBuffers.rxbuff, rxSubackPacket.returnCode, 1);
+      MQTT_ExchangeBufferRead(&mqttConnectionPtr->mqttDataExchangeBuffers.rxbuff, (uint8_t *)rxSubackPacket.returnCode, 1);
       // ToDo This calculation needs to be modified after removing
       // hardcoding
       topicNumbers = (sizeof (rxSubackPacket.returnCode) / sizeof (rxSubackPacket.returnCode[0]));
@@ -1423,7 +1423,7 @@ static mqttCurrentState mqttProcessConnack(mqttContext *mqttConnectionPtr)
    MQTT_ExchangeBufferRead(&mqttConnectionPtr->mqttDataExchangeBuffers.rxbuff, &mqttConnackPacket.connackFixedHeader.All, sizeof (mqttConnackPacket.connackFixedHeader.All));
    MQTT_ExchangeBufferRead(&mqttConnectionPtr->mqttDataExchangeBuffers.rxbuff, &mqttConnackPacket.remainingLength, sizeof (mqttConnackPacket.remainingLength));
    MQTT_ExchangeBufferRead(&mqttConnectionPtr->mqttDataExchangeBuffers.rxbuff, &mqttConnackPacket.connackVariableHeader.connackAcknowledgeFlags.All, sizeof (mqttConnackPacket.connackVariableHeader.connackAcknowledgeFlags.All));
-   MQTT_ExchangeBufferRead(&mqttConnectionPtr->mqttDataExchangeBuffers.rxbuff, &mqttConnackPacket.connackVariableHeader.connackReturnCode, sizeof (mqttConnackPacket.connackVariableHeader.connackReturnCode));
+   MQTT_ExchangeBufferRead(&mqttConnectionPtr->mqttDataExchangeBuffers.rxbuff, (uint8_t *)&mqttConnackPacket.connackVariableHeader.connackReturnCode, sizeof (mqttConnackPacket.connackVariableHeader.connackReturnCode));
 
    if (mqttConnackPacket.connackVariableHeader.connackReturnCode == CONN_ACCEPTED) 
    {

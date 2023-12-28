@@ -59,7 +59,7 @@ static bool appMQTTPublishTimeoutOccured = false;
 
 
 static void app_buildMQTTConnectPacket(void);
-static void app_buildPublishPacket(void);
+static void app_buildPublishPacket(char pubTopic[], char pubMsg[]);
 static uint32_t appCheckMQTTPublishTimeout();
 timerStruct_t appMQTTPublishTimer = {appCheckMQTTPublishTimeout, NULL};
 
@@ -79,20 +79,21 @@ static void app_buildMQTTConnectPacket(void)
     appConnectPacket.connectVariableHeader.connectFlagsByte.All = 0x02;
     // Packets need to be sent to the server every 10s.
     appConnectPacket.connectVariableHeader.keepAliveTimer = CFG_MQTT_CONN_TIMEOUT;
-    appConnectPacket.clientID = "Microchip_ac164164";
+    appConnectPacket.clientID = (uint8_t *)"Microchip_ac164164";
 
     MQTT_CreateConnectPacket(&appConnectPacket);
 }
 
 
-static void app_buildPublishPacket(void)
+static void app_buildPublishPacket(char pubTopic[], char pubMsg[])
 {
     mqttPublishPacket appPublishPacket;
     
     memset(&appPublishPacket, 0, sizeof(mqttPublishPacket));   
-      
-    appPublishPacket.topic = mqttPublishTopic;
-    appPublishPacket.payload = mqttPublishMsg;
+    //static const char mqttPublishTopic[] = CFG_PUBTOPIC;
+    //const char mqttPublishMsg[] = "Hello MQTT :)";
+    appPublishPacket.topic = (uint8_t *)pubTopic;
+    appPublishPacket.payload = (uint8_t *)pubMsg;
 
     // Fixed header
     appPublishPacket.publishHeaderFlags.duplicate = 0;
@@ -103,7 +104,7 @@ static void app_buildPublishPacket(void)
     appPublishPacket.packetIdentifierLSB = 10;
     appPublishPacket.packetIdentifierMSB = 0;
 
-    appPublishPacket.payloadLength = strlen(appPublishPacket.payload);
+    appPublishPacket.payloadLength = strlen((const char*)appPublishPacket.payload);
 
     MQTT_CreatePublishPacket(&appPublishPacket);
 }
@@ -219,7 +220,7 @@ static void socketHandler(SOCKET sock, uint8_t u8Msg, void *pvMsg)
 }
 
 
-void app_mqttExampleInit(void)
+void app_commModuleInit(void)
 {
     tstrWifiInitParam param;
     
@@ -331,13 +332,15 @@ void app_mqttScheduler(void)
             if(appMQTTPublishTimeoutOccured == true)
             {
                 appMQTTPublishTimeoutOccured = false;
-                app_buildPublishPacket();    
+                app_buildPublishPacket(mqttPublishTopic, "hello");    
             }
             mqttCurrentState state1 = MQTT_GetConnectionState();
             mqttHandlerState_t state2 = MQTT_GetLastHandlerState();
             
             printf("Connection state_Current: %d \n\r", state1);
             printf("Connection state_Handler: %d \n\r\n\r", state2);
+            
+            
             MQTT_ReceptionHandler(mqttConnnectionInfo);
             MQTT_TransmissionHandler(mqttConnnectionInfo);
         }

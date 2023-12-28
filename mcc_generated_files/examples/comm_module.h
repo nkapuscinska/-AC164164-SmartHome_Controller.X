@@ -18,13 +18,13 @@
 #ifndef COMM_MODULE_H
 #define	COMM_MODULE_H
 
-typedef struct appSendData_t{
+typedef struct DataToSend_t{
     uint8_t temp;
-}appSendData_t;
+}DataToSend_t;
 
 typedef struct mqttData_t{
     uint8_t * publishTopic;
-    appSendData_t Data;
+    DataToSend_t Data;
 }mqttData_t;
 
 mqttData_t commMqttData;
