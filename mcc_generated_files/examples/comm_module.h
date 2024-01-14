@@ -18,16 +18,16 @@
 #ifndef COMM_MODULE_H
 #define	COMM_MODULE_H
 
-typedef struct DataToSend_t{
-    uint8_t temp;
-}DataToSend_t;
+#define MQTT_PARAMS_NUM 2
+#define PAYLOAD_LENGHT 16
+#define TOPIC_LENGHT 16
 
-typedef struct mqttData_t{
-    uint8_t * publishTopic;
-    DataToSend_t Data;
-}mqttData_t;
+// Nazwy parametrów przeznaczonych do wys??nia za pomoc? MQTT, nie modyfikowa? domy?lnej kolejno?ci warto?ci enuma.
+typedef enum MQTT_parameter {PARAM1, PARAM2} MQTT_parameter;
 
-mqttData_t commMqttData;
+
+void MQTT_setParameterPayload(MQTT_parameter param, char * payload );
+void MQTT_setParameterTopic(MQTT_parameter param, char * topic);
 
 void app_commModuleInit(void);
 void app_mqttScheduler(void);

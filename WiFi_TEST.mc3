@@ -79,11 +79,11 @@
       </entry>
    </usedClasses>
    <usedLibraries class="java.util.ArrayList">
-      <ILibraryFile class="com.microchip.mcc.core.library.BaseLibraryFile" libraryClass="com.microchip.mcc.MQTTLibrary" version="2.0.2"/>
+      <ILibraryFile class="com.microchip.mcc.core.library.BaseLibraryFile" libraryClass="com.microchip.mcc.libraries.networking.winc.library.WINCLibrary" version="1.1.2"/>
+      <ILibraryFile class="com.microchip.mcc.core.library.BaseLibraryFile" libraryClass="com.microchip.mcc.foundationservices.library.FoundationServicesLibrary" version="0.2.3"/>
       <ILibraryFile class="com.microchip.mcc.core.library.BaseLibraryFile" libraryClass="com.microchip.mcc.mcu16.Mcu16PeripheralLibrary" version="1.171.4"/>
       <ILibraryFile class="com.microchip.mcc.core.library.BaseLibraryFile" libraryClass="com.microchip.mcc.boardsupportlibrary.BoardSuppportLibrary" version="1.12.0"/>
-      <ILibraryFile class="com.microchip.mcc.core.library.BaseLibraryFile" libraryClass="com.microchip.mcc.foundationservices.library.FoundationServicesLibrary" version="0.2.3"/>
-      <ILibraryFile class="com.microchip.mcc.core.library.BaseLibraryFile" libraryClass="com.microchip.mcc.libraries.networking.winc.library.WINCLibrary" version="1.1.2"/>
+      <ILibraryFile class="com.microchip.mcc.core.library.BaseLibraryFile" libraryClass="com.microchip.mcc.MQTTLibrary" version="2.0.2"/>
    </usedLibraries>
    <tokenMap class="java.util.TreeMap">
       <entry>
@@ -8304,11 +8304,11 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="SPIMASTER" name="pubSubSPIMASTERConfigurations"/>
-         <value>3847.3229008481903</value>
+         <value>2984.005103026817</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="SPIMASTER" name="pubSubspiSubscriber"/>
-         <value>206.568864278186</value>
+         <value>7143.985002821261</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="SPIMASTER" name="spiSubscriber"/>
@@ -8320,7 +8320,7 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="SPIMASTER" name="validate"/>
-         <value>0.46225419176474325</value>
+         <value>0.3605633581732284</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.PropertyTokenKey" moduleName="SPIMASTER" name="spiConfigurations%0%dataInputSample"/>
@@ -8956,7 +8956,7 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="TIMEOUTDRIVER" name="pubSubTIMEOUTDRIVER_TIMER/genericTimeoutInterfaceV2"/>
-         <value>108.45068185268758</value>
+         <value>2781.524912624033</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="TIMEOUTDRIVER" name="usecaseComboSettings"/>
@@ -9712,7 +9712,7 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="WINC15XX" name="pubSubWINC15XX_SPIMASTER/interfaceV2"/>
-         <value>9833.187372218861</value>
+         <value>9934.493956314716</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="WINC15XX" name="ssid"/>
@@ -9842,7 +9842,7 @@
       </entry>
       <entry>
          <file>mcc_generated_files\mcc.h</file>
-         <hash>8c473795d7f819947ebd7433147b5c708ab47b23e35af532b6a1af6bae9fdab7</hash>
+         <hash>3fc2d1da655a040464556eb043a19f18a4fb1d5ff70792bc7a64f053b0377e99</hash>
       </entry>
       <entry>
          <file>mcc_generated_files\mqtt\mqtt_comm_bsd\mqtt_comm_layer.c</file>
@@ -9886,7 +9886,7 @@
       </entry>
       <entry>
          <file>mcc_generated_files\pin_manager.c</file>
-         <hash>f58a81967428b17c864b78c6852a34c526d22c19bfe5eea5fc00dc4209a50dec</hash>
+         <hash>ed0bd0e87c8552d0d7d740b2f5f5e1ef80b0fb8181706a5dbde53dd96b1034e8</hash>
       </entry>
       <entry>
          <file>mcc_generated_files\pin_manager.h</file>
@@ -9906,7 +9906,7 @@
       </entry>
       <entry>
          <file>mcc_generated_files\system.c</file>
-         <hash>ccef53dd7bc78d832d31845c5f982ae0c1e24627f77978953de61651464c2e5c</hash>
+         <hash>4a547d3c0a93c731df50bf3b5e37374e78901e452062256672c6a64f04b08558</hash>
       </entry>
       <entry>
          <file>mcc_generated_files\system.h</file>

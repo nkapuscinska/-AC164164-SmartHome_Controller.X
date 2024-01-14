@@ -65,11 +65,15 @@ int main(void)
     LED_SetLow();
     app_commModuleInit();
     
+    MQTT_setParameterPayload(PARAM1, "test1" );
+    MQTT_setParameterTopic(PARAM1, "home/test1" );
     
+    MQTT_setParameterPayload(PARAM2, "test2" );
+    MQTT_setParameterTopic(PARAM2, "home/test2" );
     while (1)
     {
         // Add your application code
-        DELAY_milliseconds(200);
+        DELAY_milliseconds(20);
         app_mqttScheduler();
     }
 

@@ -33,6 +33,7 @@ build/default/debug/mcc_generated_files/examples/comm_module.o: \
  mcc_generated_files/examples/../winc/m2m/m2m_types.h \
  mcc_generated_files/examples/../config/mqtt_config.h \
  mcc_generated_files/examples/../drivers/timeout.h \
+ mcc_generated_files/examples/../examples/comm_module.h \
  mcc_generated_files/examples/../clock.h \
  mcc_generated_files/examples/../delay.h
 
@@ -101,6 +102,8 @@ mcc_generated_files/examples/../winc/m2m/m2m_types.h:
 mcc_generated_files/examples/../config/mqtt_config.h:
 
 mcc_generated_files/examples/../drivers/timeout.h:
+
+mcc_generated_files/examples/../examples/comm_module.h:
 
 mcc_generated_files/examples/../clock.h:
 

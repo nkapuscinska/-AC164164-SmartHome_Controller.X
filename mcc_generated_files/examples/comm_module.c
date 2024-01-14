@@ -25,6 +25,7 @@
 #include "../winc/m2m/m2m_types.h"
 #include "../config/mqtt_config.h"
 #include "../drivers/timeout.h"
+#include "../examples/comm_module.h"
 
 #include "../clock.h"
 #include "../delay.h"
@@ -58,10 +59,43 @@ static bool timeReceived = false;
 static bool appMQTTPublishTimeoutOccured = false;
 
 
+///////////////////////
+// Tutaj s? tablice przechowuj?ce warto?ci wszystkich parametrów, które maj?by? wys?ane, oraz tematy z nimi skojarzone.
+// Indexy tematów odpowiajaj? indexom payloadów.
+char MQTT_paramsPayloads[MQTT_PARAMS_NUM][PAYLOAD_LENGHT];
+char MQTT_paramsTopics[MQTT_PARAMS_NUM][TOPIC_LENGHT];
+
+///////////////////////
+
+
+
+
+
 static void app_buildMQTTConnectPacket(void);
 static void app_buildPublishPacket(char pubTopic[], char pubMsg[]);
 static uint32_t appCheckMQTTPublishTimeout();
 timerStruct_t appMQTTPublishTimer = {appCheckMQTTPublishTimeout, NULL};
+
+
+
+//////////////////////
+void MQTT_setParameterPayload(MQTT_parameter param, char * payload )
+{
+    char * destination = &MQTT_paramsPayloads[(uint8_t)param][0];
+    
+    strcpy(destination, payload);
+    Nop();
+}
+
+void MQTT_setParameterTopic(MQTT_parameter param, char * topic )
+{
+    char * destination = &MQTT_paramsTopics[(uint8_t)param][0];
+    
+    strcpy(destination, topic);
+    Nop();
+}
+//////////////////////
+
 
 
 static uint32_t appCheckMQTTPublishTimeout()
@@ -329,17 +363,32 @@ void app_mqttScheduler(void)
 
         case APP_STATE_TLS_CONNECTED:
         {
+            static uint8_t MQTT_params_counter = 0;
+            
             if(appMQTTPublishTimeoutOccured == true)
             {
                 appMQTTPublishTimeoutOccured = false;
-                app_buildPublishPacket(mqttPublishTopic, "hello");    
+                
+                
+                char * MQTT_topic = &MQTT_paramsTopics[ MQTT_params_counter ][0];
+                char * MQTT_payload = &MQTT_paramsPayloads[ MQTT_params_counter ][0];
+                
+                app_buildPublishPacket(MQTT_topic, MQTT_payload);  
+                
+                //Aktualizacja numeru tematu
+                MQTT_params_counter++;
+                if(MQTT_params_counter == 2)
+                {
+                    MQTT_params_counter = 0;
+                }
             }
+            
+            /////////////////////// DEBUG //////////////////////////
             mqttCurrentState state1 = MQTT_GetConnectionState();
             mqttHandlerState_t state2 = MQTT_GetLastHandlerState();
-            
             printf("Connection state_Current: %d \n\r", state1);
             printf("Connection state_Handler: %d \n\r\n\r", state2);
-            
+            ////////////////////////////////////////////////////////
             
             MQTT_ReceptionHandler(mqttConnnectionInfo);
             MQTT_TransmissionHandler(mqttConnnectionInfo);
