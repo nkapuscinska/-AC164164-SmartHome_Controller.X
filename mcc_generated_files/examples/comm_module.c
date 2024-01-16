@@ -49,27 +49,13 @@ typedef enum
 } appStates_e;
 
 
-static const char mqttPublishTopic[] = CFG_PUBTOPIC;
-const char mqttPublishMsg[] = "Hello MQTT :)";
+
 static const char mqttSubscribeTopicsList[NUM_TOPICS_SUBSCRIBE][SUBSCRIBE_TOPIC_SIZE] = {{CFG_SUBTOPIC}};
 static appStates_e appState = APP_STATE_INIT;
 static uint32_t serverIPAddress = 0;
 static uint8_t recvBuffer[256];
 static bool timeReceived = false;
 static bool appMQTTPublishTimeoutOccured = false;
-
-
-///////////////////////
-// Tutaj s? tablice przechowuj?ce warto?ci wszystkich parametrów, które maj?by? wys?ane, oraz tematy z nimi skojarzone.
-// Indexy tematów odpowiajaj? indexom payloadów.
-char MQTT_paramsPayloads[MQTT_PARAMS_NUM][PAYLOAD_LENGHT];
-char MQTT_paramsTopics[MQTT_PARAMS_NUM][TOPIC_LENGHT];
-
-///////////////////////
-
-
-
-
 
 static void app_buildMQTTConnectPacket(void);
 static void app_buildPublishPacket(char pubTopic[], char pubMsg[]);
@@ -78,21 +64,82 @@ timerStruct_t appMQTTPublishTimer = {appCheckMQTTPublishTimeout, NULL};
 
 
 
+///////////////////////
+// Tutaj s? tablice przechowuj?ce warto?ci wszystkich parametrów, które maj?by? wys?ane, oraz tematy z nimi skojarzone.
+// Indexy tematów odpowiajaj? indexom payloadów.
+char MQTT_paramsPayloads[MQTT_PARAMS_NUM][PAYLOAD_LENGHT];
+char MQTT_paramsTopics[MQTT_PARAMS_NUM][TOPIC_LENGHT];
+
 //////////////////////
+void MQTT_prepareJsonData(char * buffer)
+{
+    char * temp = &MQTT_paramsPayloads[(uint8_t)TEMPERATURE][0];
+    char * key1 = &MQTT_paramsPayloads[(uint8_t)KEY1_STATE][0];
+    char * key2 = &MQTT_paramsPayloads[(uint8_t)KEY2_STATE][0];
+    
+    memset(buffer, '\0', sizeof(buffer));
+    
+    strcat(buffer, "{\"temp\":\"");
+    strcat(buffer, temp);
+    strcat(buffer, "\",\"key1_state\":\"");
+    strcat(buffer, key1);
+    strcat(buffer, "\",\"key2_state\":\"");
+    strcat(buffer, key2);
+    strcat(buffer, "\"}");
+}
+
+void app_updateTemperature(float temp)
+{
+    char buffer[16];
+    sprintf(buffer, "%.2f", (double)temp);
+    MQTT_setParameterPayload(TEMPERATURE, buffer);
+}
+
+
+void app_updateKey1State(uint8_t state)
+{
+    char buffer[8];
+    
+    if(state == 0)
+    {
+        strcpy(buffer, "off");
+    }
+    else
+    {
+        strcpy(buffer, "on");
+    }
+    
+    MQTT_setParameterPayload(KEY1_STATE, buffer);
+}
+
+
+void app_updateKey2State(uint8_t state)
+{
+    char buffer[8];
+    if(state == 0)
+    {
+        strcpy(buffer, "off");
+    }
+    else
+    {
+        strcpy(buffer, "on");
+    }
+    
+    MQTT_setParameterPayload(KEY2_STATE, buffer);
+}
+
+
 void MQTT_setParameterPayload(MQTT_parameter param, char * payload )
 {
     char * destination = &MQTT_paramsPayloads[(uint8_t)param][0];
-    
     strcpy(destination, payload);
-    Nop();
+    
 }
 
 void MQTT_setParameterTopic(MQTT_parameter param, char * topic )
 {
     char * destination = &MQTT_paramsTopics[(uint8_t)param][0];
-    
     strcpy(destination, topic);
-    Nop();
 }
 //////////////////////
 
@@ -124,8 +171,7 @@ static void app_buildPublishPacket(char pubTopic[], char pubMsg[])
     mqttPublishPacket appPublishPacket;
     
     memset(&appPublishPacket, 0, sizeof(mqttPublishPacket));   
-    //static const char mqttPublishTopic[] = CFG_PUBTOPIC;
-    //const char mqttPublishMsg[] = "Hello MQTT :)";
+
     appPublishPacket.topic = (uint8_t *)pubTopic;
     appPublishPacket.payload = (uint8_t *)pubMsg;
 
@@ -256,6 +302,12 @@ static void socketHandler(SOCKET sock, uint8_t u8Msg, void *pvMsg)
 
 void app_commModuleInit(void)
 {
+    /////////   DATA CFG    /////////
+    MQTT_setParameterTopic(TEMPERATURE, "home/temp" );
+    MQTT_setParameterTopic(KEY1_STATE, "home/key1" );
+    MQTT_setParameterTopic(KEY2_STATE, "home/key2" );
+    /////////////////////////////////
+            
     tstrWifiInitParam param;
     
     winc_adapter_init();
@@ -363,35 +415,27 @@ void app_mqttScheduler(void)
 
         case APP_STATE_TLS_CONNECTED:
         {
-            static uint8_t MQTT_params_counter = 0;
-            
+            //static uint8_t MQTT_params_counter = 0;
+
             if(appMQTTPublishTimeoutOccured == true)
             {
                 appMQTTPublishTimeoutOccured = false;
-                
-                
-                char * MQTT_topic = &MQTT_paramsTopics[ MQTT_params_counter ][0];
-                char * MQTT_payload = &MQTT_paramsPayloads[ MQTT_params_counter ][0];
-                
-                app_buildPublishPacket(MQTT_topic, MQTT_payload);  
-                
-                //Aktualizacja numeru tematu
-                MQTT_params_counter++;
-                if(MQTT_params_counter == 2)
-                {
-                    MQTT_params_counter = 0;
-                }
+
+                char MQTT_payload[64];
+                MQTT_prepareJsonData(MQTT_payload);
+                app_buildPublishPacket(PUB_TOPIC, MQTT_payload);
             }
-            
+
             /////////////////////// DEBUG //////////////////////////
-            mqttCurrentState state1 = MQTT_GetConnectionState();
-            mqttHandlerState_t state2 = MQTT_GetLastHandlerState();
-            printf("Connection state_Current: %d \n\r", state1);
-            printf("Connection state_Handler: %d \n\r\n\r", state2);
+//            mqttCurrentState state1 = MQTT_GetConnectionState();
+//            mqttHandlerState_t state2 = MQTT_GetLastHandlerState();
+//            printf("Connection state_Current: %d \n\r", state1);
+//            printf("Connection state_Handler: %d \n\r\n\r", state2);
             ////////////////////////////////////////////////////////
-            
+
             MQTT_ReceptionHandler(mqttConnnectionInfo);
             MQTT_TransmissionHandler(mqttConnnectionInfo);
+            
         }
         break;
 
