@@ -18,18 +18,20 @@ int main(void)
     // initialize the device
     SYSTEM_Initialize();
 
-    //app_mqttExampleInit();
-    app_commModuleInit();
-    
-    app_updateTemperature(0.5);
+    app_commModuleInit();               //inicjalizacja modulu komunikacyjnego (mqtt))
+    app_updateTemperature(0.5);         //ustawienie wartosci temoratury do wyslania
 
 
     while (1)
     {
         // Add your application code
-        DELAY_milliseconds(40);
-        app_mqttScheduler();
+        DELAY_milliseconds(40);         //male opoznienie dla uC (nie musimy sie spieszyc))
+        app_mqttScheduler();            //scheduler mqtt - obsluguje cala komunikacje, wysyla dane raz na sekunde
         
+        
+        /* Przyklad uzycia z przyciskami */
+        /* wcisniecie przycisku powoduje zapalenie odpowiedniej 
+         * diody LED i aktualizuje stan do wyslania przez mqtt*/
         if(!SW1_GetValue())
         {
             app_updateKey1State(1);
@@ -54,7 +56,7 @@ int main(void)
         
         
         
-        LED_RED_Toggle();
+        LED_RED_Toggle();               //mruganie dioda LED - jak dioda mruga to program dziala w glownej petli (nie zablokowal sie gdzies glebiej)
     }
 
     return 1;

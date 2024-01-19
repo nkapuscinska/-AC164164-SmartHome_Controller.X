@@ -65,7 +65,7 @@ timerStruct_t appMQTTPublishTimer = {appCheckMQTTPublishTimeout, NULL};
 
 
 ///////////////////////
-// Tutaj s? tablice przechowuj?ce warto?ci wszystkich parametrów, które maj?by? wys?ane, oraz tematy z nimi skojarzone.
+// Tutaj sa tablice przechowuj?ce warto?ci wszystkich parametrów, które maj?by? wys?ane, oraz tematy z nimi skojarzone.
 // Indexy tematów odpowiajaj? indexom payloadów.
 char MQTT_paramsPayloads[MQTT_PARAMS_NUM][PAYLOAD_LENGHT];
 char MQTT_paramsTopics[MQTT_PARAMS_NUM][TOPIC_LENGHT];
@@ -95,7 +95,6 @@ void app_updateTemperature(float temp)
     MQTT_setParameterPayload(TEMPERATURE, buffer);
 }
 
-
 void app_updateKey1State(uint8_t state)
 {
     char buffer[8];
@@ -112,7 +111,6 @@ void app_updateKey1State(uint8_t state)
     MQTT_setParameterPayload(KEY1_STATE, buffer);
 }
 
-
 void app_updateKey2State(uint8_t state)
 {
     char buffer[8];
@@ -127,7 +125,6 @@ void app_updateKey2State(uint8_t state)
     
     MQTT_setParameterPayload(KEY2_STATE, buffer);
 }
-
 
 void MQTT_setParameterPayload(MQTT_parameter param, char * payload )
 {
@@ -302,12 +299,6 @@ static void socketHandler(SOCKET sock, uint8_t u8Msg, void *pvMsg)
 
 void app_commModuleInit(void)
 {
-    /////////   DATA CFG    /////////
-    MQTT_setParameterTopic(TEMPERATURE, "home/temp" );
-    MQTT_setParameterTopic(KEY1_STATE, "home/key1" );
-    MQTT_setParameterTopic(KEY2_STATE, "home/key2" );
-    /////////////////////////////////
-            
     tstrWifiInitParam param;
     
     winc_adapter_init();

@@ -3,7 +3,7 @@
     <type>com.microchip.mplab.nbide.embedded.makeproject</type>
     <configuration>
         <data xmlns="http://www.netbeans.org/ns/make-project/1">
-            <name>WiFi_TEST</name>
+            <name>[AC164164]SmartHome_Controller</name>
             <creation-uuid>fae92eec-d888-4d16-a6f8-6dfb3d1ce076</creation-uuid>
             <make-project-type>0</make-project-type>
             <sourceEncoding>ISO-8859-1</sourceEncoding>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <project>
-  <executable name="dist/default/debug/WiFi_TEST.X.debug.elf">
+  <executable name="dist/default/debug/_AC164164_SmartHome_Controller.X.debug.elf">
     <memory name="data">
       <units>bytes</units>
       <length>16384</length>
@@ -11,8 +11,8 @@
     <memory name="program">
       <units>bytes</units>
       <length>134400</length>
-      <used>54603</used>
-      <free>79797</free>
+      <used>54531</used>
+      <free>79869</free>
     </memory>
   </executable>
 </project>

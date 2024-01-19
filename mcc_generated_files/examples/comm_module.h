@@ -24,11 +24,15 @@
 
 #define PUB_TOPIC "home/data"
 
-// Nazwy parametrów przeznaczonych do wys??nia za pomoc? MQTT, nie modyfikowa? domy?lnej kolejno?ci warto?ci enuma.
+// Nazwy parametrów przeznaczonych do wysslnia za pomoca MQTT, nie modyfikowac domyslnej kolejnosci(numeracji) wartosci enuma.
 typedef enum MQTT_parameter {TEMPERATURE, KEY1_STATE, KEY2_STATE} MQTT_parameter;
 
-void MQTT_setParameterPayload(MQTT_parameter param, char * payload );
+
+/*    FUNKCJE NIE UZYWANE    */
 void MQTT_setParameterTopic(MQTT_parameter param, char * topic);
+/* ------------------------- */
+
+void MQTT_setParameterPayload(MQTT_parameter param, char * payload );
 
 void app_updateTemperature(float temp);
 void app_updateKey1State(uint8_t state);
