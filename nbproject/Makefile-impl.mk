@@ -24,7 +24,7 @@ CLEAN_SUBPROJECTS=${CLEAN_SUBPROJECTS_${SUBPROJECTS}}
 
 
 # Project Name
-PROJECTNAME=[AC164164]SmartHome_Controller.X
+PROJECTNAME=-AC164164-SmartHome_Controller.X
 
 # Active Configuration
 DEFAULTCONF=default
