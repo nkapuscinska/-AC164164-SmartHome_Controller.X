@@ -51,6 +51,9 @@
 #include <stdint.h>
 #include <stdbool.h>
 
+#include "tmr2.h"
+#include "tmr1.h"
+#include "drivers/spi_master.h"
 #include "interrupt_manager.h"
 #include "traps.h"
 #include "tmr1.h"
@@ -58,8 +61,8 @@
 #include "drivers/spi_master.h"
 #include "spi1_driver.h"
 #include "uart1.h"
+#include "drivers/timeout.h"
 #include "delay.h"
-
 //#warning "This file will be removed in future MCC releases. Use system.h instead."
 
 #endif	/* MCC_H */

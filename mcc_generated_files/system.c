@@ -97,13 +97,14 @@
 #include "pin_manager.h"
 #include "clock.h"
 #include "system.h"
-#include "uart1.h"
+#include "tmr2.h"
+#include "tmr1.h"
 #include "drivers/spi_master.h"
 #include "interrupt_manager.h"
 #include "traps.h"
 #include "delay.h"
-#include "tmr1.h"
 #include "spi1_driver.h"
+#include "uart1.h"
 #include "drivers/timeout.h"
 
 void SYSTEM_Initialize(void)
@@ -112,8 +113,8 @@ void SYSTEM_Initialize(void)
     INTERRUPT_Initialize();
     CLOCK_Initialize();
     UART1_Initialize();
-    TMR1_Initialize();
     timeout_initialize();
+    TMR1_Initialize();
 }
 
 /**
