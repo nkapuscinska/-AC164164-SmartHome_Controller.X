@@ -16,55 +16,55 @@
  */
 int main(void)
 {
-    // initialize the device
+    //initialize the device
     SYSTEM_Initialize();
+    printf("Start");
 
     app_commModuleInit();               //inicjalizacja modulu komunikacyjnego (mqtt))
     app_updateTemperature(0.5);         //ustawienie wartosci temoratury do wyslania
+    extern eState MyState;
 
-
-    while (1){
-        switch(eState){
-            case Released:
-                   
-                break;
-                    
-            case Released2:
-                
-                break;
-            
-            case SW1Press:
-                LED_YELLOW_SetLow();
-                LED_BLUE_SetHigh();
-                LED_RED_SetHigh();
-                LED_GREEN_SetHigh();
-                break;
-              
-            case SW1Hold:
-                LED_YELLOW_SetHigh();
-                LED_BLUE_SetHigh();
-                LED_RED_SetHigh();
-                LED_GREEN_SetHigh();
-                break;
-            case SW1Double:
-                LED_GREEN_SetLow();
-                LED_YELLOW_SetHigh();
-                LED_BLUE_SetHigh();
-                LED_RED_SetHigh();
-                break;
-            default:
-                LED_RED_SetLow();
-                LED_YELLOW_SetHigh();
-                LED_BLUE_SetHigh();
-                LED_GREEN_SetHigh();
-                break;
-                    
-        }                
-                        
-    
+    while(1){
+        MyState = AskForState();
+        printf("%d", MyState);
     }
-    
-
+//        switch(MyState){
+//            case Released:
+//                   
+//                break;
+//                    
+//            case Released2:
+//                
+//                break;
+//            
+//            case SW1Press:
+//                LED_YELLOW_SetLow();
+//                LED_BLUE_SetHigh();
+//                LED_RED_SetHigh();
+//                LED_GREEN_SetHigh();
+//                break;
+//              
+//            case SW1Hold:
+//                LED_YELLOW_SetHigh();
+//                LED_BLUE_SetHigh();
+//                LED_RED_SetHigh();
+//                LED_GREEN_SetHigh();
+//                break;
+//            case SW1Double:
+//                LED_GREEN_SetLow();
+//                LED_YELLOW_SetHigh();
+//                LED_BLUE_SetHigh();
+//                LED_RED_SetHigh();
+//                break;
+//            default:
+//                LED_RED_SetLow();
+//                LED_YELLOW_SetHigh();
+//                LED_BLUE_SetHigh();
+//                LED_GREEN_SetHigh();
+//                break;
+//                    
+//        }                
+//    }
     return 1;
 }
 
