@@ -33,10 +33,10 @@
 
 #include <xc.h> // include processor files - each processor file is guarded. 
 
-typedef enum eState{Released, SW1Press, SW1Hold, SW1Double, Released2, SW2Press, SW2Hold, SW2Double, Wait}eState;
+typedef enum eState{Released, SW1Press, SW1Hold, SW1Double, SW2Press, SW2Hold, SW2Double, Wait}eState;
 
 
-
+void BtnStateInit(void);
 eState AskForState(void);
 
 

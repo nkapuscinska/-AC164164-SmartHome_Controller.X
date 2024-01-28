@@ -106,6 +106,7 @@
 #include "spi1_driver.h"
 #include "uart1.h"
 #include "drivers/timeout.h"
+//#include "buttons.h"
 
 void SYSTEM_Initialize(void)
 {
@@ -115,6 +116,7 @@ void SYSTEM_Initialize(void)
     UART1_Initialize();
     timeout_initialize();
     TMR1_Initialize();
+    
 }
 
 /**

@@ -14,20 +14,56 @@
 /*
                          Main application
  */
+extern eState MyState;
 int main(void)
 {
     //initialize the device
     SYSTEM_Initialize();
     printf("Start");
+    BtnStateInit();
+    eState ReturnedState;
 
     app_commModuleInit();               //inicjalizacja modulu komunikacyjnego (mqtt))
     app_updateTemperature(0.5);         //ustawienie wartosci temoratury do wyslania
-    extern eState MyState;
-
+    
     while(1){
-        MyState = AskForState();
-        printf("%d", MyState);
+        ReturnedState = AskForState();
+        
+        switch(ReturnedState){
+            case Released:
+                //printf("Released");
+                break;
+                
+            case SW1Press:
+                //printf("SW1Press");
+                break;
+            case SW1Hold:
+                //printf("SW1Hold");
+                break;
+            case SW1Double:
+                //printf("SW1Double");
+                break;
+            case SW2Press:
+                //printf("SW2Press");
+                break;
+            case SW2Hold:
+                //printf("SW2Hold");
+                break;
+            case SW2Double:
+                //printf("SW2Double");
+                break;
+            case Wait:
+                
+                break;
+            default :
+                
+                break;
+            
+        }
+       
     }
+    return 1;
+}
 //        switch(MyState){
 //            case Released:
 //                   
@@ -65,8 +101,8 @@ int main(void)
 //                    
 //        }                
 //    }
-    return 1;
-}
+//    return 1;
+
 
 
 ////{

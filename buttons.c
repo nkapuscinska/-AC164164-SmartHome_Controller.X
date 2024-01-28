@@ -20,111 +20,125 @@ uint8_t Flag1 = 0;
 uint8_t Flag2 = 0;
 
 
-#define AKWISITION 200
-#define MAXTIME 90
-#define MINTIME 10
+#define AKWISITION 2000
+#define PRESSTIME 10
+#define MAXPRESSTIME 200
+#define HOLDTIME 500
+#define DOUBLETIMEMAX 500
+#define DOUBLETIMEMIN 200
+
+typedef enum BtnState {Nothing, Pressed, Hold, Double}BtnState;
+typedef enum InState{Idle, Read1, Read2}InState;
+static BtnState eBtnState;
+static InState eInState;
+static eState MyState;
 
 void CallBack(void){
     Flag1 = SW1_GetValue();
     Flag2 = SW2_GetValue();
     Counter++;
-}
+    switch(eInState){
+        case Idle:
 
+            if((Flag1 == 1)&&(Flag2 == 0)){
+                eInState = Read2;
+            }
+            else if((Flag1 == 0)&& (Flag2 == 1)){
+                eInState = Read1;
+            }
+            else {
+                eInState = Idle;
+            }
+            MyState = Wait;
+            break;
+        case Read1:
+             if((Flag1 == 0)&&(Counter < AKWISITION)){
+                HighCounter++;
+                eInState = Read1;
+            }
+            else if ((Flag1 == 1)&&(Counter < AKWISITION)){
+                LowCounter++;
+                eInState = Read1;
+            }
+            else {
+                Counter = 0;
+                if(HighCounter >= HOLDTIME){
+                    MyState = SW1Hold;
+                    printf("SW1Hold \n\r");
+                }
+                else if((HighCounter >= PRESSTIME)&&(HighCounter <= MAXPRESSTIME)){
+                    MyState = SW1Press;
+                    printf("SW1Press \n\r");
+                }
+                else if((HighCounter >= DOUBLETIMEMIN)&&(HighCounter < DOUBLETIMEMAX)){
+                    MyState = SW1Double;
+                    printf("SW1Double \n\r");
+                }
+                else {
+                    MyState = Released;
+                    printf("Released \n\r");
+                }
+                Counter = 0;
+                HighCounter = 0;
+                LowCounter = 0;
+                eInState = Idle;
+            }
+            break;
+        case Read2:
+            if((Flag2 == 0)&&(Counter < AKWISITION)){
+                HighCounter++;
+                eInState = Read2;
+            }
+            else if ((Flag2 == 1)&&(Counter < AKWISITION)){
+                LowCounter++;
+                eInState = Read2;
+            }
+            else {
+                Counter = 0;
+                if(HighCounter >= HOLDTIME){
+                    MyState = SW2Hold;
+                }
+                else if((HighCounter >= PRESSTIME)&&(HighCounter <= MAXPRESSTIME)){
+                    MyState = SW2Press;
+                }
+                else if((HighCounter >= DOUBLETIMEMIN)&&(HighCounter < DOUBLETIMEMAX)){
+                    MyState = SW2Double;
+                }
+                else {
+                    MyState = Released;
+                }
+                Counter = 0;
+                HighCounter = 0;
+                LowCounter = 0;
+                eInState = Idle;
+                printf("State %d", MyState);
+            }
+            break;
+        }
+            
+    }
+    
 
 void BtnStateInit(void){
     
     TMR2_SetInterruptHandler(&CallBack);
     TMR2_Initialize();
+    TMR2_Start();
 }
-
-
-
-typedef enum BtnState {Nothing, Pressed, Hold, Double}BtnState;
-typedef enum InState{Idle, Read1, Read2}InState;
-BtnState eBtnState;
-InState eInState;
-eState MyState;
-
-
-
-eState ReadBtnState(uint8_t Flag, uint8_t Button){
-    uint8_t adder = 0;
-    if(Button = 1){
-        adder = 0;
+////
+//eState AskForState(void){
+//    return 0;
+//
+eState AskForState(void){
+    eState PreviousState = Wait;
+    if(PreviousState == MyState){
+        //printf(" to samo %d \n\r", MyState);
+        return Wait;
     }
     else{
-        adder = 4;
-    }
-                if((Flag == 1)&&(Counter < AKWISITION)){
-                    HighCounter++;
-                }
-                else if ((Flag == 0)&&(Counter < AKWISITION)){
-                    LowCounter++;
-                }
-                else {
-                    if(HighCounter > MAXTIME){
-                        return SW1Hold + adder;
-                    }
-                    else if((HighCounter < MINTIME)&& (LowCounter > MAXTIME)){
-                        return SW1Press + adder;
-                    }
-                    else if (LowCounter >= AKWISITION){
-                        return Released;
-                    }
-                    else {
-                        return SW1Double + adder;
-                    }
-                }
-                return Released;
-}
-
-
-eState AskForState(void){
-    eState InState;
-    switch(eInState){
-            case Idle:
-                if((Flag1 == 1)&&(Flag2 == 0)){
-                    eInState = Read1;
-                }
-                else if((Flag1 == 0)&& (Flag2 == 1)){
-                    eInState = Read2;
-                }
-                else {
-                    eInState = Idle;
-                }
-                return Wait;
-                break;
-            
-            case Read1:
-                if(Counter > AKWISITION){
-                    ReadBtnState(Flag1, 1);
-                    eInState = Read1;
-                    return Wait;
-                }
-                else{
-                    Counter = 0;
-                    eInState = Idle;
-                    InState = ReadBtnState(Flag1, 1);
-                    return InState;
-                }
-            case Read2:
-                if(Counter > AKWISITION){
-                    ReadBtnState(Flag1, 1);
-                    InState = ReadBtnState(Flag2, 2);
-                    return Wait;
-                }
-                else{
-                    InState = ReadBtnState(Flag2, 2);
-                    Counter = 0;
-                    eInState = Idle;
-                    return InState;
-                    
-                }
-                break;
-        default:
-            return Wait;
-            break;
+       //printf("%d \n\r", MyState);
+       PreviousState = MyState; 
+       return MyState;
+       
     }
 }
-
-
