@@ -28,39 +28,31 @@ int main(void)
     
     while(1){
         ReturnedState = AskForState();
-        
         switch(ReturnedState){
-            case Released:
-                //printf("Released");
-                break;
-                
-            case SW1Press:
-                //printf("SW1Press");
-                break;
-            case SW1Hold:
-                //printf("SW1Hold");
-                break;
-            case SW1Double:
-                //printf("SW1Double");
-                break;
-            case SW2Press:
-                //printf("SW2Press");
-                break;
-            case SW2Hold:
-                //printf("SW2Hold");
-                break;
-            case SW2Double:
-                //printf("SW2Double");
-                break;
-            case Wait:
-                
-                break;
-            default :
-                
-                break;
-            
+        case SW1Press:
+            printf("SW1Press \n\r");
+            break;
+        case SW1Hold:
+            printf("SW1Hold \n\r");
+            break;
+        case SW1Double:
+            printf("SW1Double");
+            break;
+        case SW2Press:
+            printf("SW2Press \n\r");
+            break;
+        case SW2Hold:
+            printf("SW2Hold \n\r");
+            break;
+        case SW2Double:
+            printf("SW2Double");
+            break;
+        case Wait:
+            break;
+        default:
+            printf("default");
+            break;
         }
-       
     }
     return 1;
 }

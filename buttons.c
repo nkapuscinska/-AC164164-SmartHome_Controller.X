@@ -18,6 +18,7 @@ uint16_t HighCounter2 = 0;
 uint16_t LowCounter2 = 0;
 uint8_t Flag1 = 0;
 uint8_t Flag2 = 0;
+uint8_t Buttons = 0;
 
 
 #define AKWISITION 2000
@@ -29,9 +30,9 @@ uint8_t Flag2 = 0;
 
 typedef enum BtnState {Nothing, Pressed, Hold, Double}BtnState;
 typedef enum InState{Idle, Read1, Read2}InState;
-static BtnState eBtnState;
-static InState eInState;
-static eState MyState;
+BtnState eBtnState;
+InState eInState;
+volatile eState MyState;
 
 void CallBack(void){
     Flag1 = SW1_GetValue();
@@ -64,19 +65,19 @@ void CallBack(void){
                 Counter = 0;
                 if(HighCounter >= HOLDTIME){
                     MyState = SW1Hold;
-                    printf("SW1Hold \n\r");
+                    //printf("SW1Hold \n\r");
                 }
                 else if((HighCounter >= PRESSTIME)&&(HighCounter <= MAXPRESSTIME)){
                     MyState = SW1Press;
-                    printf("SW1Press \n\r");
+                    //printf("SW1Press \n\r");
                 }
                 else if((HighCounter >= DOUBLETIMEMIN)&&(HighCounter < DOUBLETIMEMAX)){
                     MyState = SW1Double;
-                    printf("SW1Double \n\r");
+                    //printf("SW1Double \n\r");
                 }
                 else {
                     MyState = Released;
-                    printf("Released \n\r");
+                    //printf("Released \n\r");
                 }
                 Counter = 0;
                 HighCounter = 0;
@@ -111,7 +112,7 @@ void CallBack(void){
                 HighCounter = 0;
                 LowCounter = 0;
                 eInState = Idle;
-                printf("State %d", MyState);
+                //printf("State %d", MyState);
             }
             break;
         }
@@ -129,16 +130,15 @@ void BtnStateInit(void){
 //eState AskForState(void){
 //    return 0;
 //
+
+eState PreviousState = Wait;
+
 eState AskForState(void){
-    eState PreviousState = Wait;
     if(PreviousState == MyState){
-        //printf(" to samo %d \n\r", MyState);
         return Wait;
     }
     else{
-       //printf("%d \n\r", MyState);
-       PreviousState = MyState; 
-       return MyState;
-       
+        return MyState;
+        PreviousState = MyState;
     }
 }
