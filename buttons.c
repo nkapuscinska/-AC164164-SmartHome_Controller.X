@@ -135,7 +135,7 @@ eState PreviousState = Wait;
 
 eState AskForState(void){
     if(PreviousState == MyState){
-        return Wait;
+        return Released;
     }
     else{
         return MyState;

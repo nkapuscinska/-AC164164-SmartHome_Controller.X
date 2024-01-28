@@ -47,8 +47,6 @@ int main(void)
         case SW2Double:
             printf("SW2Double");
             break;
-        case Wait:
-            break;
         default:
             printf("default");
             break;
