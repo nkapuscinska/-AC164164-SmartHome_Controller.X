@@ -8,7 +8,9 @@
 #include "mcc_generated_files/delay.h"
 #include "mcc_generated_files/drivers/timeout.h"
 #include "mcc_generated_files/pin_manager.h"
+#include "mcc_generated_files/MCP9808Drivers/MCP9808.h"
 #include "buttons.h"
+#include "mcc_generated_files/adc1.h"
 #include <stdio.h>
 
 /*
@@ -19,6 +21,8 @@
 
 /* ------- Application Functions -------- */
 void app_buttonsScheduler(void);                //Funckja obslugujaca akcje przyciskow SW1 i SW2
+void app_temperatureScheduler(void);            //Funckja obslugujaca pomiar temperatury
+void app_lightScheduler(void);                  //Funkcja obslugujaca czujnik swiatla 
 
 /* -------------------------------------- */
 
@@ -28,8 +32,11 @@ void app_buttonsScheduler(void);                //Funckja obslugujaca akcje przy
 /* ---------- Global Variables ---------- */
 uint8_t switchesStates[SWITCHES_NUMBER] = {0, 0, 0, 0, 0, 0};
 
-extern eState MyState;
 eState ButtonsState;
+
+MCP9808_i2c_params i2cParam = {0x18, 2};
+MCP9600_alert_flags i2c_alert_flags;
+
 /* -------------------------------------- */
 
 
@@ -46,21 +53,42 @@ int main(void)
     BtnStateInit();
     
     printf("Communication module init ............\n\r");
-    app_commModuleInit();               //inicjalizacja modulu komunikacyjnego (mqtt)
+    app_commModuleInit(); 
     
+    printf("MCP9808 module init ............\n\r");
+    MCP9808_MODULE_Initialize(i2cParam);
        
+    printf("ADC Light module init ............\n\r");
+    ADC_lightInit();
     
     while(1)
     {
         app_buttonsScheduler();
         app_mqttScheduler();
+        app_temperatureScheduler();
+        app_lightScheduler();
         
-        //DELAY_milliseconds(200);
+        DELAY_milliseconds(40);
     }
     
     return 1;
 }
 
+
+void app_temperatureScheduler(void)
+{
+    float temperature;
+    MCP9808_GetTemperatureValue(i2cParam, &i2c_alert_flags, &temperature);
+    app_updateTemperature(temperature);
+}
+
+
+void app_lightScheduler(void)
+{
+    int8_t light;
+    light = ADC_ReadLightDensity();
+    app_updateLight(light);
+}
 
 void app_buttonsScheduler(void)
 {
@@ -106,6 +134,12 @@ void app_buttonsScheduler(void)
         default:
             printf("Default \n\r");
             break;
+    }
+    
+    uint8_t switchNum;
+    for(switchNum = 0 ; switchNum < SWITCHES_NUMBER ; switchNum++)
+    {
+        app_updateSwitchState(switchNum, switchesStates[switchNum]);
     }
 }
 
