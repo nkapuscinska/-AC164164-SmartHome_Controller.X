@@ -16,7 +16,6 @@
           <itemPath>mcc_generated_files/drivers/timeout.h</itemPath>
         </logicalFolder>
         <logicalFolder name="examples" displayName="examples" projectFiles="true">
-          <itemPath>mcc_generated_files/examples/comm_module.h</itemPath>
         </logicalFolder>
         <logicalFolder name="mqtt" displayName="mqtt" projectFiles="true">
           <logicalFolder name="mqtt_comm_bsd"
@@ -88,6 +87,7 @@
         <itemPath>mcc_generated_files/tmr2.h</itemPath>
       </logicalFolder>
       <itemPath>buttons.h</itemPath>
+      <itemPath>comm_module.h</itemPath>
     </logicalFolder>
     <logicalFolder name="LinkerScript"
                    displayName="Linker Files"
@@ -115,7 +115,6 @@
           <itemPath>mcc_generated_files/drivers/timeout.c</itemPath>
         </logicalFolder>
         <logicalFolder name="examples" displayName="examples" projectFiles="true">
-          <itemPath>mcc_generated_files/examples/comm_module.c</itemPath>
         </logicalFolder>
         <logicalFolder name="mqtt" displayName="mqtt" projectFiles="true">
           <logicalFolder name="mqtt_comm_bsd"
@@ -172,6 +171,7 @@
       </logicalFolder>
       <itemPath>main.c</itemPath>
       <itemPath>buttons.c</itemPath>
+      <itemPath>comm_module.c</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"
@@ -180,6 +180,9 @@
       <itemPath>WiFi_TEST.mc3</itemPath>
     </logicalFolder>
   </logicalFolder>
+  <sourceRootList>
+    <Elem>.</Elem>
+  </sourceRootList>
   <projectmakefile>Makefile</projectmakefile>
   <confs>
     <conf name="default" type="2">
@@ -1443,8 +1446,6 @@
         <property key="memories.programmemory" value="true"/>
         <property key="memories.programmemory.ranges" value="0-15eff"/>
         <property key="poweroptions.powerenable" value="false"/>
-        <property key="programmerToGoFilePath"
-                  value="C:/Users/Pawel/Documents/MPLAB/WiFi_TEST.X/debug/default/WiFi_TEST_ptg"/>
         <property key="programoptions.eraseb4program" value="true"/>
         <property key="programoptions.preservedataflash" value="false"/>
         <property key="programoptions.preservedataflash.ranges"

@@ -3,7 +3,7 @@
 */
 #include "mcc_generated_files/system.h"
 #include "mcc_generated_files/pin_manager.h"
-#include "mcc_generated_files/examples/comm_module.h"
+#include "comm_module.h"
 #include "mcc_generated_files/uart1.h"
 #include "mcc_generated_files/delay.h"
 #include "mcc_generated_files/drivers/timeout.h"
@@ -14,84 +14,101 @@
 /*
                          Main application
  */
+
+#define SWITCHES_NUMBER 6
+
+/* ------- Application Functions -------- */
+void app_buttonsScheduler(void);                //Funckja obslugujaca akcje przyciskow SW1 i SW2
+
+/* -------------------------------------- */
+
+
+
+
+/* ---------- Global Variables ---------- */
+uint8_t switchesStates[SWITCHES_NUMBER] = {0, 0, 0, 0, 0, 0};
+
 extern eState MyState;
+eState ButtonsState;
+/* -------------------------------------- */
+
+
+
+
+
+/* ---------- Main Application ---------- */
 int main(void)
 {
-    //initialize the device
+    printf("Application Start ............\n\r");
     SYSTEM_Initialize();
-    printf("Start");
-    BtnStateInit();
-    eState ReturnedState;
-
-    app_commModuleInit();               //inicjalizacja modulu komunikacyjnego (mqtt))
-    app_updateTemperature(0.5);         //ustawienie wartosci temoratury do wyslania
     
-    while(1){
-        ReturnedState = AskForState();
-        switch(ReturnedState){
-        case SW1Press:
-            printf("SW1Press \n\r");
-            break;
-        case SW1Hold:
-            printf("SW1Hold \n\r");
-            break;
-        case SW1Double:
-            printf("SW1Double");
-            break;
-        case SW2Press:
-            printf("SW2Press \n\r");
-            break;
-        case SW2Hold:
-            printf("SW2Hold \n\r");
-            break;
-        case SW2Double:
-            printf("SW2Double");
-            break;
-        default:
-            printf("default");
-            break;
-        }
+    printf("Buttons module init ............\n\r");
+    BtnStateInit();
+    
+    printf("Communication module init ............\n\r");
+    app_commModuleInit();               //inicjalizacja modulu komunikacyjnego (mqtt)
+    
+       
+    
+    while(1)
+    {
+        app_buttonsScheduler();
+        app_mqttScheduler();
+        
+        //DELAY_milliseconds(200);
     }
+    
     return 1;
 }
-//        switch(MyState){
-//            case Released:
-//                   
-//                break;
-//                    
-//            case Released2:
-//                
-//                break;
-//            
-//            case SW1Press:
-//                LED_YELLOW_SetLow();
-//                LED_BLUE_SetHigh();
-//                LED_RED_SetHigh();
-//                LED_GREEN_SetHigh();
-//                break;
-//              
-//            case SW1Hold:
-//                LED_YELLOW_SetHigh();
-//                LED_BLUE_SetHigh();
-//                LED_RED_SetHigh();
-//                LED_GREEN_SetHigh();
-//                break;
-//            case SW1Double:
-//                LED_GREEN_SetLow();
-//                LED_YELLOW_SetHigh();
-//                LED_BLUE_SetHigh();
-//                LED_RED_SetHigh();
-//                break;
-//            default:
-//                LED_RED_SetLow();
-//                LED_YELLOW_SetHigh();
-//                LED_BLUE_SetHigh();
-//                LED_GREEN_SetHigh();
-//                break;
-//                    
-//        }                
-//    }
-//    return 1;
+
+
+void app_buttonsScheduler(void)
+{
+    ButtonsState = AskForState();            //Pobranie informacji o stanie przyciskow
+    
+    printf("Buttons state   -->   ");
+    switch(ButtonsState)
+    {
+        case Released:
+            printf("Released \n\r");
+            break;
+            
+        case SW1Press:
+            switchesStates[0] ^= 1;
+            printf("SW1Press \n\r");
+            break;
+            
+        case SW1Hold:
+            switchesStates[1] ^= 1;
+            printf("SW1Hold \n\r");
+            break;
+            
+        case SW1Double:
+            switchesStates[2] ^= 1;
+            printf("SW1Double");
+            break;
+            
+        case SW2Press:
+            switchesStates[3] ^= 1;
+            printf("SW2Press \n\r");
+            break;
+            
+        case SW2Hold:
+            switchesStates[4] ^= 1;
+            printf("SW2Hold \n\r");
+            break;
+            
+        case SW2Double:
+            switchesStates[5] ^= 1;
+            printf("SW2Double \n\r");
+            break;
+            
+        default:
+            printf("Default \n\r");
+            break;
+    }
+}
+
 
 
 
