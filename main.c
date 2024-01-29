@@ -28,6 +28,8 @@ void app_buttonsScheduler(void);                //Funckja obslugujaca akcje przy
 /* ---------- Global Variables ---------- */
 uint8_t switchesStates[SWITCHES_NUMBER] = {0, 0, 0, 0, 0, 0};
 
+extern eState MyState;
+eState ButtonsState;
 /* -------------------------------------- */
 
 
@@ -62,7 +64,7 @@ int main(void)
 
 void app_buttonsScheduler(void)
 {
-    eState ButtonsState = AskForState();            //Pobranie informacji o stanie przyciskow
+    ButtonsState = AskForState();            //Pobranie informacji o stanie przyciskow
     
     printf("Buttons state   -->   ");
     switch(ButtonsState)

@@ -38,6 +38,7 @@ void CallBack(void){
     Flag1 = SW1_GetValue();
     Flag2 = SW2_GetValue();
     Counter++;
+    printf("%d \n\r", Counter);
     switch(eInState){
         case Idle:
 
@@ -52,6 +53,7 @@ void CallBack(void){
             }
             MyState = Wait;
             break;
+            
         case Read1:
              if((Flag1 == 0)&&(Counter < AKWISITION)){
                 HighCounter++;
@@ -62,7 +64,6 @@ void CallBack(void){
                 eInState = Read1;
             }
             else {
-                Counter = 0;
                 if(HighCounter >= HOLDTIME){
                     MyState = SW1Hold;
                     //printf("SW1Hold \n\r");
@@ -85,6 +86,7 @@ void CallBack(void){
                 eInState = Idle;
             }
             break;
+            
         case Read2:
             if((Flag2 == 0)&&(Counter < AKWISITION)){
                 HighCounter++;
@@ -95,7 +97,6 @@ void CallBack(void){
                 eInState = Read2;
             }
             else {
-                Counter = 0;
                 if(HighCounter >= HOLDTIME){
                     MyState = SW2Hold;
                 }
@@ -112,9 +113,10 @@ void CallBack(void){
                 HighCounter = 0;
                 LowCounter = 0;
                 eInState = Idle;
-                //printf("State %d", MyState);
+                printf("State %d \n\r", MyState);
             }
             break;
+            
         }
             
     }
@@ -135,10 +137,12 @@ eState PreviousState = Wait;
 
 eState AskForState(void){
     if(PreviousState == MyState){
+        printf("MyState 1 ----->   %d", MyState);
         return Released;
     }
     else{
-        return MyState;
         PreviousState = MyState;
+        printf("MyState 2 ----->   %d", MyState);
+        return MyState;
     }
 }

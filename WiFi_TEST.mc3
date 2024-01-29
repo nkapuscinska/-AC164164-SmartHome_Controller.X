@@ -83,11 +83,11 @@
       </entry>
    </usedClasses>
    <usedLibraries class="java.util.ArrayList">
-      <ILibraryFile class="com.microchip.mcc.core.library.BaseLibraryFile" libraryClass="com.microchip.mcc.libraries.networking.winc.library.WINCLibrary" version="1.1.2"/>
-      <ILibraryFile class="com.microchip.mcc.core.library.BaseLibraryFile" libraryClass="com.microchip.mcc.mcu16.Mcu16PeripheralLibrary" version="1.171.4"/>
-      <ILibraryFile class="com.microchip.mcc.core.library.BaseLibraryFile" libraryClass="com.microchip.mcc.boardsupportlibrary.BoardSuppportLibrary" version="1.12.0"/>
       <ILibraryFile class="com.microchip.mcc.core.library.BaseLibraryFile" libraryClass="com.microchip.mcc.foundationservices.library.FoundationServicesLibrary" version="0.2.3"/>
+      <ILibraryFile class="com.microchip.mcc.core.library.BaseLibraryFile" libraryClass="com.microchip.mcc.mcu16.Mcu16PeripheralLibrary" version="1.171.4"/>
+      <ILibraryFile class="com.microchip.mcc.core.library.BaseLibraryFile" libraryClass="com.microchip.mcc.libraries.networking.winc.library.WINCLibrary" version="1.1.2"/>
       <ILibraryFile class="com.microchip.mcc.core.library.BaseLibraryFile" libraryClass="com.microchip.mcc.MQTTLibrary" version="2.0.2"/>
+      <ILibraryFile class="com.microchip.mcc.core.library.BaseLibraryFile" libraryClass="com.microchip.mcc.boardsupportlibrary.BoardSuppportLibrary" version="1.12.0"/>
    </usedLibraries>
    <tokenMap class="java.util.TreeMap">
       <entry>
@@ -8308,11 +8308,11 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="SPIMASTER" name="pubSubSPIMASTERConfigurations"/>
-         <value>3963.7511288495007</value>
+         <value>6953.740390953979</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="SPIMASTER" name="pubSubspiSubscriber"/>
-         <value>1845.0079740410174</value>
+         <value>1897.1326162178648</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="SPIMASTER" name="spiSubscriber"/>
@@ -8324,7 +8324,7 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="SPIMASTER" name="validate"/>
-         <value>0.5838120594887986</value>
+         <value>0.5925062183039755</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.PropertyTokenKey" moduleName="SPIMASTER" name="spiConfigurations%0%dataInputSample"/>
@@ -8960,7 +8960,7 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="TIMEOUTDRIVER" name="pubSubTIMEOUTDRIVER_TIMER/genericTimeoutInterfaceV2"/>
-         <value>4894.0979018211165</value>
+         <value>2590.017031055206</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="TIMEOUTDRIVER" name="usecaseComboSettings"/>
@@ -9200,11 +9200,11 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="TMR2" name="actualPeriod"/>
-         <value>0.001</value>
+         <value>0.01</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="TMR2" name="callBackRate"/>
-         <value>0.001</value>
+         <value>0.01</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="TMR2" name="clockSourceSelect"/>
@@ -9216,7 +9216,7 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="TMR2" name="customPR"/>
-         <value>124</value>
+         <value>1249</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="TMR2" name="inputMode"/>
@@ -9244,7 +9244,7 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="TMR2" name="requestedPeriod"/>
-         <value>0.001</value>
+         <value>0.01</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="TMR2" name="tickerFactor"/>
@@ -9336,7 +9336,7 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.RegisterKey" moduleName="TMR2" registerAlias="PR"/>
-         <value>124</value>
+         <value>1249</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.RegisterKey" moduleName="TMR2" registerAlias="PR32"/>
@@ -9356,7 +9356,7 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="TMR2" registerAlias="PR" settingAlias="PR"/>
-         <value>124</value>
+         <value>1249</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="TMR2" registerAlias="PR32" settingAlias="PR32"/>
@@ -9964,7 +9964,7 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="WINC15XX" name="pubSubWINC15XX_SPIMASTER/interfaceV2"/>
-         <value>1723.3179090718854</value>
+         <value>2359.604411532439</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="WINC15XX" name="ssid"/>
@@ -10078,7 +10078,7 @@
       </entry>
       <entry>
          <file>mcc_generated_files\mcc.h</file>
-         <hash>3d22e887f52480ae76b6f1e2d96d9e593421f314a5245aa8565b9751e29e0d90</hash>
+         <hash>d58805cb13050956170bf64c01153c117508697282cace0e365307ebbf998542</hash>
       </entry>
       <entry>
          <file>mcc_generated_files\mqtt\mqtt_comm_bsd\mqtt_comm_layer.c</file>
@@ -10122,7 +10122,7 @@
       </entry>
       <entry>
          <file>mcc_generated_files\pin_manager.c</file>
-         <hash>dc3c5388001bc5e0a23ce3664f62f06a0d07261acf41e42a2fce743b5599a6ca</hash>
+         <hash>68d64bef921f2e8b4021f4637a6888035af3e439f9edcc0c71aa5a4f834826e7</hash>
       </entry>
       <entry>
          <file>mcc_generated_files\pin_manager.h</file>
@@ -10142,7 +10142,7 @@
       </entry>
       <entry>
          <file>mcc_generated_files\system.c</file>
-         <hash>bf5ca756f21dfd8720f32bbce3b1fd8496f9e9b23558e5ac41d8fb864ad7b007</hash>
+         <hash>ab430c28d7c0ca4c22914bb920a119f2c66ac6f3af19ac506241be4ff2654aa8</hash>
       </entry>
       <entry>
          <file>mcc_generated_files\system.h</file>
@@ -10158,7 +10158,7 @@
       </entry>
       <entry>
          <file>mcc_generated_files\tmr2.c</file>
-         <hash>543b0336e1513f164f4b2ad0991f14012afb7f53f5add5e70f88582310a02bc8</hash>
+         <hash>8bcc62a21fe712861782b7e2ed0c0f31f511af39a0b9d3bd4b2e9820b5b39723</hash>
       </entry>
       <entry>
          <file>mcc_generated_files\tmr2.h</file>

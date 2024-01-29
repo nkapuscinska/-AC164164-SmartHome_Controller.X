@@ -93,7 +93,7 @@ void MQTT_prepareJsonData(char * buffer)
     sprintf(temporaryBuffer, "%.2f", (double)tSensors.Temperature);
     strcat(buffer, temporaryBuffer);
     
-    strcat(buffer, "\"light\":\"");
+    strcat(buffer, "\",\"light\":\"");
     sprintf(temporaryBuffer, "%.2f", (double)tSensors.Light);
     strcat(buffer, temporaryBuffer);
     

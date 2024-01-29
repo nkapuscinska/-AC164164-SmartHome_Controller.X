@@ -341,6 +341,7 @@
         <property key="warn-section-align" value="false"/>
       </C30-LD>
       <C30Global>
+        <property key="appendMe" value="--std=gnu89"/>
         <property key="combine-sourcefiles" value="false"/>
         <property key="common-include-directories"
                   value="mcc_generated_files/config;mcc_generated_files/winc;mcc_generated_files/drivers;mcc_generated_files/mqtt"/>
