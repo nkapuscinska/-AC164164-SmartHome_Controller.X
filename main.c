@@ -47,6 +47,8 @@ int main(void)
         case SW2Double:
             printf("SW2Double");
             break;
+        case Released:
+            break;
         default:
             printf("default");
             break;
