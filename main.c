@@ -68,7 +68,7 @@ int main(void)
         app_temperatureScheduler();
         app_lightScheduler();
         
-        DELAY_milliseconds(40);
+        //DELAY_milliseconds(40);
     }
     
     return 1;
@@ -89,6 +89,7 @@ void app_lightScheduler(void)
     light = ADC_ReadLightDensity();
     app_updateLight(light);
 }
+
 
 void app_buttonsScheduler(void)
 {
@@ -130,9 +131,10 @@ void app_buttonsScheduler(void)
             switchesStates[5] ^= 1;
             printf("SW2Double \n\r");
             break;
-            
+        case Wait:
+            break;
         default:
-            //printf("Default \n\r");
+            printf("Default \n\r");
             break;
     }
     
@@ -143,49 +145,7 @@ void app_buttonsScheduler(void)
     }
 }
 
-
-
-
-////{
-//        // Add your application code
-//        DELAY_milliseconds(40);         //male opoznienie dla uC (nie musimy sie spieszyc))
-//        app_mqttScheduler();            //scheduler mqtt - obsluguje cala komunikacje, wysyla dane raz na sekunde
-//        
-//        
-//        /* Przyklad uzycia z przyciskami */
-//        /* wcisniecie przycisku powoduje zapalenie odpowiedniej 
-//         * diody LED i aktualizuje stan do wyslania przez mqtt*/
-//        if(!SW1_GetValue())
-//        {
-//            app_updateKey1State(1);
-//            LED_YELLOW_SetLow();
-//        }
-//        else
-//        {
-//            app_updateKey1State(0);
-//            LED_YELLOW_SetHigh();
-//        }
-//        
-//        if(!SW2_GetValue())
-//        {
-//            app_updateKey2State(1);
-//            LED_BLUE_SetLow();
-//        }
-//        else
-//        {
-//            app_updateKey2State(0);
-//            LED_BLUE_SetHigh();
-//        }
-//        
-//        
-//        
-//        LED_RED_Toggle();               //mruganie dioda LED - jak dioda mruga to program dziala w glownej petli (nie zablokowal sie gdzies glebiej)
-//    }
-
-
-/**
- * 
- * 
+/*
  End of File
 */
 

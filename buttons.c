@@ -98,7 +98,6 @@ eState BtnStateFunction(void){
             return SW2Press;
         }
         else if((HighCounter2 >= DOUBLETIMEMIN)&&(HighCounter2 < DOUBLETIMEMAX)){
-            MyState = SW2Double;
             //printf("SW2Double \n\r");
             return SW2Double;
         }
@@ -108,7 +107,7 @@ eState BtnStateFunction(void){
         }
     }
     else{
-        
+        return Released;
         }
     }
     eState AskForState(void){
