@@ -94,11 +94,11 @@ void app_buttonsScheduler(void)
 {
     ButtonsState = AskForState();            //Pobranie informacji o stanie przyciskow
     
-    printf("Buttons state   -->   ");
+    //printf("Buttons state   -->   ");
     switch(ButtonsState)
     {
         case Released:
-            printf("Released \n\r");
+            //printf("Released \n\r");
             break;
             
         case SW1Press:
@@ -132,7 +132,7 @@ void app_buttonsScheduler(void)
             break;
             
         default:
-            printf("Default \n\r");
+            //printf("Default \n\r");
             break;
     }
     
