@@ -8,12 +8,17 @@
 #include "mcc_generated_files/delay.h"
 #include "mcc_generated_files/drivers/timeout.h"
 #include "mcc_generated_files/pin_manager.h"
+#include "mcc_generated_files/adc1.h"
 #include "buttons.h"
 #include <stdio.h>
+#include "xc.h" 
+#include "mcc_generated_files/MCP9808Drivers/MCP9808.h"
+#include "mcc_generated_files/i2c2.h"
 
 /*
                          Main application
  */
+   
 
 #define SWITCHES_NUMBER 6
 
@@ -24,14 +29,14 @@ void app_buttonsScheduler(void);                //Funckja obslugujaca akcje przy
 
 
 
-
 /* ---------- Global Variables ---------- */
 uint8_t switchesStates[SWITCHES_NUMBER] = {0, 0, 0, 0, 0, 0};
 
 extern eState MyState;
 eState ButtonsState;
-/* -------------------------------------- */
 
+extern uint16_t temperatureReady;
+/* -------------------------------------- */
 
 
 
@@ -39,6 +44,21 @@ eState ButtonsState;
 /* ---------- Main Application ---------- */
 int main(void)
 {
+    ADC1_Initialize();
+    ADC1_Enable();
+    ADC1_ChannelSelect(channel_AN8);
+    ADC1_SoftwareTriggerEnable();
+    MCP9808_i2c_params i2c_params;
+    MCP9600_alert_flags alert_flags;
+    i2c_params.i2cAddress = 0x18;
+    i2c_params.i2cBusID = 2;
+    
+    MCP9808_MODULE_Initialize(i2c_params);
+    MCP9808_SetResolutionValue(i2c_params, 0.125);
+  
+  
+  
+  
     printf("Application Start ............\n\r");
     SYSTEM_Initialize();
     
