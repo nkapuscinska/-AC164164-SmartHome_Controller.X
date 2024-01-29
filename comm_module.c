@@ -34,6 +34,9 @@
 #define CONN_AUTH CFG_MAIN_WLAN_AUTH
 #define CONN_PASSWORD CFG_MAIN_WLAN_PSK
 
+#define SWITCHES_NUM 6
+#define SEND_BUFFER_SIZE 256
+
 
 typedef enum
 {
@@ -47,6 +50,11 @@ typedef enum
     APP_STATE_ERROR,
     APP_STATE_STOPPED
 } appStates_e;
+
+
+typedef struct MQTT_sensorsValues {
+    float Temperature;
+}MQTT_sensorsValue;
 
 
 
@@ -65,79 +73,63 @@ timerStruct_t appMQTTPublishTimer = {appCheckMQTTPublishTimeout, NULL};
 
 
 ///////////////////////
-// Tutaj sa tablice przechowuj?ce warto?ci wszystkich parametrów, które maj?by? wys?ane, oraz tematy z nimi skojarzone.
-// Indexy tematów odpowiajaj? indexom payloadów.
-char MQTT_paramsPayloads[MQTT_PARAMS_NUM][PAYLOAD_LENGHT];
-char MQTT_paramsTopics[MQTT_PARAMS_NUM][TOPIC_LENGHT];
+uint8_t MQTT_switchesValues[SWITCHES_NUM];
+
+MQTT_sensorsValue tSensors;
+
 
 //////////////////////
 void MQTT_prepareJsonData(char * buffer)
-{
-    char * temp = &MQTT_paramsPayloads[(uint8_t)TEMPERATURE][0];
-    char * key1 = &MQTT_paramsPayloads[(uint8_t)KEY1_STATE][0];
-    char * key2 = &MQTT_paramsPayloads[(uint8_t)KEY2_STATE][0];
-    
+{   
     memset(buffer, '\0', sizeof(buffer));
     
+    
+    
+    char temporaryBuffer[8];    //bufor do przekonwertowania wartosci przyciskow na znaki
+    
+    
     strcat(buffer, "{\"temp\":\"");
-    strcat(buffer, temp);
-    strcat(buffer, "\",\"key1_state\":\"");
-    strcat(buffer, key1);
-    strcat(buffer, "\",\"key2_state\":\"");
-    strcat(buffer, key2);
+    sprintf(temporaryBuffer, "%.2f", (double)tSensors.Temperature);
+    strcat(buffer, temporaryBuffer);
+    
+    strcat(buffer, "\",\"bool0\":\"");
+    sprintf(temporaryBuffer, "%d", MQTT_switchesValues[0]);
+    strcat(buffer, temporaryBuffer);
+    
+    strcat(buffer, "\",\"bool1\":\"");
+    sprintf(temporaryBuffer, "%d", MQTT_switchesValues[1]);
+    strcat(buffer, temporaryBuffer);
+    
+    strcat(buffer, "\",\"bool2\":\"");
+    sprintf(temporaryBuffer, "%d", MQTT_switchesValues[2]);
+    strcat(buffer, temporaryBuffer);
+    
+    strcat(buffer, "\",\"bool3\":\"");
+    sprintf(temporaryBuffer, "%d", MQTT_switchesValues[3]);
+    strcat(buffer, temporaryBuffer);
+    
+    strcat(buffer, "\",\"bool4\":\"");
+    sprintf(temporaryBuffer, "%d", MQTT_switchesValues[4]);
+    strcat(buffer, temporaryBuffer);
+    
+    strcat(buffer, "\",\"bool5\":\"");
+    sprintf(temporaryBuffer, "%d", MQTT_switchesValues[5]);
+    strcat(buffer, temporaryBuffer);
+    
     strcat(buffer, "\"}");
+    
 }
 
 void app_updateTemperature(float temp)
 {
-    char buffer[16];
-    sprintf(buffer, "%.2f", (double)temp);
-    MQTT_setParameterPayload(TEMPERATURE, buffer);
+    tSensors.Temperature = temp;
 }
 
-void app_updateKey1State(uint8_t state)
+void app_updateSwitchState(uint8_t switchNum, uint8_t value)
 {
-    char buffer[8];
-    
-    if(state == 0)
-    {
-        strcpy(buffer, "off");
-    }
-    else
-    {
-        strcpy(buffer, "on");
-    }
-    
-    MQTT_setParameterPayload(KEY1_STATE, buffer);
+    MQTT_switchesValues[switchNum] = value;
 }
 
-void app_updateKey2State(uint8_t state)
-{
-    char buffer[8];
-    if(state == 0)
-    {
-        strcpy(buffer, "off");
-    }
-    else
-    {
-        strcpy(buffer, "on");
-    }
-    
-    MQTT_setParameterPayload(KEY2_STATE, buffer);
-}
-
-void MQTT_setParameterPayload(MQTT_parameter param, char * payload )
-{
-    char * destination = &MQTT_paramsPayloads[(uint8_t)param][0];
-    strcpy(destination, payload);
-    
-}
-
-void MQTT_setParameterTopic(MQTT_parameter param, char * topic )
-{
-    char * destination = &MQTT_paramsTopics[(uint8_t)param][0];
-    strcpy(destination, topic);
-}
 //////////////////////
 
 
@@ -412,7 +404,7 @@ void app_mqttScheduler(void)
             {
                 appMQTTPublishTimeoutOccured = false;
 
-                char MQTT_payload[64];
+                char MQTT_payload[SEND_BUFFER_SIZE];
                 MQTT_prepareJsonData(MQTT_payload);
                 app_buildPublishPacket(PUB_TOPIC, MQTT_payload);
             }

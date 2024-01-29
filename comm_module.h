@@ -18,25 +18,11 @@
 #ifndef COMM_MODULE_H
 #define	COMM_MODULE_H
 
-#define MQTT_PARAMS_NUM 3
-#define PAYLOAD_LENGHT 16
-#define TOPIC_LENGHT 16
-
 #define PUB_TOPIC "home/data"
 
-// Nazwy parametrów przeznaczonych do wysslnia za pomoca MQTT, nie modyfikowac domyslnej kolejnosci(numeracji) wartosci enuma.
-typedef enum MQTT_parameter {TEMPERATURE, KEY1_STATE, KEY2_STATE} MQTT_parameter;
-
-
-/*    FUNKCJE NIE UZYWANE    */
-void MQTT_setParameterTopic(MQTT_parameter param, char * topic);
-/* ------------------------- */
-
-void MQTT_setParameterPayload(MQTT_parameter param, char * payload );
-
 void app_updateTemperature(float temp);
-void app_updateKey1State(uint8_t state);
-void app_updateKey2State(uint8_t state);
+void app_updateSwitchState(uint8_t switchNum, uint8_t value);
+
 
 void app_commModuleInit(void);
 void app_mqttScheduler(void);
