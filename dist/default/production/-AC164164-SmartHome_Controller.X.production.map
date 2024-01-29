@@ -233,41 +233,41 @@ Default Scalar Model: Small
 section                    address   length (PC units)   length (bytes) (dec)
 -------                    -------   -----------------   --------------------
 .text                        0x100              0x1f1a          0x2ea7  (11943)
-.const                      0x201a               0x242           0x363  (867)
-.text                       0x225c              0x61bc          0x929a  (37530)
-.dinit                      0x8418               0x1b0           0x288  (648)
-.text                       0x85c8               0xd18          0x13a4  (5028)
-.init.delay32               0x92e0                0x1c            0x2a  (42)
-.text                       0x92fc                0x3e            0x5d  (93)
+.const                      0x201a               0x24c           0x372  (882)
+.text                       0x2266              0x61f2          0x92eb  (37611)
+.dinit                      0x8458               0x1b6           0x291  (657)
+.text                       0x860e               0xd48          0x13ec  (5100)
+.init.delay32               0x9356                0x1c            0x2a  (42)
+.text                       0x9372                0x3e            0x5d  (93)
 
-                 Total "program" memory used (bytes):         0xdb57  (56151) 41%
+                 Total "program" memory used (bytes):         0xdc08  (56328) 41%
 
 
 "data" Memory  [Origin = 0x800, Length = 0x4000]
 
 section                    address      alignment gaps    total length  (dec)
 -------                    -------      --------------    -------------------
-.nbss                        0x800                   0            0x8c  (140)
-.ndata                       0x88c                   0             0x2  (2)
-.nbss                        0x88e                   0             0x4  (4)
-.ndata                       0x892                   0             0x2  (2)
-.nbss                        0x894                   0             0x2  (2)
-.ndata                       0x896                   0             0x4  (4)
-.nbss                        0x89a                   0             0x2  (2)
-.ndata                       0x89c                   0             0x2  (2)
-.nbss                        0x89e                   0             0x6  (6)
-.ndata                       0x8a4                   0             0x2  (2)
-.bss                         0x8a6                   0           0x696  (1686)
-.data                        0xf3c                   0            0xb0  (176)
-.bss                         0xfec                   0            0x20  (32)
-.data                       0x100c                   0            0x1e  (30)
-.bss                        0x102a                   0            0x10  (16)
-.data                       0x103a                   0            0x1a  (26)
-.bss                        0x1054                   0             0xa  (10)
-.data                       0x105e                   0             0xa  (10)
-.bss                        0x1068                   0             0x6  (6)
+.nbss                        0x800                   0            0x90  (144)
+.ndata                       0x890                   0             0x2  (2)
+.nbss                        0x892                   0             0x4  (4)
+.ndata                       0x896                   0             0x2  (2)
+.nbss                        0x898                   0             0x2  (2)
+.ndata                       0x89a                   0             0x4  (4)
+.nbss                        0x89e                   0             0x2  (2)
+.ndata                       0x8a0                   0             0x2  (2)
+.nbss                        0x8a2                   0             0x6  (6)
+.ndata                       0x8a8                   0             0x2  (2)
+.bss                         0x8aa                   0           0x696  (1686)
+.data                        0xf40                   0            0xb0  (176)
+.bss                         0xff0                   0            0x20  (32)
+.data                       0x1010                   0            0x1e  (30)
+.bss                        0x102e                   0            0x10  (16)
+.data                       0x103e                   0            0x1a  (26)
+.bss                        0x1058                   0             0xa  (10)
+.data                       0x1062                   0             0xa  (10)
+.bss                        0x106c                   0             0xc  (12)
 
-                 Total "data" memory used (bytes):          0x86e  (2158) 13%
+                 Total "data" memory used (bytes):          0x878  (2168) 13%
 
 
 Dynamic Memory Usage
@@ -275,9 +275,9 @@ Dynamic Memory Usage
 region                     address                      maximum length  (dec)
 ------                     -------                      ---------------------
 heap                             0                                   0  (0)
-stack                       0x106e                              0x3792  (14226)
+stack                       0x1078                              0x3788  (14216)
 
-                 Maximum dynamic memory (bytes):         0x3792  (14226)
+                 Maximum dynamic memory (bytes):         0x3788  (14216)
 
 Info: Project is using a large data memory model when small data memory model is sufficient.
 
@@ -295,30 +295,31 @@ External Symbols in Data Memory (by address):
                     0x0828                  _eBtnState
                     0x082a                  _eInState
                     0x082c                  _MyState
-                    0x084e                  _listHead
-                    0x0850                  _executeQueueHead
-                    0x0852                  _absoluteTimeofLastTimeout
-                    0x0856                  _lastTimerLoad
-                    0x085a                  _isRunning
-                    0x0864                  _tSensors
-                    0x0890                  _publishRecvCallback
-                    0x089a                  _spi1_interruptHandler
-                    0x089e                  _INT_InterruptHandler
-                    0x08a0                  _TMR1_InterruptHandler
-                    0x08a2                  _TMR2_InterruptHandler
-                    0x08a4                  _PreviousState
-                    0x0e68                  _MQTT_switchesValues
-                    0x0f3c                  __stdout
-                    0x0f3e                  ___stdout_used
-                    0x0fba                  _connackTimer
-                    0x0fc4                  _pingreqTimer
-                    0x0fce                  _pingrespTimer
-                    0x0fd8                  _subackTimer
-                    0x0fe2                  _unsubackTimer
-                    0x104a                  _dummy_exec
-                    0x1054                  _dummy
-                    0x105e                  _appMQTTPublishTimer
-                    0x106c                  ___errno_val
+                    0x0856                  _tSensors
+                    0x085e                  _listHead
+                    0x0860                  _executeQueueHead
+                    0x0862                  _absoluteTimeofLastTimeout
+                    0x0866                  _lastTimerLoad
+                    0x086a                  _isRunning
+                    0x0894                  _publishRecvCallback
+                    0x089e                  _spi1_interruptHandler
+                    0x08a2                  _INT_InterruptHandler
+                    0x08a4                  _TMR1_InterruptHandler
+                    0x08a6                  _TMR2_InterruptHandler
+                    0x08a8                  _PreviousState
+                    0x0e6c                  _MQTT_switchesValues
+                    0x0f40                  __stdout
+                    0x0f42                  ___stdout_used
+                    0x0fbe                  _connackTimer
+                    0x0fc8                  _pingreqTimer
+                    0x0fd2                  _pingrespTimer
+                    0x0fdc                  _subackTimer
+                    0x0fe6                  _unsubackTimer
+                    0x104e                  _dummy_exec
+                    0x1058                  _dummy
+                    0x1062                  _appMQTTPublishTimer
+                    0x106c                  _switchesStates
+                    0x1076                  ___errno_val
 
 External Symbols in Data Memory (by name):
 
@@ -328,35 +329,36 @@ External Symbols in Data Memory (by name):
                     0x0825                  _Flag2
                     0x081c                  _HighCounter
                     0x0820                  _HighCounter2
-                    0x089e                  _INT_InterruptHandler
+                    0x08a2                  _INT_InterruptHandler
                     0x081e                  _LowCounter
                     0x0822                  _LowCounter2
-                    0x0e68                  _MQTT_switchesValues
+                    0x0e6c                  _MQTT_switchesValues
                     0x082c                  _MyState
-                    0x08a4                  _PreviousState
-                    0x08a0                  _TMR1_InterruptHandler
-                    0x08a2                  _TMR2_InterruptHandler
-                    0x106c                  ___errno_val
-                    0x0f3e                  ___stdout_used
-                    0x0f3c                  __stdout
-                    0x0852                  _absoluteTimeofLastTimeout
-                    0x105e                  _appMQTTPublishTimer
-                    0x0fba                  _connackTimer
-                    0x1054                  _dummy
-                    0x104a                  _dummy_exec
+                    0x08a8                  _PreviousState
+                    0x08a4                  _TMR1_InterruptHandler
+                    0x08a6                  _TMR2_InterruptHandler
+                    0x1076                  ___errno_val
+                    0x0f42                  ___stdout_used
+                    0x0f40                  __stdout
+                    0x0862                  _absoluteTimeofLastTimeout
+                    0x1062                  _appMQTTPublishTimer
+                    0x0fbe                  _connackTimer
+                    0x1058                  _dummy
+                    0x104e                  _dummy_exec
                     0x0828                  _eBtnState
                     0x082a                  _eInState
-                    0x0850                  _executeQueueHead
-                    0x085a                  _isRunning
-                    0x0856                  _lastTimerLoad
-                    0x084e                  _listHead
-                    0x0fc4                  _pingreqTimer
-                    0x0fce                  _pingrespTimer
-                    0x0890                  _publishRecvCallback
-                    0x089a                  _spi1_interruptHandler
-                    0x0fd8                  _subackTimer
-                    0x0864                  _tSensors
-                    0x0fe2                  _unsubackTimer
+                    0x0860                  _executeQueueHead
+                    0x086a                  _isRunning
+                    0x0866                  _lastTimerLoad
+                    0x085e                  _listHead
+                    0x0fc8                  _pingreqTimer
+                    0x0fd2                  _pingrespTimer
+                    0x0894                  _publishRecvCallback
+                    0x089e                  _spi1_interruptHandler
+                    0x0fdc                  _subackTimer
+                    0x106c                  _switchesStates
+                    0x0856                  _tSensors
+                    0x0fe6                  _unsubackTimer
 
 External Symbols in Program Memory (by address):
 
@@ -416,16 +418,16 @@ External Symbols in Program Memory (by address):
                   0x001696                  ___toupper_l
                   0x00169a                  ___init_stdio
                   0x0016a0                  ___vsnprintf
-                  0x0016ea                  ___eqdf2
                   0x0016ea                  ___ltdf2
+                  0x0016ea                  ___eqdf2
                   0x0016ea                  ___ledf2
-                  0x0016f4                  ___gedf2
                   0x0016f4                  ___gtdf2
+                  0x0016f4                  ___gedf2
                   0x0016fe                  ___extendsfdf2
                   0x00173c                  ___fixdfsi
                   0x001794                  __funpack
-                  0x0017be                  ___mulsi3
                   0x0017be                  ___mulp32peds3
+                  0x0017be                  ___mulsi3
                   0x0017be                  ___mulp32eds3
                   0x0017ca                  ___subdf3
                   0x0017d6                  ___adddf3
@@ -450,417 +452,418 @@ External Symbols in Program Memory (by address):
                   0x001efc                  __dunpack2exit
                   0x001f06                  __dPropagateNaN
                   0x001f22                  _floorl
-                  0x002212                  _spiMaster
-                  0x00225c                  build/default/production/mcc_generated_files/mqtt/mqtt_core/mqtt_core.o:_checkConnackTimeoutState
-                  0x002266                  build/default/production/mcc_generated_files/mqtt/mqtt_core/mqtt_core.o:_checkPingreqTimeoutState
-                  0x00229a                  build/default/production/mcc_generated_files/mqtt/mqtt_core/mqtt_core.o:_checkPingrespTimeoutState
-                  0x0022a6                  build/default/production/mcc_generated_files/mqtt/mqtt_core/mqtt_core.o:_checkSubackTimeoutState
-                  0x0022b0                  build/default/production/mcc_generated_files/mqtt/mqtt_core/mqtt_core.o:_checkUnsubackTimeoutState
-                  0x0022ba                  _MQTT_initialiseState
-                  0x0022c2                  _MQTT_GetConnectionState
-                  0x0022ca                  _MQTT_CreateConnectPacket
-                  0x0025e8                  _MQTT_CreatePublishPacket
-                  0x00275e                  _MQTT_CreateSubscribePacket
-                  0x00289e                  _MQTT_CreateUnsubscribePacket
-                  0x002cb4                  _MQTT_Disconnect
-                  0x002fb8                  _MQTT_GetLastHandlerState
-                  0x002fc0                  _MQTT_GetLastReceivedPacketHeader
-                  0x002fcc                  _MQTT_GetLastReceivedLength
-                  0x002fd4                  _MQTT_TransmissionHandler
-                  0x0031a0                  _MQTT_ReceptionHandler
-                  0x00369a                  _m2m_ip_cb
-                  0x0039fe                  _socketInit
-                  0x003a18                  _socketDeinit
-                  0x003a2e                  _registerSocketCallback
-                  0x003a40                  _registerSocketEventCallback
-                  0x003a4c                  _registerSocketResolveCallback
-                  0x003a58                  _socket
-                  0x003b6e                  _bind
-                  0x003bfa                  _listen
-                  0x003c50                  _accept
-                  0x003c7a                  _connect
-                  0x003d18                  _send
-                  0x003dcc                  _sendto
-                  0x003e68                  _recv
-                  0x003f54                  _close
-                  0x003fda                  _recvfrom
-                  0x00409e                  _inet_addr
-                  0x0041b4                  _inet_ntop
-                  0x004292                  _gethostbyname
-                  0x004472                  _setsockopt
-                  0x0044f4                  _getsockopt
-                  0x004506                  _m2m_ping_req
-                  0x004562                  _sslEnableCertExpirationCheck
-                  0x004584                  _IsSocketReady
-                  0x00458c                  _m2m_wifi_cb
-                  0x004654                  _m2m_wifi_download_mode
-                  0x0047b0                  _m2m_wifi_send_crl
-                  0x0047c8                  _m2m_wifi_init_hold
-                  0x0047e0                  _m2m_wifi_init_start
-                  0x004826                  _m2m_wifi_init
-                  0x004844                  _m2m_wifi_deinit
-                  0x004854                  _m2m_wifi_handle_events
-                  0x00485e                  _m2m_wifi_delete_sc
-                  0x00487e                  _m2m_wifi_default_connect
-                  0x004a1e                  _m2m_wifi_connect_open
-                  0x004a52                  _m2m_wifi_connect_wep
-                  0x004ade                  _m2m_wifi_connect_psk
-                  0x004bb0                  _m2m_wifi_connect_1x_mschap2
-                  0x004bbe                  _m2m_wifi_connect_1x_tls
-                  0x004bcc                  _m2m_wifi_connect
-                  0x004bea                  _m2m_wifi_connect_sc
-                  0x004d3c                  _m2m_wifi_disconnect
-                  0x004d4c                  _m2m_wifi_set_mac_address
-                  0x004d66                  _m2m_wifi_set_static_ip
-                  0x004da4                  _m2m_wifi_enable_dhcp
-                  0x004dc4                  _m2m_wifi_set_lsn_int
-                  0x004dd6                  _m2m_wifi_set_cust_InfoElement
-                  0x004e0c                  _m2m_wifi_set_scan_options
-                  0x004e2e                  _m2m_wifi_set_scan_region
-                  0x004e44                  _m2m_wifi_request_scan
-                  0x004e96                  _m2m_wifi_request_scan_passive
-                  0x004eee                  _m2m_wifi_request_scan_ssid_list
-                  0x004f90                  _m2m_wifi_wps
-                  0x004fb8                  _m2m_wifi_wps_disable
-                  0x004fc8                  _m2m_wifi_req_client_ctrl
-                  0x004fd2                  _m2m_wifi_req_server_init
-                  0x004fdc                  _m2m_wifi_p2p
-                  0x005008                  _m2m_wifi_p2p_disconnect
-                  0x005018                  _m2m_wifi_enable_ap
-                  0x00504c                  _m2m_wifi_enable_ap_ext
-                  0x005074                  _m2m_wifi_set_gains
-                  0x005094                  _m2m_wifi_disable_ap
-                  0x0050a4                  _m2m_wifi_req_curr_rssi
-                  0x0050b4                  _m2m_wifi_send_ethernet_pkt
-                  0x0050ec                  _m2m_wifi_get_otp_mac_address
-                  0x005126                  _m2m_wifi_get_mac_address
-                  0x005148                  _m2m_wifi_req_scan_result
-                  0x00515e                  _m2m_wifi_get_num_ap_found
-                  0x005166                  _m2m_wifi_get_sleep_mode
-                  0x005170                  _m2m_wifi_set_sleep_mode
-                  0x0051a8                  _m2m_wifi_request_sleep
-                  0x0051d4                  _m2m_wifi_set_device_name
-                  0x005206                  _m2m_wifi_configure_sntp
-                  0x005242                  _m2m_wifi_get_firmware_version
-                  0x005272                  _m2m_wifi_start_provision_mode
-                  0x0052ae                  _m2m_wifi_start_provision_mode_ext
-                  0x005310                  _m2m_wifi_stop_provision_mode
-                  0x005320                  _m2m_wifi_get_connection_info
-                  0x005330                  _m2m_wifi_set_system_time
-                  0x005342                  _m2m_wifi_get_system_time
-                  0x005352                  _m2m_wifi_enable_sntp
-                  0x005372                  _m2m_wifi_set_power_profile
-                  0x005388                  _m2m_wifi_set_tx_power
-                  0x00539e                  _m2m_wifi_set_gain_table_idx
-                  0x0053b4                  _m2m_wifi_enable_firmware_logs
-                  0x0053ca                  _m2m_wifi_set_battery_voltage
-                  0x0053e4                  _m2m_wifi_prng_get_random_bytes
-                  0x005418                  _m2m_wifi_conf_auto_rate
-                  0x00542a                  _m2m_wifi_get_state
-                  0x005432                  _m2m_wifi_enable_roaming
-                  0x005456                  _m2m_wifi_disable_roaming
-                  0x00597e                  _spi_flash_enable
-                  0x005a9e                  _spi_flash_read
-                  0x005b0e                  _spi_flash_write
-                  0x005c02                  _spi_flash_erase
-                  0x005c7a                  _spi_flash_get_size
-                  0x005cca                  _BSD_GetErrNo
-                  0x005cd2                  _getSocketInfo
-                  0x005d12                  _BSD_socket
-                  0x005d88                  _BSD_connect
-                  0x005e2e                  _BSD_SetRecvHandlerTable
-                  0x005e3a                  _BSD_GetRecvHandlerTable
-                  0x005e42                  _BSD_recv
-                  0x005ebc                  _BSD_close
-                  0x005f06                  _BSD_htonl
-                  0x005f6c                  _BSD_htons
-                  0x005f7c                  _BSD_ntohl
-                  0x005fe2                  _BSD_ntohs
-                  0x005ff2                  _BSD_bind
-                  0x00607a                  _BSD_recvfrom
-                  0x00611c                  _BSD_listen
-                  0x006164                  _BSD_accept
-                  0x0061c0                  _BSD_getsockopt
-                  0x0061d6                  _BSD_setsockopt
-                  0x006266                  _BSD_write
-                  0x006278                  _BSD_read
-                  0x00628a                  _BSD_poll
-                  0x00629c                  _BSD_GetSocketState
-                  0x0062be                  _BSD_send
-                  0x006336                  _BSD_sendto
-                  0x0063e2                  _BSD_SocketHandler
-                  0x006770                  _winc_bus_write_reg
-                  0x0067a0                  _winc_bus_write_reg_no_rsp
-                  0x0067d0                  _winc_bus_write_block
-                  0x006860                  _winc_bus_read_block
-                  0x006904                  _winc_bus_init
-                  0x006912                  _winc_bus_reset
-                  0x006920                  _winc_bus_deinit
-                  0x00692c                  _winc_bus_read_reg
-                  0x006958                  _winc_bus_read_reg_with_ret
-                  0x006982                  _winc_bus_set_reg_bits
-                  0x0069e0                  _winc_bus_clear_reg_bits
-                  0x006a50                  _winc_bus_error
-                  0x006a94                  _winc_chip_interrupts_enable
-                  0x006ac0                  _winc_chip_get_id
-                  0x006b88                  _winc_chip_sleep
-                  0x006bd0                  _winc_chip_wake
-                  0x006c46                  _winc_chip_halt
-                  0x006c72                  _winc_chip_reset
-                  0x006c86                  _winc_chip_init
-                  0x006e08                  _winc_chip_deinit
-                  0x006e22                  _winc_chip_get_otp_mac_address
-                  0x006eac                  _winc_chip_get_mac_address
-                  0x006f1c                  _MQTT_prepareJsonData
-                  0x007042                  _app_updateTemperature
-                  0x007050                  _app_updateSwitchState
-                  0x007062                  build/default/production/comm_module.o:_appCheckMQTTPublishTimeout
-                  0x007130                  build/default/production/comm_module.o:_wifiHandler
-                  0x007180                  build/default/production/comm_module.o:_icmpReplyHandler
-                  0x00718e                  build/default/production/comm_module.o:_dnsHandler
-                  0x0071c0                  build/default/production/comm_module.o:_socketHandler
-                  0x00724c                  _app_commModuleInit
-                  0x00727a                  _app_mqttScheduler
-                  0x0073a2                  _dummyHandler
-                  0x0073ac                  _timeout_hasPendingTimeouts
-                  0x0073be                  _timeout_hasPendingCallbacks
-                  0x0073d0                  _stopTimeouts
-                  0x0073e2                  _setTimerDuration
-                  0x007406                  _makeAbsolute
-                  0x007458                  _timeout_getTimeRemaining
-                  0x007472                  _rebaseList
-                  0x0074ba                  _printList
-                  0x0074e6                  _sortedInsert
-                  0x007596                  _startTimerAtHead
-                  0x0075e8                  _timeout_flushAll
-                  0x007608                  _timeout_deleteHelper
-                  0x007676                  _timeout_delete
-                  0x007696                  _enqueueCallback
-                  0x0076d6                  _timeout_callNextCallback
-                  0x00772e                  _timeout_initialize
-                  0x007738                  _timeout_create
-                  0x00776a                  _timeout_isr
-                  0x007796                  _timeout_startTimer
-                  0x0077b0                  _timeout_stopTimer
-                  0x0077f2                  _m2m_ssl_cb
-                  0x007930                  _m2m_ssl_init
-                  0x007946                  _m2m_ssl_handshake_rsp
-                  0x00796a                  _m2m_ssl_send_certs_to_winc
-                  0x007aa6                  _m2m_ssl_retrieve_cert
-                  0x007bde                  _m2m_ssl_retrieve_hash
-                  0x007c0a                  _m2m_ssl_stop_processing_certs
-                  0x007c10                  _m2m_ssl_ecc_process_done
-                  0x007c1a                  _m2m_ssl_set_active_ciphersuites
-                  0x007c40                  _m2m_ota_cb
-                  0x007db4                  _m2m_ota_init
-                  0x007dd0                  _m2m_ota_notif_set_url
-                  0x007df2                  _m2m_ota_notif_check_for_update
-                  0x007e0a                  _m2m_ota_notif_sched
-                  0x007e26                  _m2m_ota_start_update
-                  0x007e48                  _m2m_ota_rollback
-                  0x007e60                  _m2m_ota_abort
-                  0x007e78                  _m2m_ota_switch_firmware
-                  0x007e90                  _m2m_ota_get_firmware_version
-                  0x007ec0                  _m2m_ota_host_file_get
-                  0x007f1a                  _m2m_ota_host_file_read_hif
-                  0x007f6e                  _m2m_ota_host_file_read_spi
-                  0x00803e                  _m2m_ota_host_file_erase
-                  0x008072                  build/default/production/mcc_generated_files/winc/driver/winc_hif.o:_hif_null_cb
-                  0x008080                  _winc_hif_chip_wake
-                  0x0080b0                  _winc_hif_set_power_save
-                  0x0080be                  _winc_hif_chip_sleep
-                  0x0080ea                  _winc_hif_init
-                  0x0080f6                  _winc_hif_deinit
-                  0x0080fe                  _winc_hif_send
-                  0x008298                  _winc_hif_send_no_data
-                  0x0082b6                  _winc_hif_handle_isr
-                  0x0083c2                  _winc_hif_receive
-                  0x0085c8                  _MQTT_ExchangeBufferInit
-                  0x0085de                  _MQTT_ExchangeBufferWrite
-                  0x008672                  _MQTT_ExchangeBufferPeek
-                  0x0086d0                  _MQTT_ExchangeBufferRead
-                  0x00873a                  _CallBack
-                  0x00888a                  _BtnStateInit
-                  0x008898                  _AskForState
-                  0x0088ec                  _m2m_fwinfo_version_check
-                  0x00896c                  _m2m_fwinfo_get_firmware_info
-                  0x0089f8                  _spi1_close
-                  0x008a00                  _spi1_open
-                  0x008a56                  _spi1_exchangeByte
-                  0x008a70                  _spi1_exchangeBlock
-                  0x008aa2                  _spi1_writeBlock
-                  0x008ad0                  _spi1_readBlock
-                  0x008b00                  _spi1_writeByte
-                  0x008b0c                  _spi1_readByte
-                  0x008b16                  _spi1_isr
-                  0x008b32                  _spi1_setSpiISR
-                  0x008b3e                  build/default/production/mcc_generated_files/winc/driver/winc_adapter.o:_winc_interrupt_handler
-                  0x008b4a                  _winc_adapter_interrupt_request_pending
-                  0x008b5a                  _winc_adapter_interrupt_serviced
-                  0x008b7a                  _winc_adapter_init
-                  0x008b88                  _winc_adapter_deinit
-                  0x008b90                  _winc_adapter_sleep
-                  0x008bb8                  _winc_adapter_chip_enable_assert
-                  0x008bc0                  _winc_adapter_chip_enable_deassert
-                  0x008bc8                  _winc_adapter_reset_assert
-                  0x008bd0                  _winc_adapter_reset_deassert
-                  0x008bd8                  _winc_adapter_spi_open
-                  0x008be0                  _winc_adapter_spi_write
-                  0x008c00                  _winc_adapter_spi_read
-                  0x008c20                  _winc_adapter_spi_close
-                  0x008c28                  _main
-                  0x008c66                  _app_buttonsScheduler
-                  0x008cea                  _spi_flexible_flash_find_section
-                  0x008daa                  _PIN_MANAGER_Initialize
-                  0x008e4e                  _INT_SetInterruptHandler
-                  0x008e5e                  _INT_SetIOCInterruptHandler
-                  0x008e6a                  _UART1_Initialize
-                  0x008e80                  _UART1_Read
-                  0x008e9e                  _UART1_Write
-                  0x008eb6                  _UART1_IsRxReady
-                  0x008ece                  _UART1_IsTxReady
-                  0x008ef0                  _UART1_IsTxDone
-                  0x008f08                  _UART1_StatusGet
-                  0x008f10                  _UART1_Enable
-                  0x008f1a                  _UART1_Disable
-                  0x008f24                  _TMR1_Initialize
-                  0x008f48                  _TMR1_Period16BitSet
-                  0x008f5a                  _TMR1_Period16BitGet
-                  0x008f62                  _TMR1_Counter16BitSet
-                  0x008f74                  _TMR1_Counter16BitGet
-                  0x008f82                  _TMR1_SetInterruptHandler
-                  0x008f92                  _TMR1_Start
-                  0x008fa2                  _TMR1_Stop
-                  0x008fac                  _TMR1_GetElapsedThenClear
-                  0x008fc4                  _TMR1_SoftwareCounterGet
-                  0x008fd0                  _TMR1_SoftwareCounterClear
-                  0x008fdc                  _TMR2_Initialize
-                  0x009000                  _TMR2_Period16BitSet
-                  0x009012                  _TMR2_Period16BitGet
-                  0x00901a                  _TMR2_Counter16BitSet
-                  0x00902c                  _TMR2_Counter16BitGet
-                  0x00903a                  _TMR2_SetInterruptHandler
-                  0x00904a                  _TMR2_Start
-                  0x00905a                  _TMR2_Stop
-                  0x009064                  _TMR2_GetElapsedThenClear
-                  0x00907c                  _TMR2_SoftwareCounterGet
-                  0x009088                  _TMR2_SoftwareCounterClear
-                  0x009094                  _MQTT_ClientInitialise
-                  0x0090d0                  _MQTT_GetClientConnectionInfo
-                  0x0090d8                  _MQTT_Send
-                  0x009106                  _MQTT_LastSentSize
-                  0x00910e                  _MQTT_Close
-                  0x00912e                  _MQTT_GetReceivedData
-                  0x009148                  _winc_drv_init
-                  0x00919a                  _winc_drv_start
-                  0x0091c0                  _winc_drv_deinit
-                  0x0091ec                  _CLOCK_Initialize
-                  0x009248                  _DELAY_milliseconds
-                  0x00926a                  _DELAY_microseconds
-                  0x00929e                  _INTERRUPT_Initialize
-                  0x0092c2                  _WINC_open
-                  0x0092cc                  _spi_master_open
-                  0x0092e0                  ___delay32
-                  0x009314                  _MQTT_SetPublishReceptionCallback
-                  0x009320                  _MQTT_GetPublishReceptionCallback
-                  0x009328                  _SYSTEM_Initialize
+                  0x00221c                  _spiMaster
+                  0x002266                  build/default/production/mcc_generated_files/mqtt/mqtt_core/mqtt_core.o:_checkConnackTimeoutState
+                  0x002270                  build/default/production/mcc_generated_files/mqtt/mqtt_core/mqtt_core.o:_checkPingreqTimeoutState
+                  0x0022a4                  build/default/production/mcc_generated_files/mqtt/mqtt_core/mqtt_core.o:_checkPingrespTimeoutState
+                  0x0022b0                  build/default/production/mcc_generated_files/mqtt/mqtt_core/mqtt_core.o:_checkSubackTimeoutState
+                  0x0022ba                  build/default/production/mcc_generated_files/mqtt/mqtt_core/mqtt_core.o:_checkUnsubackTimeoutState
+                  0x0022c4                  _MQTT_initialiseState
+                  0x0022cc                  _MQTT_GetConnectionState
+                  0x0022d4                  _MQTT_CreateConnectPacket
+                  0x0025f2                  _MQTT_CreatePublishPacket
+                  0x002768                  _MQTT_CreateSubscribePacket
+                  0x0028a8                  _MQTT_CreateUnsubscribePacket
+                  0x002cbe                  _MQTT_Disconnect
+                  0x002fc2                  _MQTT_GetLastHandlerState
+                  0x002fca                  _MQTT_GetLastReceivedPacketHeader
+                  0x002fd6                  _MQTT_GetLastReceivedLength
+                  0x002fde                  _MQTT_TransmissionHandler
+                  0x0031aa                  _MQTT_ReceptionHandler
+                  0x0036a4                  _m2m_ip_cb
+                  0x003a08                  _socketInit
+                  0x003a22                  _socketDeinit
+                  0x003a38                  _registerSocketCallback
+                  0x003a4a                  _registerSocketEventCallback
+                  0x003a56                  _registerSocketResolveCallback
+                  0x003a62                  _socket
+                  0x003b78                  _bind
+                  0x003c04                  _listen
+                  0x003c5a                  _accept
+                  0x003c84                  _connect
+                  0x003d22                  _send
+                  0x003dd6                  _sendto
+                  0x003e72                  _recv
+                  0x003f5e                  _close
+                  0x003fe4                  _recvfrom
+                  0x0040a8                  _inet_addr
+                  0x0041be                  _inet_ntop
+                  0x00429c                  _gethostbyname
+                  0x00447c                  _setsockopt
+                  0x0044fe                  _getsockopt
+                  0x004510                  _m2m_ping_req
+                  0x00456c                  _sslEnableCertExpirationCheck
+                  0x00458e                  _IsSocketReady
+                  0x004596                  _m2m_wifi_cb
+                  0x00465e                  _m2m_wifi_download_mode
+                  0x0047ba                  _m2m_wifi_send_crl
+                  0x0047d2                  _m2m_wifi_init_hold
+                  0x0047ea                  _m2m_wifi_init_start
+                  0x004830                  _m2m_wifi_init
+                  0x00484e                  _m2m_wifi_deinit
+                  0x00485e                  _m2m_wifi_handle_events
+                  0x004868                  _m2m_wifi_delete_sc
+                  0x004888                  _m2m_wifi_default_connect
+                  0x004a28                  _m2m_wifi_connect_open
+                  0x004a5c                  _m2m_wifi_connect_wep
+                  0x004ae8                  _m2m_wifi_connect_psk
+                  0x004bba                  _m2m_wifi_connect_1x_mschap2
+                  0x004bc8                  _m2m_wifi_connect_1x_tls
+                  0x004bd6                  _m2m_wifi_connect
+                  0x004bf4                  _m2m_wifi_connect_sc
+                  0x004d46                  _m2m_wifi_disconnect
+                  0x004d56                  _m2m_wifi_set_mac_address
+                  0x004d70                  _m2m_wifi_set_static_ip
+                  0x004dae                  _m2m_wifi_enable_dhcp
+                  0x004dce                  _m2m_wifi_set_lsn_int
+                  0x004de0                  _m2m_wifi_set_cust_InfoElement
+                  0x004e16                  _m2m_wifi_set_scan_options
+                  0x004e38                  _m2m_wifi_set_scan_region
+                  0x004e4e                  _m2m_wifi_request_scan
+                  0x004ea0                  _m2m_wifi_request_scan_passive
+                  0x004ef8                  _m2m_wifi_request_scan_ssid_list
+                  0x004f9a                  _m2m_wifi_wps
+                  0x004fc2                  _m2m_wifi_wps_disable
+                  0x004fd2                  _m2m_wifi_req_client_ctrl
+                  0x004fdc                  _m2m_wifi_req_server_init
+                  0x004fe6                  _m2m_wifi_p2p
+                  0x005012                  _m2m_wifi_p2p_disconnect
+                  0x005022                  _m2m_wifi_enable_ap
+                  0x005056                  _m2m_wifi_enable_ap_ext
+                  0x00507e                  _m2m_wifi_set_gains
+                  0x00509e                  _m2m_wifi_disable_ap
+                  0x0050ae                  _m2m_wifi_req_curr_rssi
+                  0x0050be                  _m2m_wifi_send_ethernet_pkt
+                  0x0050f6                  _m2m_wifi_get_otp_mac_address
+                  0x005130                  _m2m_wifi_get_mac_address
+                  0x005152                  _m2m_wifi_req_scan_result
+                  0x005168                  _m2m_wifi_get_num_ap_found
+                  0x005170                  _m2m_wifi_get_sleep_mode
+                  0x00517a                  _m2m_wifi_set_sleep_mode
+                  0x0051b2                  _m2m_wifi_request_sleep
+                  0x0051de                  _m2m_wifi_set_device_name
+                  0x005210                  _m2m_wifi_configure_sntp
+                  0x00524c                  _m2m_wifi_get_firmware_version
+                  0x00527c                  _m2m_wifi_start_provision_mode
+                  0x0052b8                  _m2m_wifi_start_provision_mode_ext
+                  0x00531a                  _m2m_wifi_stop_provision_mode
+                  0x00532a                  _m2m_wifi_get_connection_info
+                  0x00533a                  _m2m_wifi_set_system_time
+                  0x00534c                  _m2m_wifi_get_system_time
+                  0x00535c                  _m2m_wifi_enable_sntp
+                  0x00537c                  _m2m_wifi_set_power_profile
+                  0x005392                  _m2m_wifi_set_tx_power
+                  0x0053a8                  _m2m_wifi_set_gain_table_idx
+                  0x0053be                  _m2m_wifi_enable_firmware_logs
+                  0x0053d4                  _m2m_wifi_set_battery_voltage
+                  0x0053ee                  _m2m_wifi_prng_get_random_bytes
+                  0x005422                  _m2m_wifi_conf_auto_rate
+                  0x005434                  _m2m_wifi_get_state
+                  0x00543c                  _m2m_wifi_enable_roaming
+                  0x005460                  _m2m_wifi_disable_roaming
+                  0x005988                  _spi_flash_enable
+                  0x005aa8                  _spi_flash_read
+                  0x005b18                  _spi_flash_write
+                  0x005c0c                  _spi_flash_erase
+                  0x005c84                  _spi_flash_get_size
+                  0x005cd4                  _BSD_GetErrNo
+                  0x005cdc                  _getSocketInfo
+                  0x005d1c                  _BSD_socket
+                  0x005d92                  _BSD_connect
+                  0x005e38                  _BSD_SetRecvHandlerTable
+                  0x005e44                  _BSD_GetRecvHandlerTable
+                  0x005e4c                  _BSD_recv
+                  0x005ec6                  _BSD_close
+                  0x005f10                  _BSD_htonl
+                  0x005f76                  _BSD_htons
+                  0x005f86                  _BSD_ntohl
+                  0x005fec                  _BSD_ntohs
+                  0x005ffc                  _BSD_bind
+                  0x006084                  _BSD_recvfrom
+                  0x006126                  _BSD_listen
+                  0x00616e                  _BSD_accept
+                  0x0061ca                  _BSD_getsockopt
+                  0x0061e0                  _BSD_setsockopt
+                  0x006270                  _BSD_write
+                  0x006282                  _BSD_read
+                  0x006294                  _BSD_poll
+                  0x0062a6                  _BSD_GetSocketState
+                  0x0062c8                  _BSD_send
+                  0x006340                  _BSD_sendto
+                  0x0063ec                  _BSD_SocketHandler
+                  0x00677a                  _winc_bus_write_reg
+                  0x0067aa                  _winc_bus_write_reg_no_rsp
+                  0x0067da                  _winc_bus_write_block
+                  0x00686a                  _winc_bus_read_block
+                  0x00690e                  _winc_bus_init
+                  0x00691c                  _winc_bus_reset
+                  0x00692a                  _winc_bus_deinit
+                  0x006936                  _winc_bus_read_reg
+                  0x006962                  _winc_bus_read_reg_with_ret
+                  0x00698c                  _winc_bus_set_reg_bits
+                  0x0069ea                  _winc_bus_clear_reg_bits
+                  0x006a5a                  _winc_bus_error
+                  0x006a9e                  _winc_chip_interrupts_enable
+                  0x006aca                  _winc_chip_get_id
+                  0x006b92                  _winc_chip_sleep
+                  0x006bda                  _winc_chip_wake
+                  0x006c50                  _winc_chip_halt
+                  0x006c7c                  _winc_chip_reset
+                  0x006c90                  _winc_chip_init
+                  0x006e12                  _winc_chip_deinit
+                  0x006e2c                  _winc_chip_get_otp_mac_address
+                  0x006eb6                  _winc_chip_get_mac_address
+                  0x006f26                  _MQTT_prepareJsonData
+                  0x007072                  _app_updateTemperature
+                  0x007080                  _app_updateLight
+                  0x007090                  _app_updateSwitchState
+                  0x0070a2                  build/default/production/comm_module.o:_appCheckMQTTPublishTimeout
+                  0x007170                  build/default/production/comm_module.o:_wifiHandler
+                  0x0071c0                  build/default/production/comm_module.o:_icmpReplyHandler
+                  0x0071ce                  build/default/production/comm_module.o:_dnsHandler
+                  0x007200                  build/default/production/comm_module.o:_socketHandler
+                  0x00728c                  _app_commModuleInit
+                  0x0072ba                  _app_mqttScheduler
+                  0x0073e2                  _dummyHandler
+                  0x0073ec                  _timeout_hasPendingTimeouts
+                  0x0073fe                  _timeout_hasPendingCallbacks
+                  0x007410                  _stopTimeouts
+                  0x007422                  _setTimerDuration
+                  0x007446                  _makeAbsolute
+                  0x007498                  _timeout_getTimeRemaining
+                  0x0074b2                  _rebaseList
+                  0x0074fa                  _printList
+                  0x007526                  _sortedInsert
+                  0x0075d6                  _startTimerAtHead
+                  0x007628                  _timeout_flushAll
+                  0x007648                  _timeout_deleteHelper
+                  0x0076b6                  _timeout_delete
+                  0x0076d6                  _enqueueCallback
+                  0x007716                  _timeout_callNextCallback
+                  0x00776e                  _timeout_initialize
+                  0x007778                  _timeout_create
+                  0x0077aa                  _timeout_isr
+                  0x0077d6                  _timeout_startTimer
+                  0x0077f0                  _timeout_stopTimer
+                  0x007832                  _m2m_ssl_cb
+                  0x007970                  _m2m_ssl_init
+                  0x007986                  _m2m_ssl_handshake_rsp
+                  0x0079aa                  _m2m_ssl_send_certs_to_winc
+                  0x007ae6                  _m2m_ssl_retrieve_cert
+                  0x007c1e                  _m2m_ssl_retrieve_hash
+                  0x007c4a                  _m2m_ssl_stop_processing_certs
+                  0x007c50                  _m2m_ssl_ecc_process_done
+                  0x007c5a                  _m2m_ssl_set_active_ciphersuites
+                  0x007c80                  _m2m_ota_cb
+                  0x007df4                  _m2m_ota_init
+                  0x007e10                  _m2m_ota_notif_set_url
+                  0x007e32                  _m2m_ota_notif_check_for_update
+                  0x007e4a                  _m2m_ota_notif_sched
+                  0x007e66                  _m2m_ota_start_update
+                  0x007e88                  _m2m_ota_rollback
+                  0x007ea0                  _m2m_ota_abort
+                  0x007eb8                  _m2m_ota_switch_firmware
+                  0x007ed0                  _m2m_ota_get_firmware_version
+                  0x007f00                  _m2m_ota_host_file_get
+                  0x007f5a                  _m2m_ota_host_file_read_hif
+                  0x007fae                  _m2m_ota_host_file_read_spi
+                  0x00807e                  _m2m_ota_host_file_erase
+                  0x0080b2                  build/default/production/mcc_generated_files/winc/driver/winc_hif.o:_hif_null_cb
+                  0x0080c0                  _winc_hif_chip_wake
+                  0x0080f0                  _winc_hif_set_power_save
+                  0x0080fe                  _winc_hif_chip_sleep
+                  0x00812a                  _winc_hif_init
+                  0x008136                  _winc_hif_deinit
+                  0x00813e                  _winc_hif_send
+                  0x0082d8                  _winc_hif_send_no_data
+                  0x0082f6                  _winc_hif_handle_isr
+                  0x008402                  _winc_hif_receive
+                  0x00860e                  _MQTT_ExchangeBufferInit
+                  0x008624                  _MQTT_ExchangeBufferWrite
+                  0x0086b8                  _MQTT_ExchangeBufferPeek
+                  0x008716                  _MQTT_ExchangeBufferRead
+                  0x008780                  _CallBack
+                  0x0088d0                  _BtnStateInit
+                  0x0088de                  _AskForState
+                  0x008932                  _m2m_fwinfo_version_check
+                  0x0089b2                  _m2m_fwinfo_get_firmware_info
+                  0x008a3e                  _spi1_close
+                  0x008a46                  _spi1_open
+                  0x008a9c                  _spi1_exchangeByte
+                  0x008ab6                  _spi1_exchangeBlock
+                  0x008ae8                  _spi1_writeBlock
+                  0x008b16                  _spi1_readBlock
+                  0x008b46                  _spi1_writeByte
+                  0x008b52                  _spi1_readByte
+                  0x008b5c                  _spi1_isr
+                  0x008b78                  _spi1_setSpiISR
+                  0x008b84                  _main
+                  0x008baa                  _app_buttonsScheduler
+                  0x008c76                  build/default/production/mcc_generated_files/winc/driver/winc_adapter.o:_winc_interrupt_handler
+                  0x008c82                  _winc_adapter_interrupt_request_pending
+                  0x008c92                  _winc_adapter_interrupt_serviced
+                  0x008cb2                  _winc_adapter_init
+                  0x008cc0                  _winc_adapter_deinit
+                  0x008cc8                  _winc_adapter_sleep
+                  0x008cf0                  _winc_adapter_chip_enable_assert
+                  0x008cf8                  _winc_adapter_chip_enable_deassert
+                  0x008d00                  _winc_adapter_reset_assert
+                  0x008d08                  _winc_adapter_reset_deassert
+                  0x008d10                  _winc_adapter_spi_open
+                  0x008d18                  _winc_adapter_spi_write
+                  0x008d38                  _winc_adapter_spi_read
+                  0x008d58                  _winc_adapter_spi_close
+                  0x008d60                  _spi_flexible_flash_find_section
+                  0x008e20                  _PIN_MANAGER_Initialize
+                  0x008ec4                  _INT_SetInterruptHandler
+                  0x008ed4                  _INT_SetIOCInterruptHandler
+                  0x008ee0                  _UART1_Initialize
+                  0x008ef6                  _UART1_Read
+                  0x008f14                  _UART1_Write
+                  0x008f2c                  _UART1_IsRxReady
+                  0x008f44                  _UART1_IsTxReady
+                  0x008f66                  _UART1_IsTxDone
+                  0x008f7e                  _UART1_StatusGet
+                  0x008f86                  _UART1_Enable
+                  0x008f90                  _UART1_Disable
+                  0x008f9a                  _TMR1_Initialize
+                  0x008fbe                  _TMR1_Period16BitSet
+                  0x008fd0                  _TMR1_Period16BitGet
+                  0x008fd8                  _TMR1_Counter16BitSet
+                  0x008fea                  _TMR1_Counter16BitGet
+                  0x008ff8                  _TMR1_SetInterruptHandler
+                  0x009008                  _TMR1_Start
+                  0x009018                  _TMR1_Stop
+                  0x009022                  _TMR1_GetElapsedThenClear
+                  0x00903a                  _TMR1_SoftwareCounterGet
+                  0x009046                  _TMR1_SoftwareCounterClear
+                  0x009052                  _TMR2_Initialize
+                  0x009076                  _TMR2_Period16BitSet
+                  0x009088                  _TMR2_Period16BitGet
+                  0x009090                  _TMR2_Counter16BitSet
+                  0x0090a2                  _TMR2_Counter16BitGet
+                  0x0090b0                  _TMR2_SetInterruptHandler
+                  0x0090c0                  _TMR2_Start
+                  0x0090d0                  _TMR2_Stop
+                  0x0090da                  _TMR2_GetElapsedThenClear
+                  0x0090f2                  _TMR2_SoftwareCounterGet
+                  0x0090fe                  _TMR2_SoftwareCounterClear
+                  0x00910a                  _MQTT_ClientInitialise
+                  0x009146                  _MQTT_GetClientConnectionInfo
+                  0x00914e                  _MQTT_Send
+                  0x00917c                  _MQTT_LastSentSize
+                  0x009184                  _MQTT_Close
+                  0x0091a4                  _MQTT_GetReceivedData
+                  0x0091be                  _winc_drv_init
+                  0x009210                  _winc_drv_start
+                  0x009236                  _winc_drv_deinit
+                  0x009262                  _CLOCK_Initialize
+                  0x0092be                  _DELAY_milliseconds
+                  0x0092e0                  _DELAY_microseconds
+                  0x009314                  _INTERRUPT_Initialize
+                  0x009338                  _WINC_open
+                  0x009342                  _spi_master_open
+                  0x009356                  ___delay32
+                  0x00938a                  _MQTT_SetPublishReceptionCallback
+                  0x009396                  _MQTT_GetPublishReceptionCallback
+                  0x00939e                  _SYSTEM_Initialize
                   0x015f00                  __FSEC.sec
 
 External Symbols in Program Memory (by name):
 
-                  0x008898                  _AskForState
-                  0x005cca                  _BSD_GetErrNo
-                  0x005e3a                  _BSD_GetRecvHandlerTable
-                  0x00629c                  _BSD_GetSocketState
-                  0x005e2e                  _BSD_SetRecvHandlerTable
-                  0x0063e2                  _BSD_SocketHandler
-                  0x006164                  _BSD_accept
-                  0x005ff2                  _BSD_bind
-                  0x005ebc                  _BSD_close
-                  0x005d88                  _BSD_connect
-                  0x0061c0                  _BSD_getsockopt
-                  0x005f06                  _BSD_htonl
-                  0x005f6c                  _BSD_htons
-                  0x00611c                  _BSD_listen
-                  0x005f7c                  _BSD_ntohl
-                  0x005fe2                  _BSD_ntohs
-                  0x00628a                  _BSD_poll
-                  0x006278                  _BSD_read
-                  0x005e42                  _BSD_recv
-                  0x00607a                  _BSD_recvfrom
-                  0x0062be                  _BSD_send
-                  0x006336                  _BSD_sendto
-                  0x0061d6                  _BSD_setsockopt
-                  0x005d12                  _BSD_socket
-                  0x006266                  _BSD_write
-                  0x00888a                  _BtnStateInit
-                  0x0091ec                  _CLOCK_Initialize
-                  0x00873a                  _CallBack
-                  0x00926a                  _DELAY_microseconds
-                  0x009248                  _DELAY_milliseconds
-                  0x00929e                  _INTERRUPT_Initialize
-                  0x008e5e                  _INT_SetIOCInterruptHandler
-                  0x008e4e                  _INT_SetInterruptHandler
-                  0x004584                  _IsSocketReady
-                  0x009094                  _MQTT_ClientInitialise
-                  0x00910e                  _MQTT_Close
-                  0x0022ca                  _MQTT_CreateConnectPacket
-                  0x0025e8                  _MQTT_CreatePublishPacket
-                  0x00275e                  _MQTT_CreateSubscribePacket
-                  0x00289e                  _MQTT_CreateUnsubscribePacket
-                  0x002cb4                  _MQTT_Disconnect
-                  0x0085c8                  _MQTT_ExchangeBufferInit
-                  0x008672                  _MQTT_ExchangeBufferPeek
-                  0x0086d0                  _MQTT_ExchangeBufferRead
-                  0x0085de                  _MQTT_ExchangeBufferWrite
-                  0x0090d0                  _MQTT_GetClientConnectionInfo
-                  0x0022c2                  _MQTT_GetConnectionState
-                  0x002fb8                  _MQTT_GetLastHandlerState
-                  0x002fcc                  _MQTT_GetLastReceivedLength
-                  0x002fc0                  _MQTT_GetLastReceivedPacketHeader
-                  0x009320                  _MQTT_GetPublishReceptionCallback
-                  0x00912e                  _MQTT_GetReceivedData
-                  0x009106                  _MQTT_LastSentSize
-                  0x0031a0                  _MQTT_ReceptionHandler
-                  0x0090d8                  _MQTT_Send
-                  0x009314                  _MQTT_SetPublishReceptionCallback
-                  0x002fd4                  _MQTT_TransmissionHandler
-                  0x0022ba                  _MQTT_initialiseState
-                  0x006f1c                  _MQTT_prepareJsonData
-                  0x008daa                  _PIN_MANAGER_Initialize
-                  0x009328                  _SYSTEM_Initialize
-                  0x008f74                  _TMR1_Counter16BitGet
-                  0x008f62                  _TMR1_Counter16BitSet
-                  0x008fac                  _TMR1_GetElapsedThenClear
-                  0x008f24                  _TMR1_Initialize
-                  0x008f5a                  _TMR1_Period16BitGet
-                  0x008f48                  _TMR1_Period16BitSet
-                  0x008f82                  _TMR1_SetInterruptHandler
-                  0x008fd0                  _TMR1_SoftwareCounterClear
-                  0x008fc4                  _TMR1_SoftwareCounterGet
-                  0x008f92                  _TMR1_Start
-                  0x008fa2                  _TMR1_Stop
-                  0x00902c                  _TMR2_Counter16BitGet
-                  0x00901a                  _TMR2_Counter16BitSet
-                  0x009064                  _TMR2_GetElapsedThenClear
-                  0x008fdc                  _TMR2_Initialize
-                  0x009012                  _TMR2_Period16BitGet
-                  0x009000                  _TMR2_Period16BitSet
-                  0x00903a                  _TMR2_SetInterruptHandler
-                  0x009088                  _TMR2_SoftwareCounterClear
-                  0x00907c                  _TMR2_SoftwareCounterGet
-                  0x00904a                  _TMR2_Start
-                  0x00905a                  _TMR2_Stop
-                  0x008f1a                  _UART1_Disable
-                  0x008f10                  _UART1_Enable
-                  0x008e6a                  _UART1_Initialize
-                  0x008eb6                  _UART1_IsRxReady
-                  0x008ef0                  _UART1_IsTxDone
-                  0x008ece                  _UART1_IsTxReady
-                  0x008e80                  _UART1_Read
-                  0x008f08                  _UART1_StatusGet
-                  0x008e9e                  _UART1_Write
-                  0x0092c2                  _WINC_open
+                  0x0088de                  _AskForState
+                  0x005cd4                  _BSD_GetErrNo
+                  0x005e44                  _BSD_GetRecvHandlerTable
+                  0x0062a6                  _BSD_GetSocketState
+                  0x005e38                  _BSD_SetRecvHandlerTable
+                  0x0063ec                  _BSD_SocketHandler
+                  0x00616e                  _BSD_accept
+                  0x005ffc                  _BSD_bind
+                  0x005ec6                  _BSD_close
+                  0x005d92                  _BSD_connect
+                  0x0061ca                  _BSD_getsockopt
+                  0x005f10                  _BSD_htonl
+                  0x005f76                  _BSD_htons
+                  0x006126                  _BSD_listen
+                  0x005f86                  _BSD_ntohl
+                  0x005fec                  _BSD_ntohs
+                  0x006294                  _BSD_poll
+                  0x006282                  _BSD_read
+                  0x005e4c                  _BSD_recv
+                  0x006084                  _BSD_recvfrom
+                  0x0062c8                  _BSD_send
+                  0x006340                  _BSD_sendto
+                  0x0061e0                  _BSD_setsockopt
+                  0x005d1c                  _BSD_socket
+                  0x006270                  _BSD_write
+                  0x0088d0                  _BtnStateInit
+                  0x009262                  _CLOCK_Initialize
+                  0x008780                  _CallBack
+                  0x0092e0                  _DELAY_microseconds
+                  0x0092be                  _DELAY_milliseconds
+                  0x009314                  _INTERRUPT_Initialize
+                  0x008ed4                  _INT_SetIOCInterruptHandler
+                  0x008ec4                  _INT_SetInterruptHandler
+                  0x00458e                  _IsSocketReady
+                  0x00910a                  _MQTT_ClientInitialise
+                  0x009184                  _MQTT_Close
+                  0x0022d4                  _MQTT_CreateConnectPacket
+                  0x0025f2                  _MQTT_CreatePublishPacket
+                  0x002768                  _MQTT_CreateSubscribePacket
+                  0x0028a8                  _MQTT_CreateUnsubscribePacket
+                  0x002cbe                  _MQTT_Disconnect
+                  0x00860e                  _MQTT_ExchangeBufferInit
+                  0x0086b8                  _MQTT_ExchangeBufferPeek
+                  0x008716                  _MQTT_ExchangeBufferRead
+                  0x008624                  _MQTT_ExchangeBufferWrite
+                  0x009146                  _MQTT_GetClientConnectionInfo
+                  0x0022cc                  _MQTT_GetConnectionState
+                  0x002fc2                  _MQTT_GetLastHandlerState
+                  0x002fd6                  _MQTT_GetLastReceivedLength
+                  0x002fca                  _MQTT_GetLastReceivedPacketHeader
+                  0x009396                  _MQTT_GetPublishReceptionCallback
+                  0x0091a4                  _MQTT_GetReceivedData
+                  0x00917c                  _MQTT_LastSentSize
+                  0x0031aa                  _MQTT_ReceptionHandler
+                  0x00914e                  _MQTT_Send
+                  0x00938a                  _MQTT_SetPublishReceptionCallback
+                  0x002fde                  _MQTT_TransmissionHandler
+                  0x0022c4                  _MQTT_initialiseState
+                  0x006f26                  _MQTT_prepareJsonData
+                  0x008e20                  _PIN_MANAGER_Initialize
+                  0x00939e                  _SYSTEM_Initialize
+                  0x008fea                  _TMR1_Counter16BitGet
+                  0x008fd8                  _TMR1_Counter16BitSet
+                  0x009022                  _TMR1_GetElapsedThenClear
+                  0x008f9a                  _TMR1_Initialize
+                  0x008fd0                  _TMR1_Period16BitGet
+                  0x008fbe                  _TMR1_Period16BitSet
+                  0x008ff8                  _TMR1_SetInterruptHandler
+                  0x009046                  _TMR1_SoftwareCounterClear
+                  0x00903a                  _TMR1_SoftwareCounterGet
+                  0x009008                  _TMR1_Start
+                  0x009018                  _TMR1_Stop
+                  0x0090a2                  _TMR2_Counter16BitGet
+                  0x009090                  _TMR2_Counter16BitSet
+                  0x0090da                  _TMR2_GetElapsedThenClear
+                  0x009052                  _TMR2_Initialize
+                  0x009088                  _TMR2_Period16BitGet
+                  0x009076                  _TMR2_Period16BitSet
+                  0x0090b0                  _TMR2_SetInterruptHandler
+                  0x0090fe                  _TMR2_SoftwareCounterClear
+                  0x0090f2                  _TMR2_SoftwareCounterGet
+                  0x0090c0                  _TMR2_Start
+                  0x0090d0                  _TMR2_Stop
+                  0x008f90                  _UART1_Disable
+                  0x008f86                  _UART1_Enable
+                  0x008ee0                  _UART1_Initialize
+                  0x008f2c                  _UART1_IsRxReady
+                  0x008f66                  _UART1_IsTxDone
+                  0x008f44                  _UART1_IsTxReady
+                  0x008ef6                  _UART1_Read
+                  0x008f7e                  _UART1_StatusGet
+                  0x008f14                  _UART1_Write
+                  0x009338                  _WINC_open
                   0x0002ca                  __AddressError
                   0x0003d0                  __DefaultInterrupt
                   0x015f00                  __FSEC.sec
@@ -873,7 +876,7 @@ External Symbols in Program Memory (by name):
                   0x00039a                  __T2Interrupt
                   0x0017d6                  ___adddf3
                   0x000cc4                  ___cvt_u
-                  0x0092e0                  ___delay32
+                  0x009356                  ___delay32
                   0x00186c                  ___divdf3
                   0x001d54                  ___divdi3
                   0x0016ea                  ___eqdf2
@@ -939,240 +942,241 @@ External Symbols in Program Memory (by name):
                   0x001794                  __funpack
                   0x00013c                  __psv_init
                   0x000100                  __resetPRI
-                  0x003c50                  _accept
-                  0x008c66                  _app_buttonsScheduler
-                  0x00724c                  _app_commModuleInit
-                  0x00727a                  _app_mqttScheduler
-                  0x007050                  _app_updateSwitchState
-                  0x007042                  _app_updateTemperature
+                  0x003c5a                  _accept
+                  0x008baa                  _app_buttonsScheduler
+                  0x00728c                  _app_commModuleInit
+                  0x0072ba                  _app_mqttScheduler
+                  0x007080                  _app_updateLight
+                  0x007090                  _app_updateSwitchState
+                  0x007072                  _app_updateTemperature
                   0x001548                  _atoi
-                  0x003b6e                  _bind
-                  0x003f54                  _close
-                  0x003c7a                  _connect
-                  0x0073a2                  _dummyHandler
-                  0x007696                  _enqueueCallback
+                  0x003b78                  _bind
+                  0x003f5e                  _close
+                  0x003c84                  _connect
+                  0x0073e2                  _dummyHandler
+                  0x0076d6                  _enqueueCallback
                   0x001f22                  _floorl
                   0x001594                  _fputs
                   0x0015c0                  _fwrite
-                  0x005cd2                  _getSocketInfo
-                  0x004292                  _gethostbyname
-                  0x0044f4                  _getsockopt
-                  0x00409e                  _inet_addr
-                  0x0041b4                  _inet_ntop
-                  0x003bfa                  _listen
-                  0x00896c                  _m2m_fwinfo_get_firmware_info
-                  0x0088ec                  _m2m_fwinfo_version_check
-                  0x00369a                  _m2m_ip_cb
-                  0x007e60                  _m2m_ota_abort
-                  0x007c40                  _m2m_ota_cb
-                  0x007e90                  _m2m_ota_get_firmware_version
-                  0x00803e                  _m2m_ota_host_file_erase
-                  0x007ec0                  _m2m_ota_host_file_get
-                  0x007f1a                  _m2m_ota_host_file_read_hif
-                  0x007f6e                  _m2m_ota_host_file_read_spi
-                  0x007db4                  _m2m_ota_init
-                  0x007df2                  _m2m_ota_notif_check_for_update
-                  0x007e0a                  _m2m_ota_notif_sched
-                  0x007dd0                  _m2m_ota_notif_set_url
-                  0x007e48                  _m2m_ota_rollback
-                  0x007e26                  _m2m_ota_start_update
-                  0x007e78                  _m2m_ota_switch_firmware
-                  0x004506                  _m2m_ping_req
-                  0x0077f2                  _m2m_ssl_cb
-                  0x007c10                  _m2m_ssl_ecc_process_done
-                  0x007946                  _m2m_ssl_handshake_rsp
-                  0x007930                  _m2m_ssl_init
-                  0x007aa6                  _m2m_ssl_retrieve_cert
-                  0x007bde                  _m2m_ssl_retrieve_hash
-                  0x00796a                  _m2m_ssl_send_certs_to_winc
-                  0x007c1a                  _m2m_ssl_set_active_ciphersuites
-                  0x007c0a                  _m2m_ssl_stop_processing_certs
-                  0x00458c                  _m2m_wifi_cb
-                  0x005418                  _m2m_wifi_conf_auto_rate
-                  0x005206                  _m2m_wifi_configure_sntp
-                  0x004bcc                  _m2m_wifi_connect
-                  0x004bb0                  _m2m_wifi_connect_1x_mschap2
-                  0x004bbe                  _m2m_wifi_connect_1x_tls
-                  0x004a1e                  _m2m_wifi_connect_open
-                  0x004ade                  _m2m_wifi_connect_psk
-                  0x004bea                  _m2m_wifi_connect_sc
-                  0x004a52                  _m2m_wifi_connect_wep
-                  0x00487e                  _m2m_wifi_default_connect
-                  0x004844                  _m2m_wifi_deinit
-                  0x00485e                  _m2m_wifi_delete_sc
-                  0x005094                  _m2m_wifi_disable_ap
-                  0x005456                  _m2m_wifi_disable_roaming
-                  0x004d3c                  _m2m_wifi_disconnect
-                  0x004654                  _m2m_wifi_download_mode
-                  0x005018                  _m2m_wifi_enable_ap
-                  0x00504c                  _m2m_wifi_enable_ap_ext
-                  0x004da4                  _m2m_wifi_enable_dhcp
-                  0x0053b4                  _m2m_wifi_enable_firmware_logs
-                  0x005432                  _m2m_wifi_enable_roaming
-                  0x005352                  _m2m_wifi_enable_sntp
-                  0x005320                  _m2m_wifi_get_connection_info
-                  0x005242                  _m2m_wifi_get_firmware_version
-                  0x005126                  _m2m_wifi_get_mac_address
-                  0x00515e                  _m2m_wifi_get_num_ap_found
-                  0x0050ec                  _m2m_wifi_get_otp_mac_address
-                  0x005166                  _m2m_wifi_get_sleep_mode
-                  0x00542a                  _m2m_wifi_get_state
-                  0x005342                  _m2m_wifi_get_system_time
-                  0x004854                  _m2m_wifi_handle_events
-                  0x004826                  _m2m_wifi_init
-                  0x0047c8                  _m2m_wifi_init_hold
-                  0x0047e0                  _m2m_wifi_init_start
-                  0x004fdc                  _m2m_wifi_p2p
-                  0x005008                  _m2m_wifi_p2p_disconnect
-                  0x0053e4                  _m2m_wifi_prng_get_random_bytes
-                  0x004fc8                  _m2m_wifi_req_client_ctrl
-                  0x0050a4                  _m2m_wifi_req_curr_rssi
-                  0x005148                  _m2m_wifi_req_scan_result
-                  0x004fd2                  _m2m_wifi_req_server_init
-                  0x004e44                  _m2m_wifi_request_scan
-                  0x004e96                  _m2m_wifi_request_scan_passive
-                  0x004eee                  _m2m_wifi_request_scan_ssid_list
-                  0x0051a8                  _m2m_wifi_request_sleep
-                  0x0047b0                  _m2m_wifi_send_crl
-                  0x0050b4                  _m2m_wifi_send_ethernet_pkt
-                  0x0053ca                  _m2m_wifi_set_battery_voltage
-                  0x004dd6                  _m2m_wifi_set_cust_InfoElement
-                  0x0051d4                  _m2m_wifi_set_device_name
-                  0x00539e                  _m2m_wifi_set_gain_table_idx
-                  0x005074                  _m2m_wifi_set_gains
-                  0x004dc4                  _m2m_wifi_set_lsn_int
-                  0x004d4c                  _m2m_wifi_set_mac_address
-                  0x005372                  _m2m_wifi_set_power_profile
-                  0x004e0c                  _m2m_wifi_set_scan_options
-                  0x004e2e                  _m2m_wifi_set_scan_region
-                  0x005170                  _m2m_wifi_set_sleep_mode
-                  0x004d66                  _m2m_wifi_set_static_ip
-                  0x005330                  _m2m_wifi_set_system_time
-                  0x005388                  _m2m_wifi_set_tx_power
-                  0x005272                  _m2m_wifi_start_provision_mode
-                  0x0052ae                  _m2m_wifi_start_provision_mode_ext
-                  0x005310                  _m2m_wifi_stop_provision_mode
-                  0x004f90                  _m2m_wifi_wps
-                  0x004fb8                  _m2m_wifi_wps_disable
-                  0x008c28                  _main
-                  0x007406                  _makeAbsolute
+                  0x005cdc                  _getSocketInfo
+                  0x00429c                  _gethostbyname
+                  0x0044fe                  _getsockopt
+                  0x0040a8                  _inet_addr
+                  0x0041be                  _inet_ntop
+                  0x003c04                  _listen
+                  0x0089b2                  _m2m_fwinfo_get_firmware_info
+                  0x008932                  _m2m_fwinfo_version_check
+                  0x0036a4                  _m2m_ip_cb
+                  0x007ea0                  _m2m_ota_abort
+                  0x007c80                  _m2m_ota_cb
+                  0x007ed0                  _m2m_ota_get_firmware_version
+                  0x00807e                  _m2m_ota_host_file_erase
+                  0x007f00                  _m2m_ota_host_file_get
+                  0x007f5a                  _m2m_ota_host_file_read_hif
+                  0x007fae                  _m2m_ota_host_file_read_spi
+                  0x007df4                  _m2m_ota_init
+                  0x007e32                  _m2m_ota_notif_check_for_update
+                  0x007e4a                  _m2m_ota_notif_sched
+                  0x007e10                  _m2m_ota_notif_set_url
+                  0x007e88                  _m2m_ota_rollback
+                  0x007e66                  _m2m_ota_start_update
+                  0x007eb8                  _m2m_ota_switch_firmware
+                  0x004510                  _m2m_ping_req
+                  0x007832                  _m2m_ssl_cb
+                  0x007c50                  _m2m_ssl_ecc_process_done
+                  0x007986                  _m2m_ssl_handshake_rsp
+                  0x007970                  _m2m_ssl_init
+                  0x007ae6                  _m2m_ssl_retrieve_cert
+                  0x007c1e                  _m2m_ssl_retrieve_hash
+                  0x0079aa                  _m2m_ssl_send_certs_to_winc
+                  0x007c5a                  _m2m_ssl_set_active_ciphersuites
+                  0x007c4a                  _m2m_ssl_stop_processing_certs
+                  0x004596                  _m2m_wifi_cb
+                  0x005422                  _m2m_wifi_conf_auto_rate
+                  0x005210                  _m2m_wifi_configure_sntp
+                  0x004bd6                  _m2m_wifi_connect
+                  0x004bba                  _m2m_wifi_connect_1x_mschap2
+                  0x004bc8                  _m2m_wifi_connect_1x_tls
+                  0x004a28                  _m2m_wifi_connect_open
+                  0x004ae8                  _m2m_wifi_connect_psk
+                  0x004bf4                  _m2m_wifi_connect_sc
+                  0x004a5c                  _m2m_wifi_connect_wep
+                  0x004888                  _m2m_wifi_default_connect
+                  0x00484e                  _m2m_wifi_deinit
+                  0x004868                  _m2m_wifi_delete_sc
+                  0x00509e                  _m2m_wifi_disable_ap
+                  0x005460                  _m2m_wifi_disable_roaming
+                  0x004d46                  _m2m_wifi_disconnect
+                  0x00465e                  _m2m_wifi_download_mode
+                  0x005022                  _m2m_wifi_enable_ap
+                  0x005056                  _m2m_wifi_enable_ap_ext
+                  0x004dae                  _m2m_wifi_enable_dhcp
+                  0x0053be                  _m2m_wifi_enable_firmware_logs
+                  0x00543c                  _m2m_wifi_enable_roaming
+                  0x00535c                  _m2m_wifi_enable_sntp
+                  0x00532a                  _m2m_wifi_get_connection_info
+                  0x00524c                  _m2m_wifi_get_firmware_version
+                  0x005130                  _m2m_wifi_get_mac_address
+                  0x005168                  _m2m_wifi_get_num_ap_found
+                  0x0050f6                  _m2m_wifi_get_otp_mac_address
+                  0x005170                  _m2m_wifi_get_sleep_mode
+                  0x005434                  _m2m_wifi_get_state
+                  0x00534c                  _m2m_wifi_get_system_time
+                  0x00485e                  _m2m_wifi_handle_events
+                  0x004830                  _m2m_wifi_init
+                  0x0047d2                  _m2m_wifi_init_hold
+                  0x0047ea                  _m2m_wifi_init_start
+                  0x004fe6                  _m2m_wifi_p2p
+                  0x005012                  _m2m_wifi_p2p_disconnect
+                  0x0053ee                  _m2m_wifi_prng_get_random_bytes
+                  0x004fd2                  _m2m_wifi_req_client_ctrl
+                  0x0050ae                  _m2m_wifi_req_curr_rssi
+                  0x005152                  _m2m_wifi_req_scan_result
+                  0x004fdc                  _m2m_wifi_req_server_init
+                  0x004e4e                  _m2m_wifi_request_scan
+                  0x004ea0                  _m2m_wifi_request_scan_passive
+                  0x004ef8                  _m2m_wifi_request_scan_ssid_list
+                  0x0051b2                  _m2m_wifi_request_sleep
+                  0x0047ba                  _m2m_wifi_send_crl
+                  0x0050be                  _m2m_wifi_send_ethernet_pkt
+                  0x0053d4                  _m2m_wifi_set_battery_voltage
+                  0x004de0                  _m2m_wifi_set_cust_InfoElement
+                  0x0051de                  _m2m_wifi_set_device_name
+                  0x0053a8                  _m2m_wifi_set_gain_table_idx
+                  0x00507e                  _m2m_wifi_set_gains
+                  0x004dce                  _m2m_wifi_set_lsn_int
+                  0x004d56                  _m2m_wifi_set_mac_address
+                  0x00537c                  _m2m_wifi_set_power_profile
+                  0x004e16                  _m2m_wifi_set_scan_options
+                  0x004e38                  _m2m_wifi_set_scan_region
+                  0x00517a                  _m2m_wifi_set_sleep_mode
+                  0x004d70                  _m2m_wifi_set_static_ip
+                  0x00533a                  _m2m_wifi_set_system_time
+                  0x005392                  _m2m_wifi_set_tx_power
+                  0x00527c                  _m2m_wifi_start_provision_mode
+                  0x0052b8                  _m2m_wifi_start_provision_mode_ext
+                  0x00531a                  _m2m_wifi_stop_provision_mode
+                  0x004f9a                  _m2m_wifi_wps
+                  0x004fc2                  _m2m_wifi_wps_disable
+                  0x008b84                  _main
+                  0x007446                  _makeAbsolute
                   0x00044c                  _memcpy
                   0x00045a                  _memset
-                  0x0074ba                  _printList
+                  0x0074fa                  _printList
                   0x001626                  _putc
                   0x000522                  _puts
-                  0x007472                  _rebaseList
-                  0x003e68                  _recv
-                  0x003fda                  _recvfrom
-                  0x003a2e                  _registerSocketCallback
-                  0x003a40                  _registerSocketEventCallback
-                  0x003a4c                  _registerSocketResolveCallback
-                  0x003d18                  _send
-                  0x003dcc                  _sendto
-                  0x0073e2                  _setTimerDuration
-                  0x004472                  _setsockopt
-                  0x003a58                  _socket
-                  0x003a18                  _socketDeinit
-                  0x0039fe                  _socketInit
-                  0x0074e6                  _sortedInsert
-                  0x0089f8                  _spi1_close
-                  0x008a70                  _spi1_exchangeBlock
-                  0x008a56                  _spi1_exchangeByte
-                  0x008b16                  _spi1_isr
-                  0x008a00                  _spi1_open
-                  0x008ad0                  _spi1_readBlock
-                  0x008b0c                  _spi1_readByte
-                  0x008b32                  _spi1_setSpiISR
-                  0x008aa2                  _spi1_writeBlock
-                  0x008b00                  _spi1_writeByte
-                  0x002212                  _spiMaster
-                  0x00597e                  _spi_flash_enable
-                  0x005c02                  _spi_flash_erase
-                  0x005c7a                  _spi_flash_get_size
-                  0x005a9e                  _spi_flash_read
-                  0x005b0e                  _spi_flash_write
-                  0x008cea                  _spi_flexible_flash_find_section
-                  0x0092cc                  _spi_master_open
-                  0x004562                  _sslEnableCertExpirationCheck
-                  0x007596                  _startTimerAtHead
-                  0x0073d0                  _stopTimeouts
+                  0x0074b2                  _rebaseList
+                  0x003e72                  _recv
+                  0x003fe4                  _recvfrom
+                  0x003a38                  _registerSocketCallback
+                  0x003a4a                  _registerSocketEventCallback
+                  0x003a56                  _registerSocketResolveCallback
+                  0x003d22                  _send
+                  0x003dd6                  _sendto
+                  0x007422                  _setTimerDuration
+                  0x00447c                  _setsockopt
+                  0x003a62                  _socket
+                  0x003a22                  _socketDeinit
+                  0x003a08                  _socketInit
+                  0x007526                  _sortedInsert
+                  0x008a3e                  _spi1_close
+                  0x008ab6                  _spi1_exchangeBlock
+                  0x008a9c                  _spi1_exchangeByte
+                  0x008b5c                  _spi1_isr
+                  0x008a46                  _spi1_open
+                  0x008b16                  _spi1_readBlock
+                  0x008b52                  _spi1_readByte
+                  0x008b78                  _spi1_setSpiISR
+                  0x008ae8                  _spi1_writeBlock
+                  0x008b46                  _spi1_writeByte
+                  0x00221c                  _spiMaster
+                  0x005988                  _spi_flash_enable
+                  0x005c0c                  _spi_flash_erase
+                  0x005c84                  _spi_flash_get_size
+                  0x005aa8                  _spi_flash_read
+                  0x005b18                  _spi_flash_write
+                  0x008d60                  _spi_flexible_flash_find_section
+                  0x009342                  _spi_master_open
+                  0x00456c                  _sslEnableCertExpirationCheck
+                  0x0075d6                  _startTimerAtHead
+                  0x007410                  _stopTimeouts
                   0x00054a                  _strcat
                   0x00055e                  _strcpy
                   0x00056c                  _strlen
-                  0x0076d6                  _timeout_callNextCallback
-                  0x007738                  _timeout_create
-                  0x007676                  _timeout_delete
-                  0x007608                  _timeout_deleteHelper
-                  0x0075e8                  _timeout_flushAll
-                  0x007458                  _timeout_getTimeRemaining
-                  0x0073be                  _timeout_hasPendingCallbacks
-                  0x0073ac                  _timeout_hasPendingTimeouts
-                  0x00772e                  _timeout_initialize
-                  0x00776a                  _timeout_isr
-                  0x007796                  _timeout_startTimer
-                  0x0077b0                  _timeout_stopTimer
+                  0x007716                  _timeout_callNextCallback
+                  0x007778                  _timeout_create
+                  0x0076b6                  _timeout_delete
+                  0x007648                  _timeout_deleteHelper
+                  0x007628                  _timeout_flushAll
+                  0x007498                  _timeout_getTimeRemaining
+                  0x0073fe                  _timeout_hasPendingCallbacks
+                  0x0073ec                  _timeout_hasPendingTimeouts
+                  0x00776e                  _timeout_initialize
+                  0x0077aa                  _timeout_isr
+                  0x0077d6                  _timeout_startTimer
+                  0x0077f0                  _timeout_stopTimer
                   0x00167c                  _tolower
                   0x00168a                  _toupper
-                  0x008bb8                  _winc_adapter_chip_enable_assert
-                  0x008bc0                  _winc_adapter_chip_enable_deassert
-                  0x008b88                  _winc_adapter_deinit
-                  0x008b7a                  _winc_adapter_init
-                  0x008b4a                  _winc_adapter_interrupt_request_pending
-                  0x008b5a                  _winc_adapter_interrupt_serviced
-                  0x008bc8                  _winc_adapter_reset_assert
-                  0x008bd0                  _winc_adapter_reset_deassert
-                  0x008b90                  _winc_adapter_sleep
-                  0x008c20                  _winc_adapter_spi_close
-                  0x008bd8                  _winc_adapter_spi_open
-                  0x008c00                  _winc_adapter_spi_read
-                  0x008be0                  _winc_adapter_spi_write
-                  0x0069e0                  _winc_bus_clear_reg_bits
-                  0x006920                  _winc_bus_deinit
-                  0x006a50                  _winc_bus_error
-                  0x006904                  _winc_bus_init
-                  0x006860                  _winc_bus_read_block
-                  0x00692c                  _winc_bus_read_reg
-                  0x006958                  _winc_bus_read_reg_with_ret
-                  0x006912                  _winc_bus_reset
-                  0x006982                  _winc_bus_set_reg_bits
-                  0x0067d0                  _winc_bus_write_block
-                  0x006770                  _winc_bus_write_reg
-                  0x0067a0                  _winc_bus_write_reg_no_rsp
-                  0x006e08                  _winc_chip_deinit
-                  0x006ac0                  _winc_chip_get_id
-                  0x006eac                  _winc_chip_get_mac_address
-                  0x006e22                  _winc_chip_get_otp_mac_address
-                  0x006c46                  _winc_chip_halt
-                  0x006c86                  _winc_chip_init
-                  0x006a94                  _winc_chip_interrupts_enable
-                  0x006c72                  _winc_chip_reset
-                  0x006b88                  _winc_chip_sleep
-                  0x006bd0                  _winc_chip_wake
-                  0x0091c0                  _winc_drv_deinit
-                  0x009148                  _winc_drv_init
-                  0x00919a                  _winc_drv_start
-                  0x0080be                  _winc_hif_chip_sleep
-                  0x008080                  _winc_hif_chip_wake
-                  0x0080f6                  _winc_hif_deinit
-                  0x0082b6                  _winc_hif_handle_isr
-                  0x0080ea                  _winc_hif_init
-                  0x0083c2                  _winc_hif_receive
-                  0x0080fe                  _winc_hif_send
-                  0x008298                  _winc_hif_send_no_data
-                  0x0080b0                  _winc_hif_set_power_save
+                  0x008cf0                  _winc_adapter_chip_enable_assert
+                  0x008cf8                  _winc_adapter_chip_enable_deassert
+                  0x008cc0                  _winc_adapter_deinit
+                  0x008cb2                  _winc_adapter_init
+                  0x008c82                  _winc_adapter_interrupt_request_pending
+                  0x008c92                  _winc_adapter_interrupt_serviced
+                  0x008d00                  _winc_adapter_reset_assert
+                  0x008d08                  _winc_adapter_reset_deassert
+                  0x008cc8                  _winc_adapter_sleep
+                  0x008d58                  _winc_adapter_spi_close
+                  0x008d10                  _winc_adapter_spi_open
+                  0x008d38                  _winc_adapter_spi_read
+                  0x008d18                  _winc_adapter_spi_write
+                  0x0069ea                  _winc_bus_clear_reg_bits
+                  0x00692a                  _winc_bus_deinit
+                  0x006a5a                  _winc_bus_error
+                  0x00690e                  _winc_bus_init
+                  0x00686a                  _winc_bus_read_block
+                  0x006936                  _winc_bus_read_reg
+                  0x006962                  _winc_bus_read_reg_with_ret
+                  0x00691c                  _winc_bus_reset
+                  0x00698c                  _winc_bus_set_reg_bits
+                  0x0067da                  _winc_bus_write_block
+                  0x00677a                  _winc_bus_write_reg
+                  0x0067aa                  _winc_bus_write_reg_no_rsp
+                  0x006e12                  _winc_chip_deinit
+                  0x006aca                  _winc_chip_get_id
+                  0x006eb6                  _winc_chip_get_mac_address
+                  0x006e2c                  _winc_chip_get_otp_mac_address
+                  0x006c50                  _winc_chip_halt
+                  0x006c90                  _winc_chip_init
+                  0x006a9e                  _winc_chip_interrupts_enable
+                  0x006c7c                  _winc_chip_reset
+                  0x006b92                  _winc_chip_sleep
+                  0x006bda                  _winc_chip_wake
+                  0x009236                  _winc_drv_deinit
+                  0x0091be                  _winc_drv_init
+                  0x009210                  _winc_drv_start
+                  0x0080fe                  _winc_hif_chip_sleep
+                  0x0080c0                  _winc_hif_chip_wake
+                  0x008136                  _winc_hif_deinit
+                  0x0082f6                  _winc_hif_handle_isr
+                  0x00812a                  _winc_hif_init
+                  0x008402                  _winc_hif_receive
+                  0x00813e                  _winc_hif_send
+                  0x0082d8                  _winc_hif_send_no_data
+                  0x0080f0                  _winc_hif_set_power_save
                   0x0003d4                  _write
-                  0x007062                  build/default/production/comm_module.o:_appCheckMQTTPublishTimeout
-                  0x00718e                  build/default/production/comm_module.o:_dnsHandler
-                  0x007180                  build/default/production/comm_module.o:_icmpReplyHandler
-                  0x0071c0                  build/default/production/comm_module.o:_socketHandler
-                  0x007130                  build/default/production/comm_module.o:_wifiHandler
-                  0x00225c                  build/default/production/mcc_generated_files/mqtt/mqtt_core/mqtt_core.o:_checkConnackTimeoutState
-                  0x002266                  build/default/production/mcc_generated_files/mqtt/mqtt_core/mqtt_core.o:_checkPingreqTimeoutState
-                  0x00229a                  build/default/production/mcc_generated_files/mqtt/mqtt_core/mqtt_core.o:_checkPingrespTimeoutState
-                  0x0022a6                  build/default/production/mcc_generated_files/mqtt/mqtt_core/mqtt_core.o:_checkSubackTimeoutState
-                  0x0022b0                  build/default/production/mcc_generated_files/mqtt/mqtt_core/mqtt_core.o:_checkUnsubackTimeoutState
-                  0x008b3e                  build/default/production/mcc_generated_files/winc/driver/winc_adapter.o:_winc_interrupt_handler
-                  0x008072                  build/default/production/mcc_generated_files/winc/driver/winc_hif.o:_hif_null_cb
+                  0x0070a2                  build/default/production/comm_module.o:_appCheckMQTTPublishTimeout
+                  0x0071ce                  build/default/production/comm_module.o:_dnsHandler
+                  0x0071c0                  build/default/production/comm_module.o:_icmpReplyHandler
+                  0x007200                  build/default/production/comm_module.o:_socketHandler
+                  0x007170                  build/default/production/comm_module.o:_wifiHandler
+                  0x002266                  build/default/production/mcc_generated_files/mqtt/mqtt_core/mqtt_core.o:_checkConnackTimeoutState
+                  0x002270                  build/default/production/mcc_generated_files/mqtt/mqtt_core/mqtt_core.o:_checkPingreqTimeoutState
+                  0x0022a4                  build/default/production/mcc_generated_files/mqtt/mqtt_core/mqtt_core.o:_checkPingrespTimeoutState
+                  0x0022b0                  build/default/production/mcc_generated_files/mqtt/mqtt_core/mqtt_core.o:_checkSubackTimeoutState
+                  0x0022ba                  build/default/production/mcc_generated_files/mqtt/mqtt_core/mqtt_core.o:_checkUnsubackTimeoutState
+                  0x008c76                  build/default/production/mcc_generated_files/winc/driver/winc_adapter.o:_winc_interrupt_handler
+                  0x0080b2                  build/default/production/mcc_generated_files/winc/driver/winc_hif.o:_hif_null_cb
 
 Memory Configuration
 
@@ -1577,7 +1581,7 @@ __FDEVOPT1
 .comment
  *(.comment)
 
-.debug_info       0x000000      0x1898f
+.debug_info       0x000000      0x189f6
  *(.debug_info)
  .debug_info      0x000000        0x3c4 build/default/production/mcc_generated_files/drivers/spi_master.o
  .debug_info      0x0003c4        0xbe1 build/default/production/mcc_generated_files/drivers/timeout.o
@@ -1610,27 +1614,27 @@ __FDEVOPT1
  .debug_info      0x013fc9        0x770 build/default/production/mcc_generated_files/uart1.o
  .debug_info      0x014739        0x9a9 build/default/production/mcc_generated_files/tmr1.o
  .debug_info      0x0150e2        0x96c build/default/production/mcc_generated_files/tmr2.o
- .debug_info      0x015a4e        0x239 build/default/production/main.o
- .debug_info      0x015c87        0x53b build/default/production/buttons.o
- .debug_info      0x0161c2       0x1f13 build/default/production/comm_module.o
- .debug_info      0x0180d5         0x8d c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(deqltle.DA_o)
- .debug_info      0x018162         0x8b c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(dgtge.DA_o)
- .debug_info      0x0181ed         0x90 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(extendsfdf.DA_o)
- .debug_info      0x01827d         0x8d c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(fixdfsi.DA_o)
- .debug_info      0x01830a         0x8d c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(funpack.DA_o)
- .debug_info      0x018397         0x8c c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(mulsi3.DA_o)
- .debug_info      0x018423         0xa9 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(dpadd.DA_o)
- .debug_info      0x0184cc         0xa9 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(dpdiv.DA_o)
- .debug_info      0x018575         0xa9 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(dpmul.DA_o)
- .debug_info      0x01861e         0xaa c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(dpsubs.DA_o)
- .debug_info      0x0186c8         0x8e c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(dcompare.DA_o)
- .debug_info      0x018756         0x8b c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(dtype.DA_o)
- .debug_info      0x0187e1         0x8d c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(dunpack.DA_o)
- .debug_info      0x01886e         0x8e c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(dunpack2.DA_o)
- .debug_info      0x0188fc         0x93 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(dpropagateNaN.DA_o)
+ .debug_info      0x015a4e        0x25b build/default/production/main.o
+ .debug_info      0x015ca9        0x53b build/default/production/buttons.o
+ .debug_info      0x0161e4       0x1f58 build/default/production/comm_module.o
+ .debug_info      0x01813c         0x8d c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(deqltle.DA_o)
+ .debug_info      0x0181c9         0x8b c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(dgtge.DA_o)
+ .debug_info      0x018254         0x90 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(extendsfdf.DA_o)
+ .debug_info      0x0182e4         0x8d c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(fixdfsi.DA_o)
+ .debug_info      0x018371         0x8d c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(funpack.DA_o)
+ .debug_info      0x0183fe         0x8c c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(mulsi3.DA_o)
+ .debug_info      0x01848a         0xa9 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(dpadd.DA_o)
+ .debug_info      0x018533         0xa9 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(dpdiv.DA_o)
+ .debug_info      0x0185dc         0xa9 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(dpmul.DA_o)
+ .debug_info      0x018685         0xaa c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(dpsubs.DA_o)
+ .debug_info      0x01872f         0x8e c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(dcompare.DA_o)
+ .debug_info      0x0187bd         0x8b c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(dtype.DA_o)
+ .debug_info      0x018848         0x8d c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(dunpack.DA_o)
+ .debug_info      0x0188d5         0x8e c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(dunpack2.DA_o)
+ .debug_info      0x018963         0x93 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(dpropagateNaN.DA_o)
  *(.gnu.linkonce.wi.*)
 
-.debug_abbrev     0x000000       0x2a2a
+.debug_abbrev     0x000000       0x2a5e
  *(.debug_abbrev)
  .debug_abbrev    0x000000        0x102 build/default/production/mcc_generated_files/drivers/spi_master.o
  .debug_abbrev    0x000102        0x221 build/default/production/mcc_generated_files/drivers/timeout.o
@@ -1664,26 +1668,26 @@ __FDEVOPT1
  .debug_abbrev    0x002086        0x131 build/default/production/mcc_generated_files/uart1.o
  .debug_abbrev    0x0021b7        0x1a2 build/default/production/mcc_generated_files/tmr1.o
  .debug_abbrev    0x002359        0x1a2 build/default/production/mcc_generated_files/tmr2.o
- .debug_abbrev    0x0024fb         0x81 build/default/production/main.o
- .debug_abbrev    0x00257c        0x119 build/default/production/buttons.o
- .debug_abbrev    0x002695        0x269 build/default/production/comm_module.o
- .debug_abbrev    0x0028fe         0x14 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(deqltle.DA_o)
- .debug_abbrev    0x002912         0x14 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(dgtge.DA_o)
- .debug_abbrev    0x002926         0x14 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(extendsfdf.DA_o)
- .debug_abbrev    0x00293a         0x14 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(fixdfsi.DA_o)
- .debug_abbrev    0x00294e         0x14 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(funpack.DA_o)
- .debug_abbrev    0x002962         0x14 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(mulsi3.DA_o)
- .debug_abbrev    0x002976         0x14 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(dpadd.DA_o)
- .debug_abbrev    0x00298a         0x14 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(dpdiv.DA_o)
- .debug_abbrev    0x00299e         0x14 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(dpmul.DA_o)
- .debug_abbrev    0x0029b2         0x14 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(dpsubs.DA_o)
- .debug_abbrev    0x0029c6         0x14 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(dcompare.DA_o)
- .debug_abbrev    0x0029da         0x14 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(dtype.DA_o)
- .debug_abbrev    0x0029ee         0x14 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(dunpack.DA_o)
- .debug_abbrev    0x002a02         0x14 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(dunpack2.DA_o)
- .debug_abbrev    0x002a16         0x14 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(dpropagateNaN.DA_o)
+ .debug_abbrev    0x0024fb         0xb5 build/default/production/main.o
+ .debug_abbrev    0x0025b0        0x119 build/default/production/buttons.o
+ .debug_abbrev    0x0026c9        0x269 build/default/production/comm_module.o
+ .debug_abbrev    0x002932         0x14 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(deqltle.DA_o)
+ .debug_abbrev    0x002946         0x14 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(dgtge.DA_o)
+ .debug_abbrev    0x00295a         0x14 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(extendsfdf.DA_o)
+ .debug_abbrev    0x00296e         0x14 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(fixdfsi.DA_o)
+ .debug_abbrev    0x002982         0x14 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(funpack.DA_o)
+ .debug_abbrev    0x002996         0x14 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(mulsi3.DA_o)
+ .debug_abbrev    0x0029aa         0x14 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(dpadd.DA_o)
+ .debug_abbrev    0x0029be         0x14 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(dpdiv.DA_o)
+ .debug_abbrev    0x0029d2         0x14 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(dpmul.DA_o)
+ .debug_abbrev    0x0029e6         0x14 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(dpsubs.DA_o)
+ .debug_abbrev    0x0029fa         0x14 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(dcompare.DA_o)
+ .debug_abbrev    0x002a0e         0x14 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(dtype.DA_o)
+ .debug_abbrev    0x002a22         0x14 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(dunpack.DA_o)
+ .debug_abbrev    0x002a36         0x14 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(dunpack2.DA_o)
+ .debug_abbrev    0x002a4a         0x14 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(dpropagateNaN.DA_o)
 
-.debug_line       0x000000       0x3e35
+.debug_line       0x000000       0x3e3f
  *(.debug_line)
  .debug_line      0x000000         0xec build/default/production/mcc_generated_files/drivers/spi_master.o
  .debug_line      0x0000ec        0x20f build/default/production/mcc_generated_files/drivers/timeout.o
@@ -1717,26 +1721,26 @@ __FDEVOPT1
  .debug_line      0x002dd6        0x157 build/default/production/mcc_generated_files/uart1.o
  .debug_line      0x002f2d        0x163 build/default/production/mcc_generated_files/tmr1.o
  .debug_line      0x003090        0x163 build/default/production/mcc_generated_files/tmr2.o
- .debug_line      0x0031f3         0xb2 build/default/production/main.o
- .debug_line      0x0032a5        0x14f build/default/production/buttons.o
- .debug_line      0x0033f4        0x38d build/default/production/comm_module.o
- .debug_line      0x003781         0x3a c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(deqltle.DA_o)
- .debug_line      0x0037bb         0x38 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(dgtge.DA_o)
- .debug_line      0x0037f3         0x59 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(extendsfdf.DA_o)
- .debug_line      0x00384c         0x61 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(fixdfsi.DA_o)
- .debug_line      0x0038ad         0x4a c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(funpack.DA_o)
- .debug_line      0x0038f7         0x3a c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(mulsi3.DA_o)
- .debug_line      0x003931         0xa2 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(dpadd.DA_o)
- .debug_line      0x0039d3        0x100 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(dpdiv.DA_o)
- .debug_line      0x003ad3         0xde c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(dpmul.DA_o)
- .debug_line      0x003bb1         0xe8 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(dpsubs.DA_o)
- .debug_line      0x003c99         0x5f c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(dcompare.DA_o)
- .debug_line      0x003cf8         0x45 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(dtype.DA_o)
- .debug_line      0x003d3d         0x5c c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(dunpack.DA_o)
- .debug_line      0x003d99         0x53 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(dunpack2.DA_o)
- .debug_line      0x003dec         0x49 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(dpropagateNaN.DA_o)
+ .debug_line      0x0031f3         0xb5 build/default/production/main.o
+ .debug_line      0x0032a8        0x14f build/default/production/buttons.o
+ .debug_line      0x0033f7        0x394 build/default/production/comm_module.o
+ .debug_line      0x00378b         0x3a c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(deqltle.DA_o)
+ .debug_line      0x0037c5         0x38 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(dgtge.DA_o)
+ .debug_line      0x0037fd         0x59 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(extendsfdf.DA_o)
+ .debug_line      0x003856         0x61 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(fixdfsi.DA_o)
+ .debug_line      0x0038b7         0x4a c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(funpack.DA_o)
+ .debug_line      0x003901         0x3a c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(mulsi3.DA_o)
+ .debug_line      0x00393b         0xa2 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(dpadd.DA_o)
+ .debug_line      0x0039dd        0x100 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(dpdiv.DA_o)
+ .debug_line      0x003add         0xde c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(dpmul.DA_o)
+ .debug_line      0x003bbb         0xe8 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(dpsubs.DA_o)
+ .debug_line      0x003ca3         0x5f c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(dcompare.DA_o)
+ .debug_line      0x003d02         0x45 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(dtype.DA_o)
+ .debug_line      0x003d47         0x5c c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(dunpack.DA_o)
+ .debug_line      0x003da3         0x53 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(dunpack2.DA_o)
+ .debug_line      0x003df6         0x49 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(dpropagateNaN.DA_o)
 
-.debug_frame      0x000000       0x2a78
+.debug_frame      0x000000       0x2aa0
  *(.debug_frame)
  .debug_frame     0x000000         0x48 build/default/production/mcc_generated_files/drivers/spi_master.o
  .debug_frame     0x000048        0x254 build/default/production/mcc_generated_files/drivers/timeout.o
@@ -1769,9 +1773,9 @@ __FDEVOPT1
  .debug_frame     0x002626        0x18a build/default/production/mcc_generated_files/tmr2.o
  .debug_frame     0x0027b0         0x7a build/default/production/main.o
  .debug_frame     0x00282a         0x62 build/default/production/buttons.o
- .debug_frame     0x00288c        0x1ec build/default/production/comm_module.o
+ .debug_frame     0x00288c        0x214 build/default/production/comm_module.o
 
-.debug_str        0x000000        0x97c
+.debug_str        0x000000        0x98b
  *(.debug_str)
  .debug_str       0x000000         0x79 build/default/production/mcc_generated_files/drivers/timeout.o
  .debug_str       0x000079          0xe build/default/production/mcc_generated_files/mqtt/mqtt_comm_bsd/mqtt_comm_layer.o
@@ -1797,8 +1801,9 @@ __FDEVOPT1
  .debug_str       0x000849         0x15 build/default/production/mcc_generated_files/uart1.o
  .debug_str       0x00085e         0x32 build/default/production/mcc_generated_files/tmr1.o
  .debug_str       0x000890         0x32 build/default/production/mcc_generated_files/tmr2.o
- .debug_str       0x0008c2         0x41 build/default/production/buttons.o
- .debug_str       0x000903         0x79 build/default/production/comm_module.o
+ .debug_str       0x0008c2          0xf build/default/production/main.o
+ .debug_str       0x0008d1         0x41 build/default/production/buttons.o
+ .debug_str       0x000912         0x79 build/default/production/comm_module.o
 
 .debug_loc
  *(.debug_loc)
@@ -1807,7 +1812,7 @@ __FDEVOPT1
  *(.debug_macinfo)
 
 .debug_pubnames
-                  0x000000       0x20e0
+                  0x000000       0x2107
  *(.debug_pubnames)
  .debug_pubnames
                   0x000000         0x42 build/default/production/mcc_generated_files/drivers/spi_master.o
@@ -1868,11 +1873,11 @@ __FDEVOPT1
  .debug_pubnames
                   0x001da8        0x156 build/default/production/mcc_generated_files/tmr2.o
  .debug_pubnames
-                  0x001efe         0x34 build/default/production/main.o
+                  0x001efe         0x47 build/default/production/main.o
  .debug_pubnames
-                  0x001f32         0xe5 build/default/production/buttons.o
+                  0x001f45         0xe5 build/default/production/buttons.o
  .debug_pubnames
-                  0x002017         0xc9 build/default/production/comm_module.o
+                  0x00202a         0xdd build/default/production/comm_module.o
 
 .debug_ranges
  *(.debug_ranges)
@@ -3675,7 +3680,7 @@ __c30_signature
 
 __xc_reference_data
 
-.nbss               0x0800         0x8c
+.nbss               0x0800         0x90
  .nbss              0x0800         0x1a build/default/production/mcc_generated_files/winc/m2m/m2m_ota.o
  .nbss              0x081a         0x14 build/default/production/buttons.o
                     0x081a                  _Counter
@@ -3691,104 +3696,106 @@ __xc_reference_data
                     0x082c                  _MyState
  .nbss              0x082e         0x10 build/default/production/mcc_generated_files/mqtt/mqtt_core/mqtt_core.o
  .nbss              0x083e         0x10 build/default/production/mcc_generated_files/winc/socket/socket.o
- .nbss              0x084e          0xe build/default/production/mcc_generated_files/drivers/timeout.o
-                    0x084e                  _listHead
-                    0x0850                  _executeQueueHead
-                    0x0852                  _absoluteTimeofLastTimeout
-                    0x0856                  _lastTimerLoad
-                    0x085a                  _isRunning
- .nbss              0x085c          0xc build/default/production/comm_module.o
-                    0x0864                  _tSensors
- .nbss              0x0868          0xa build/default/production/mcc_generated_files/winc/driver/winc_hif.o
- .nbss              0x0872          0x8 build/default/production/mcc_generated_files/winc/m2m/m2m_wifi.o
- .nbss              0x087a          0x6 build/default/production/mcc_generated_files/winc/m2m/m2m_ssl.o
- .nbss              0x0880          0x4 build/default/production/mcc_generated_files/mqtt/mqtt_winc_adapter.o
- .nbss              0x0884          0x4 build/default/production/mcc_generated_files/winc/driver/winc_asic.o
- .nbss              0x0888          0x4 build/default/production/mcc_generated_files/winc/spi_flash/spi_flash.o
+ .nbss              0x084e         0x10 build/default/production/comm_module.o
+                    0x0856                  _tSensors
+ .nbss              0x085e          0xe build/default/production/mcc_generated_files/drivers/timeout.o
+                    0x085e                  _listHead
+                    0x0860                  _executeQueueHead
+                    0x0862                  _absoluteTimeofLastTimeout
+                    0x0866                  _lastTimerLoad
+                    0x086a                  _isRunning
+ .nbss              0x086c          0xa build/default/production/mcc_generated_files/winc/driver/winc_hif.o
+ .nbss              0x0876          0x8 build/default/production/mcc_generated_files/winc/m2m/m2m_wifi.o
+ .nbss              0x087e          0x6 build/default/production/mcc_generated_files/winc/m2m/m2m_ssl.o
+ .nbss              0x0884          0x4 build/default/production/mcc_generated_files/mqtt/mqtt_winc_adapter.o
+ .nbss              0x0888          0x4 build/default/production/mcc_generated_files/winc/driver/winc_asic.o
+ .nbss              0x088c          0x4 build/default/production/mcc_generated_files/winc/spi_flash/spi_flash.o
 
-.ndata              0x088c          0x2
- .ndata             0x088c          0x2 build/default/production/mcc_generated_files/mqtt/mqtt_comm_bsd/mqtt_comm_layer.o
+.ndata              0x0890          0x2
+ .ndata             0x0890          0x2 build/default/production/mcc_generated_files/mqtt/mqtt_comm_bsd/mqtt_comm_layer.o
 
-.nbss               0x088e          0x4
- .nbss              0x088e          0x2 build/default/production/mcc_generated_files/mqtt/mqtt_comm_bsd/mqtt_comm_layer.o
- .nbss              0x0890          0x2 build/default/production/mcc_generated_files/mqtt/mqtt_packetTransfer_interface.o
-                    0x0890                  _publishRecvCallback
+.nbss               0x0892          0x4
+ .nbss              0x0892          0x2 build/default/production/mcc_generated_files/mqtt/mqtt_comm_bsd/mqtt_comm_layer.o
+ .nbss              0x0894          0x2 build/default/production/mcc_generated_files/mqtt/mqtt_packetTransfer_interface.o
+                    0x0894                  _publishRecvCallback
 
-.ndata              0x0892          0x2
- .ndata             0x0892          0x2 build/default/production/mcc_generated_files/winc/driver/winc_spi.o
+.ndata              0x0896          0x2
+ .ndata             0x0896          0x2 build/default/production/mcc_generated_files/winc/driver/winc_spi.o
 
-.nbss               0x0894          0x2
- .nbss              0x0894          0x2 build/default/production/mcc_generated_files/winc/driver/winc_adapter.o
+.nbss               0x0898          0x2
+ .nbss              0x0898          0x2 build/default/production/mcc_generated_files/winc/driver/winc_adapter.o
 
-.ndata              0x0896          0x4
- .ndata             0x0896          0x2 build/default/production/mcc_generated_files/winc/m2m/m2m_ssl.o
- .ndata             0x0898          0x2 build/default/production/mcc_generated_files/winc/m2m/m2m_ota.o
+.ndata              0x089a          0x4
+ .ndata             0x089a          0x2 build/default/production/mcc_generated_files/winc/m2m/m2m_ssl.o
+ .ndata             0x089c          0x2 build/default/production/mcc_generated_files/winc/m2m/m2m_ota.o
 
-.nbss               0x089a          0x2
- .nbss              0x089a          0x2 build/default/production/mcc_generated_files/spi1_driver.o
-                    0x089a                  _spi1_interruptHandler
+.nbss               0x089e          0x2
+ .nbss              0x089e          0x2 build/default/production/mcc_generated_files/spi1_driver.o
+                    0x089e                  _spi1_interruptHandler
 
-.ndata              0x089c          0x2
- .ndata             0x089c          0x2 build/default/production/mcc_generated_files/traps.o
+.ndata              0x08a0          0x2
+ .ndata             0x08a0          0x2 build/default/production/mcc_generated_files/traps.o
 
-.nbss               0x089e          0x6
- .nbss              0x089e          0x2 build/default/production/mcc_generated_files/pin_manager.o
-                    0x089e                  _INT_InterruptHandler
- .nbss              0x08a0          0x2 build/default/production/mcc_generated_files/tmr1.o
-                    0x08a0                  _TMR1_InterruptHandler
- .nbss              0x08a2          0x2 build/default/production/mcc_generated_files/tmr2.o
-                    0x08a2                  _TMR2_InterruptHandler
+.nbss               0x08a2          0x6
+ .nbss              0x08a2          0x2 build/default/production/mcc_generated_files/pin_manager.o
+                    0x08a2                  _INT_InterruptHandler
+ .nbss              0x08a4          0x2 build/default/production/mcc_generated_files/tmr1.o
+                    0x08a4                  _TMR1_InterruptHandler
+ .nbss              0x08a6          0x2 build/default/production/mcc_generated_files/tmr2.o
+                    0x08a6                  _TMR2_InterruptHandler
 
-.ndata              0x08a4          0x2
- .ndata             0x08a4          0x2 build/default/production/buttons.o
-                    0x08a4                  _PreviousState
+.ndata              0x08a8          0x2
+ .ndata             0x08a8          0x2 build/default/production/buttons.o
+                    0x08a8                  _PreviousState
 
-.bss                0x08a6        0x696
- .bss               0x08a6        0x4c2 build/default/production/mcc_generated_files/mqtt/mqtt_comm_bsd/mqtt_comm_layer.o
- .bss               0x0d68        0x106 build/default/production/comm_module.o
-                    0x0e68                  _MQTT_switchesValues
- .bss               0x0e6e         0x84 build/default/production/mcc_generated_files/winc/socket/socket.o
- .bss               0x0ef2         0x4a build/default/production/mcc_generated_files/mqtt/mqtt_core/mqtt_core.o
+.bss                0x08aa        0x696
+ .bss               0x08aa        0x4c2 build/default/production/mcc_generated_files/mqtt/mqtt_comm_bsd/mqtt_comm_layer.o
+ .bss               0x0d6c        0x106 build/default/production/comm_module.o
+                    0x0e6c                  _MQTT_switchesValues
+ .bss               0x0e72         0x84 build/default/production/mcc_generated_files/winc/socket/socket.o
+ .bss               0x0ef6         0x4a build/default/production/mcc_generated_files/mqtt/mqtt_core/mqtt_core.o
 
-.data               0x0f3c         0xb0
- .data              0x0f3c         0x42 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-elf.a(stdout.DA_o)
-                    0x0f3c                  __stdout
-                    0x0f3e                  ___stdout_used
- .data              0x0f7e         0x3c build/default/production/mcc_generated_files/winc/m2m/m2m_wifi.o
- .data              0x0fba         0x32 build/default/production/mcc_generated_files/mqtt/mqtt_core/mqtt_core.o
-                    0x0fba                  _connackTimer
-                    0x0fc4                  _pingreqTimer
-                    0x0fce                  _pingrespTimer
-                    0x0fd8                  _subackTimer
-                    0x0fe2                  _unsubackTimer
+.data               0x0f40         0xb0
+ .data              0x0f40         0x42 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-elf.a(stdout.DA_o)
+                    0x0f40                  __stdout
+                    0x0f42                  ___stdout_used
+ .data              0x0f82         0x3c build/default/production/mcc_generated_files/winc/m2m/m2m_wifi.o
+ .data              0x0fbe         0x32 build/default/production/mcc_generated_files/mqtt/mqtt_core/mqtt_core.o
+                    0x0fbe                  _connackTimer
+                    0x0fc8                  _pingreqTimer
+                    0x0fd2                  _pingrespTimer
+                    0x0fdc                  _subackTimer
+                    0x0fe6                  _unsubackTimer
 
-.bss                0x0fec         0x20
- .bss               0x0fec         0x20 build/default/production/mcc_generated_files/traps.o
+.bss                0x0ff0         0x20
+ .bss               0x0ff0         0x20 build/default/production/mcc_generated_files/traps.o
 
-.data               0x100c         0x1e
- .data              0x100c         0x1e c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-elf.a(__printf_core.DA_o)
+.data               0x1010         0x1e
+ .data              0x1010         0x1e c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-elf.a(__printf_core.DA_o)
 
-.bss                0x102a         0x10
- .bss               0x102a         0x10 build/default/production/mcc_generated_files/mqtt/mqtt_winc_adapter.o
+.bss                0x102e         0x10
+ .bss               0x102e         0x10 build/default/production/mcc_generated_files/mqtt/mqtt_winc_adapter.o
 
-.data               0x103a         0x1a
- .data              0x103a         0x10 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-elf.a(__fmt_fp.DA_o)
- .data              0x104a          0xa build/default/production/mcc_generated_files/drivers/timeout.o
-                    0x104a                  _dummy_exec
+.data               0x103e         0x1a
+ .data              0x103e         0x10 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-elf.a(__fmt_fp.DA_o)
+ .data              0x104e          0xa build/default/production/mcc_generated_files/drivers/timeout.o
+                    0x104e                  _dummy_exec
 
-.bss                0x1054          0xa
- .bss               0x1054          0xa build/default/production/mcc_generated_files/drivers/timeout.o
-                    0x1054                  _dummy
+.bss                0x1058          0xa
+ .bss               0x1058          0xa build/default/production/mcc_generated_files/drivers/timeout.o
+                    0x1058                  _dummy
 
-.data               0x105e          0xa
- .data              0x105e          0xa build/default/production/comm_module.o
-                    0x105e                  _appMQTTPublishTimer
+.data               0x1062          0xa
+ .data              0x1062          0xa build/default/production/comm_module.o
+                    0x1062                  _appMQTTPublishTimer
 
-.bss                0x1068          0x6
- .bss               0x1068          0x2 build/default/production/mcc_generated_files/tmr1.o
- .bss               0x106a          0x2 build/default/production/mcc_generated_files/tmr2.o
- .bss               0x106c          0x2 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-elf.a(__errno_location.DA_o)
-                    0x106c                  ___errno_val
+.bss                0x106c          0xc
+ .bss               0x106c          0x6 build/default/production/main.o
+                    0x106c                  _switchesStates
+ .bss               0x1072          0x2 build/default/production/mcc_generated_files/tmr1.o
+ .bss               0x1074          0x2 build/default/production/mcc_generated_files/tmr2.o
+ .bss               0x1076          0x2 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-elf.a(__errno_location.DA_o)
+                    0x1076                  ___errno_val
 
 .config_ALTI2C1
                   0x015f2c          0x2
@@ -3855,373 +3862,374 @@ __xc_reference_data
  .ivt._T2Interrupt
                   0x000022          0x2 build/default/production/mcc_generated_files/tmr2.o
 
-.const              0xa01a        0x242 load address 0x00201a  
- .const             0xa01a        0x118 build/default/production/comm_module.o
- .const             0xa132         0xe0 build/default/production/main.o
- .const             0xa212         0x14 build/default/production/mcc_generated_files/drivers/spi_master.o
-                    0xa212                  _spiMaster
- .const             0xa226          0xe build/default/production/mcc_generated_files/drivers/timeout.o
- .const             0xa234          0xe build/default/production/mcc_generated_files/winc/driver/winc_spi.o
- .const             0xa242          0xe build/default/production/mcc_generated_files/winc/driver/winc_hif.o
- .const             0xa250          0xc build/default/production/mcc_generated_files/spi1_driver.o
+.const              0xa01a        0x24c load address 0x00201a  
+ .const             0xa01a        0x122 build/default/production/comm_module.o
+ .const             0xa13c         0xe0 build/default/production/main.o
+ .const             0xa21c         0x14 build/default/production/mcc_generated_files/drivers/spi_master.o
+                    0xa21c                  _spiMaster
+ .const             0xa230          0xe build/default/production/mcc_generated_files/drivers/timeout.o
+ .const             0xa23e          0xe build/default/production/mcc_generated_files/winc/driver/winc_spi.o
+ .const             0xa24c          0xe build/default/production/mcc_generated_files/winc/driver/winc_hif.o
+ .const             0xa25a          0xc build/default/production/mcc_generated_files/spi1_driver.o
 
-.text             0x00225c       0x61bc
- .text            0x00225c       0x137a build/default/production/mcc_generated_files/mqtt/mqtt_core/mqtt_core.o
-                  0x00225c                  build/default/production/mcc_generated_files/mqtt/mqtt_core/mqtt_core.o:_checkConnackTimeoutState
-                  0x002266                  build/default/production/mcc_generated_files/mqtt/mqtt_core/mqtt_core.o:_checkPingreqTimeoutState
-                  0x00229a                  build/default/production/mcc_generated_files/mqtt/mqtt_core/mqtt_core.o:_checkPingrespTimeoutState
-                  0x0022a6                  build/default/production/mcc_generated_files/mqtt/mqtt_core/mqtt_core.o:_checkSubackTimeoutState
-                  0x0022b0                  build/default/production/mcc_generated_files/mqtt/mqtt_core/mqtt_core.o:_checkUnsubackTimeoutState
-                  0x0022ba                  _MQTT_initialiseState
-                  0x0022c2                  _MQTT_GetConnectionState
-                  0x0022ca                  _MQTT_CreateConnectPacket
-                  0x0025e8                  _MQTT_CreatePublishPacket
-                  0x00275e                  _MQTT_CreateSubscribePacket
-                  0x00289e                  _MQTT_CreateUnsubscribePacket
-                  0x002cb4                  _MQTT_Disconnect
-                  0x002fb8                  _MQTT_GetLastHandlerState
-                  0x002fc0                  _MQTT_GetLastReceivedPacketHeader
-                  0x002fcc                  _MQTT_GetLastReceivedLength
-                  0x002fd4                  _MQTT_TransmissionHandler
-                  0x0031a0                  _MQTT_ReceptionHandler
- .text            0x0035d6        0xfb6 build/default/production/mcc_generated_files/winc/socket/socket.o
-                  0x00369a                  _m2m_ip_cb
-                  0x0039fe                  _socketInit
-                  0x003a18                  _socketDeinit
-                  0x003a2e                  _registerSocketCallback
-                  0x003a40                  _registerSocketEventCallback
-                  0x003a4c                  _registerSocketResolveCallback
-                  0x003a58                  _socket
-                  0x003b6e                  _bind
-                  0x003bfa                  _listen
-                  0x003c50                  _accept
-                  0x003c7a                  _connect
-                  0x003d18                  _send
-                  0x003dcc                  _sendto
-                  0x003e68                  _recv
-                  0x003f54                  _close
-                  0x003fda                  _recvfrom
-                  0x00409e                  _inet_addr
-                  0x0041b4                  _inet_ntop
-                  0x004292                  _gethostbyname
-                  0x004472                  _setsockopt
-                  0x0044f4                  _getsockopt
-                  0x004506                  _m2m_ping_req
-                  0x004562                  _sslEnableCertExpirationCheck
-                  0x004584                  _IsSocketReady
- .text            0x00458c        0xede build/default/production/mcc_generated_files/winc/m2m/m2m_wifi.o
-                  0x00458c                  _m2m_wifi_cb
-                  0x004654                  _m2m_wifi_download_mode
-                  0x0047b0                  _m2m_wifi_send_crl
-                  0x0047c8                  _m2m_wifi_init_hold
-                  0x0047e0                  _m2m_wifi_init_start
-                  0x004826                  _m2m_wifi_init
-                  0x004844                  _m2m_wifi_deinit
-                  0x004854                  _m2m_wifi_handle_events
-                  0x00485e                  _m2m_wifi_delete_sc
-                  0x00487e                  _m2m_wifi_default_connect
-                  0x004a1e                  _m2m_wifi_connect_open
-                  0x004a52                  _m2m_wifi_connect_wep
-                  0x004ade                  _m2m_wifi_connect_psk
-                  0x004bb0                  _m2m_wifi_connect_1x_mschap2
-                  0x004bbe                  _m2m_wifi_connect_1x_tls
-                  0x004bcc                  _m2m_wifi_connect
-                  0x004bea                  _m2m_wifi_connect_sc
-                  0x004d3c                  _m2m_wifi_disconnect
-                  0x004d4c                  _m2m_wifi_set_mac_address
-                  0x004d66                  _m2m_wifi_set_static_ip
-                  0x004da4                  _m2m_wifi_enable_dhcp
-                  0x004dc4                  _m2m_wifi_set_lsn_int
-                  0x004dd6                  _m2m_wifi_set_cust_InfoElement
-                  0x004e0c                  _m2m_wifi_set_scan_options
-                  0x004e2e                  _m2m_wifi_set_scan_region
-                  0x004e44                  _m2m_wifi_request_scan
-                  0x004e96                  _m2m_wifi_request_scan_passive
-                  0x004eee                  _m2m_wifi_request_scan_ssid_list
-                  0x004f90                  _m2m_wifi_wps
-                  0x004fb8                  _m2m_wifi_wps_disable
-                  0x004fc8                  _m2m_wifi_req_client_ctrl
-                  0x004fd2                  _m2m_wifi_req_server_init
-                  0x004fdc                  _m2m_wifi_p2p
-                  0x005008                  _m2m_wifi_p2p_disconnect
-                  0x005018                  _m2m_wifi_enable_ap
-                  0x00504c                  _m2m_wifi_enable_ap_ext
-                  0x005074                  _m2m_wifi_set_gains
-                  0x005094                  _m2m_wifi_disable_ap
-                  0x0050a4                  _m2m_wifi_req_curr_rssi
-                  0x0050b4                  _m2m_wifi_send_ethernet_pkt
-                  0x0050ec                  _m2m_wifi_get_otp_mac_address
-                  0x005126                  _m2m_wifi_get_mac_address
-                  0x005148                  _m2m_wifi_req_scan_result
-                  0x00515e                  _m2m_wifi_get_num_ap_found
-                  0x005166                  _m2m_wifi_get_sleep_mode
-                  0x005170                  _m2m_wifi_set_sleep_mode
-                  0x0051a8                  _m2m_wifi_request_sleep
-                  0x0051d4                  _m2m_wifi_set_device_name
-                  0x005206                  _m2m_wifi_configure_sntp
-                  0x005242                  _m2m_wifi_get_firmware_version
-                  0x005272                  _m2m_wifi_start_provision_mode
-                  0x0052ae                  _m2m_wifi_start_provision_mode_ext
-                  0x005310                  _m2m_wifi_stop_provision_mode
-                  0x005320                  _m2m_wifi_get_connection_info
-                  0x005330                  _m2m_wifi_set_system_time
-                  0x005342                  _m2m_wifi_get_system_time
-                  0x005352                  _m2m_wifi_enable_sntp
-                  0x005372                  _m2m_wifi_set_power_profile
-                  0x005388                  _m2m_wifi_set_tx_power
-                  0x00539e                  _m2m_wifi_set_gain_table_idx
-                  0x0053b4                  _m2m_wifi_enable_firmware_logs
-                  0x0053ca                  _m2m_wifi_set_battery_voltage
-                  0x0053e4                  _m2m_wifi_prng_get_random_bytes
-                  0x005418                  _m2m_wifi_conf_auto_rate
-                  0x00542a                  _m2m_wifi_get_state
-                  0x005432                  _m2m_wifi_enable_roaming
-                  0x005456                  _m2m_wifi_disable_roaming
- .text            0x00546a        0x854 build/default/production/mcc_generated_files/winc/spi_flash/spi_flash.o
-                  0x00597e                  _spi_flash_enable
-                  0x005a9e                  _spi_flash_read
-                  0x005b0e                  _spi_flash_write
-                  0x005c02                  _spi_flash_erase
-                  0x005c7a                  _spi_flash_get_size
- .text            0x005cbe        0x7fe build/default/production/mcc_generated_files/mqtt/mqtt_winc_adapter.o
-                  0x005cca                  _BSD_GetErrNo
-                  0x005cd2                  _getSocketInfo
-                  0x005d12                  _BSD_socket
-                  0x005d88                  _BSD_connect
-                  0x005e2e                  _BSD_SetRecvHandlerTable
-                  0x005e3a                  _BSD_GetRecvHandlerTable
-                  0x005e42                  _BSD_recv
-                  0x005ebc                  _BSD_close
-                  0x005f06                  _BSD_htonl
-                  0x005f6c                  _BSD_htons
-                  0x005f7c                  _BSD_ntohl
-                  0x005fe2                  _BSD_ntohs
-                  0x005ff2                  _BSD_bind
-                  0x00607a                  _BSD_recvfrom
-                  0x00611c                  _BSD_listen
-                  0x006164                  _BSD_accept
-                  0x0061c0                  _BSD_getsockopt
-                  0x0061d6                  _BSD_setsockopt
-                  0x006266                  _BSD_write
-                  0x006278                  _BSD_read
-                  0x00628a                  _BSD_poll
-                  0x00629c                  _BSD_GetSocketState
-                  0x0062be                  _BSD_send
-                  0x006336                  _BSD_sendto
-                  0x0063e2                  _BSD_SocketHandler
- .text            0x0064bc        0x5a2 build/default/production/mcc_generated_files/winc/driver/winc_spi.o
-                  0x006770                  _winc_bus_write_reg
-                  0x0067a0                  _winc_bus_write_reg_no_rsp
-                  0x0067d0                  _winc_bus_write_block
-                  0x006860                  _winc_bus_read_block
-                  0x006904                  _winc_bus_init
-                  0x006912                  _winc_bus_reset
-                  0x006920                  _winc_bus_deinit
-                  0x00692c                  _winc_bus_read_reg
-                  0x006958                  _winc_bus_read_reg_with_ret
-                  0x006982                  _winc_bus_set_reg_bits
-                  0x0069e0                  _winc_bus_clear_reg_bits
-                  0x006a50                  _winc_bus_error
- .text            0x006a5e        0x4be build/default/production/mcc_generated_files/winc/driver/winc_asic.o
-                  0x006a94                  _winc_chip_interrupts_enable
-                  0x006ac0                  _winc_chip_get_id
-                  0x006b88                  _winc_chip_sleep
-                  0x006bd0                  _winc_chip_wake
-                  0x006c46                  _winc_chip_halt
-                  0x006c72                  _winc_chip_reset
-                  0x006c86                  _winc_chip_init
-                  0x006e08                  _winc_chip_deinit
-                  0x006e22                  _winc_chip_get_otp_mac_address
-                  0x006eac                  _winc_chip_get_mac_address
- .text            0x006f1c        0x486 build/default/production/comm_module.o
-                  0x006f1c                  _MQTT_prepareJsonData
-                  0x007042                  _app_updateTemperature
-                  0x007050                  _app_updateSwitchState
-                  0x007062                  build/default/production/comm_module.o:_appCheckMQTTPublishTimeout
-                  0x007130                  build/default/production/comm_module.o:_wifiHandler
-                  0x007180                  build/default/production/comm_module.o:_icmpReplyHandler
-                  0x00718e                  build/default/production/comm_module.o:_dnsHandler
-                  0x0071c0                  build/default/production/comm_module.o:_socketHandler
-                  0x00724c                  _app_commModuleInit
-                  0x00727a                  _app_mqttScheduler
- .text            0x0073a2        0x450 build/default/production/mcc_generated_files/drivers/timeout.o
-                  0x0073a2                  _dummyHandler
-                  0x0073ac                  _timeout_hasPendingTimeouts
-                  0x0073be                  _timeout_hasPendingCallbacks
-                  0x0073d0                  _stopTimeouts
-                  0x0073e2                  _setTimerDuration
-                  0x007406                  _makeAbsolute
-                  0x007458                  _timeout_getTimeRemaining
-                  0x007472                  _rebaseList
-                  0x0074ba                  _printList
-                  0x0074e6                  _sortedInsert
-                  0x007596                  _startTimerAtHead
-                  0x0075e8                  _timeout_flushAll
-                  0x007608                  _timeout_deleteHelper
-                  0x007676                  _timeout_delete
-                  0x007696                  _enqueueCallback
-                  0x0076d6                  _timeout_callNextCallback
-                  0x00772e                  _timeout_initialize
-                  0x007738                  _timeout_create
-                  0x00776a                  _timeout_isr
-                  0x007796                  _timeout_startTimer
-                  0x0077b0                  _timeout_stopTimer
- .text            0x0077f2        0x44e build/default/production/mcc_generated_files/winc/m2m/m2m_ssl.o
-                  0x0077f2                  _m2m_ssl_cb
-                  0x007930                  _m2m_ssl_init
-                  0x007946                  _m2m_ssl_handshake_rsp
-                  0x00796a                  _m2m_ssl_send_certs_to_winc
-                  0x007aa6                  _m2m_ssl_retrieve_cert
-                  0x007bde                  _m2m_ssl_retrieve_hash
-                  0x007c0a                  _m2m_ssl_stop_processing_certs
-                  0x007c10                  _m2m_ssl_ecc_process_done
-                  0x007c1a                  _m2m_ssl_set_active_ciphersuites
- .text            0x007c40        0x432 build/default/production/mcc_generated_files/winc/m2m/m2m_ota.o
-                  0x007c40                  _m2m_ota_cb
-                  0x007db4                  _m2m_ota_init
-                  0x007dd0                  _m2m_ota_notif_set_url
-                  0x007df2                  _m2m_ota_notif_check_for_update
-                  0x007e0a                  _m2m_ota_notif_sched
-                  0x007e26                  _m2m_ota_start_update
-                  0x007e48                  _m2m_ota_rollback
-                  0x007e60                  _m2m_ota_abort
-                  0x007e78                  _m2m_ota_switch_firmware
-                  0x007e90                  _m2m_ota_get_firmware_version
-                  0x007ec0                  _m2m_ota_host_file_get
-                  0x007f1a                  _m2m_ota_host_file_read_hif
-                  0x007f6e                  _m2m_ota_host_file_read_spi
-                  0x00803e                  _m2m_ota_host_file_erase
- .text            0x008072        0x3a6 build/default/production/mcc_generated_files/winc/driver/winc_hif.o
-                  0x008072                  build/default/production/mcc_generated_files/winc/driver/winc_hif.o:_hif_null_cb
-                  0x008080                  _winc_hif_chip_wake
-                  0x0080b0                  _winc_hif_set_power_save
-                  0x0080be                  _winc_hif_chip_sleep
-                  0x0080ea                  _winc_hif_init
-                  0x0080f6                  _winc_hif_deinit
-                  0x0080fe                  _winc_hif_send
-                  0x008298                  _winc_hif_send_no_data
-                  0x0082b6                  _winc_hif_handle_isr
-                  0x0083c2                  _winc_hif_receive
+.text             0x002266       0x61f2
+ .text            0x002266       0x137a build/default/production/mcc_generated_files/mqtt/mqtt_core/mqtt_core.o
+                  0x002266                  build/default/production/mcc_generated_files/mqtt/mqtt_core/mqtt_core.o:_checkConnackTimeoutState
+                  0x002270                  build/default/production/mcc_generated_files/mqtt/mqtt_core/mqtt_core.o:_checkPingreqTimeoutState
+                  0x0022a4                  build/default/production/mcc_generated_files/mqtt/mqtt_core/mqtt_core.o:_checkPingrespTimeoutState
+                  0x0022b0                  build/default/production/mcc_generated_files/mqtt/mqtt_core/mqtt_core.o:_checkSubackTimeoutState
+                  0x0022ba                  build/default/production/mcc_generated_files/mqtt/mqtt_core/mqtt_core.o:_checkUnsubackTimeoutState
+                  0x0022c4                  _MQTT_initialiseState
+                  0x0022cc                  _MQTT_GetConnectionState
+                  0x0022d4                  _MQTT_CreateConnectPacket
+                  0x0025f2                  _MQTT_CreatePublishPacket
+                  0x002768                  _MQTT_CreateSubscribePacket
+                  0x0028a8                  _MQTT_CreateUnsubscribePacket
+                  0x002cbe                  _MQTT_Disconnect
+                  0x002fc2                  _MQTT_GetLastHandlerState
+                  0x002fca                  _MQTT_GetLastReceivedPacketHeader
+                  0x002fd6                  _MQTT_GetLastReceivedLength
+                  0x002fde                  _MQTT_TransmissionHandler
+                  0x0031aa                  _MQTT_ReceptionHandler
+ .text            0x0035e0        0xfb6 build/default/production/mcc_generated_files/winc/socket/socket.o
+                  0x0036a4                  _m2m_ip_cb
+                  0x003a08                  _socketInit
+                  0x003a22                  _socketDeinit
+                  0x003a38                  _registerSocketCallback
+                  0x003a4a                  _registerSocketEventCallback
+                  0x003a56                  _registerSocketResolveCallback
+                  0x003a62                  _socket
+                  0x003b78                  _bind
+                  0x003c04                  _listen
+                  0x003c5a                  _accept
+                  0x003c84                  _connect
+                  0x003d22                  _send
+                  0x003dd6                  _sendto
+                  0x003e72                  _recv
+                  0x003f5e                  _close
+                  0x003fe4                  _recvfrom
+                  0x0040a8                  _inet_addr
+                  0x0041be                  _inet_ntop
+                  0x00429c                  _gethostbyname
+                  0x00447c                  _setsockopt
+                  0x0044fe                  _getsockopt
+                  0x004510                  _m2m_ping_req
+                  0x00456c                  _sslEnableCertExpirationCheck
+                  0x00458e                  _IsSocketReady
+ .text            0x004596        0xede build/default/production/mcc_generated_files/winc/m2m/m2m_wifi.o
+                  0x004596                  _m2m_wifi_cb
+                  0x00465e                  _m2m_wifi_download_mode
+                  0x0047ba                  _m2m_wifi_send_crl
+                  0x0047d2                  _m2m_wifi_init_hold
+                  0x0047ea                  _m2m_wifi_init_start
+                  0x004830                  _m2m_wifi_init
+                  0x00484e                  _m2m_wifi_deinit
+                  0x00485e                  _m2m_wifi_handle_events
+                  0x004868                  _m2m_wifi_delete_sc
+                  0x004888                  _m2m_wifi_default_connect
+                  0x004a28                  _m2m_wifi_connect_open
+                  0x004a5c                  _m2m_wifi_connect_wep
+                  0x004ae8                  _m2m_wifi_connect_psk
+                  0x004bba                  _m2m_wifi_connect_1x_mschap2
+                  0x004bc8                  _m2m_wifi_connect_1x_tls
+                  0x004bd6                  _m2m_wifi_connect
+                  0x004bf4                  _m2m_wifi_connect_sc
+                  0x004d46                  _m2m_wifi_disconnect
+                  0x004d56                  _m2m_wifi_set_mac_address
+                  0x004d70                  _m2m_wifi_set_static_ip
+                  0x004dae                  _m2m_wifi_enable_dhcp
+                  0x004dce                  _m2m_wifi_set_lsn_int
+                  0x004de0                  _m2m_wifi_set_cust_InfoElement
+                  0x004e16                  _m2m_wifi_set_scan_options
+                  0x004e38                  _m2m_wifi_set_scan_region
+                  0x004e4e                  _m2m_wifi_request_scan
+                  0x004ea0                  _m2m_wifi_request_scan_passive
+                  0x004ef8                  _m2m_wifi_request_scan_ssid_list
+                  0x004f9a                  _m2m_wifi_wps
+                  0x004fc2                  _m2m_wifi_wps_disable
+                  0x004fd2                  _m2m_wifi_req_client_ctrl
+                  0x004fdc                  _m2m_wifi_req_server_init
+                  0x004fe6                  _m2m_wifi_p2p
+                  0x005012                  _m2m_wifi_p2p_disconnect
+                  0x005022                  _m2m_wifi_enable_ap
+                  0x005056                  _m2m_wifi_enable_ap_ext
+                  0x00507e                  _m2m_wifi_set_gains
+                  0x00509e                  _m2m_wifi_disable_ap
+                  0x0050ae                  _m2m_wifi_req_curr_rssi
+                  0x0050be                  _m2m_wifi_send_ethernet_pkt
+                  0x0050f6                  _m2m_wifi_get_otp_mac_address
+                  0x005130                  _m2m_wifi_get_mac_address
+                  0x005152                  _m2m_wifi_req_scan_result
+                  0x005168                  _m2m_wifi_get_num_ap_found
+                  0x005170                  _m2m_wifi_get_sleep_mode
+                  0x00517a                  _m2m_wifi_set_sleep_mode
+                  0x0051b2                  _m2m_wifi_request_sleep
+                  0x0051de                  _m2m_wifi_set_device_name
+                  0x005210                  _m2m_wifi_configure_sntp
+                  0x00524c                  _m2m_wifi_get_firmware_version
+                  0x00527c                  _m2m_wifi_start_provision_mode
+                  0x0052b8                  _m2m_wifi_start_provision_mode_ext
+                  0x00531a                  _m2m_wifi_stop_provision_mode
+                  0x00532a                  _m2m_wifi_get_connection_info
+                  0x00533a                  _m2m_wifi_set_system_time
+                  0x00534c                  _m2m_wifi_get_system_time
+                  0x00535c                  _m2m_wifi_enable_sntp
+                  0x00537c                  _m2m_wifi_set_power_profile
+                  0x005392                  _m2m_wifi_set_tx_power
+                  0x0053a8                  _m2m_wifi_set_gain_table_idx
+                  0x0053be                  _m2m_wifi_enable_firmware_logs
+                  0x0053d4                  _m2m_wifi_set_battery_voltage
+                  0x0053ee                  _m2m_wifi_prng_get_random_bytes
+                  0x005422                  _m2m_wifi_conf_auto_rate
+                  0x005434                  _m2m_wifi_get_state
+                  0x00543c                  _m2m_wifi_enable_roaming
+                  0x005460                  _m2m_wifi_disable_roaming
+ .text            0x005474        0x854 build/default/production/mcc_generated_files/winc/spi_flash/spi_flash.o
+                  0x005988                  _spi_flash_enable
+                  0x005aa8                  _spi_flash_read
+                  0x005b18                  _spi_flash_write
+                  0x005c0c                  _spi_flash_erase
+                  0x005c84                  _spi_flash_get_size
+ .text            0x005cc8        0x7fe build/default/production/mcc_generated_files/mqtt/mqtt_winc_adapter.o
+                  0x005cd4                  _BSD_GetErrNo
+                  0x005cdc                  _getSocketInfo
+                  0x005d1c                  _BSD_socket
+                  0x005d92                  _BSD_connect
+                  0x005e38                  _BSD_SetRecvHandlerTable
+                  0x005e44                  _BSD_GetRecvHandlerTable
+                  0x005e4c                  _BSD_recv
+                  0x005ec6                  _BSD_close
+                  0x005f10                  _BSD_htonl
+                  0x005f76                  _BSD_htons
+                  0x005f86                  _BSD_ntohl
+                  0x005fec                  _BSD_ntohs
+                  0x005ffc                  _BSD_bind
+                  0x006084                  _BSD_recvfrom
+                  0x006126                  _BSD_listen
+                  0x00616e                  _BSD_accept
+                  0x0061ca                  _BSD_getsockopt
+                  0x0061e0                  _BSD_setsockopt
+                  0x006270                  _BSD_write
+                  0x006282                  _BSD_read
+                  0x006294                  _BSD_poll
+                  0x0062a6                  _BSD_GetSocketState
+                  0x0062c8                  _BSD_send
+                  0x006340                  _BSD_sendto
+                  0x0063ec                  _BSD_SocketHandler
+ .text            0x0064c6        0x5a2 build/default/production/mcc_generated_files/winc/driver/winc_spi.o
+                  0x00677a                  _winc_bus_write_reg
+                  0x0067aa                  _winc_bus_write_reg_no_rsp
+                  0x0067da                  _winc_bus_write_block
+                  0x00686a                  _winc_bus_read_block
+                  0x00690e                  _winc_bus_init
+                  0x00691c                  _winc_bus_reset
+                  0x00692a                  _winc_bus_deinit
+                  0x006936                  _winc_bus_read_reg
+                  0x006962                  _winc_bus_read_reg_with_ret
+                  0x00698c                  _winc_bus_set_reg_bits
+                  0x0069ea                  _winc_bus_clear_reg_bits
+                  0x006a5a                  _winc_bus_error
+ .text            0x006a68        0x4be build/default/production/mcc_generated_files/winc/driver/winc_asic.o
+                  0x006a9e                  _winc_chip_interrupts_enable
+                  0x006aca                  _winc_chip_get_id
+                  0x006b92                  _winc_chip_sleep
+                  0x006bda                  _winc_chip_wake
+                  0x006c50                  _winc_chip_halt
+                  0x006c7c                  _winc_chip_reset
+                  0x006c90                  _winc_chip_init
+                  0x006e12                  _winc_chip_deinit
+                  0x006e2c                  _winc_chip_get_otp_mac_address
+                  0x006eb6                  _winc_chip_get_mac_address
+ .text            0x006f26        0x4bc build/default/production/comm_module.o
+                  0x006f26                  _MQTT_prepareJsonData
+                  0x007072                  _app_updateTemperature
+                  0x007080                  _app_updateLight
+                  0x007090                  _app_updateSwitchState
+                  0x0070a2                  build/default/production/comm_module.o:_appCheckMQTTPublishTimeout
+                  0x007170                  build/default/production/comm_module.o:_wifiHandler
+                  0x0071c0                  build/default/production/comm_module.o:_icmpReplyHandler
+                  0x0071ce                  build/default/production/comm_module.o:_dnsHandler
+                  0x007200                  build/default/production/comm_module.o:_socketHandler
+                  0x00728c                  _app_commModuleInit
+                  0x0072ba                  _app_mqttScheduler
+ .text            0x0073e2        0x450 build/default/production/mcc_generated_files/drivers/timeout.o
+                  0x0073e2                  _dummyHandler
+                  0x0073ec                  _timeout_hasPendingTimeouts
+                  0x0073fe                  _timeout_hasPendingCallbacks
+                  0x007410                  _stopTimeouts
+                  0x007422                  _setTimerDuration
+                  0x007446                  _makeAbsolute
+                  0x007498                  _timeout_getTimeRemaining
+                  0x0074b2                  _rebaseList
+                  0x0074fa                  _printList
+                  0x007526                  _sortedInsert
+                  0x0075d6                  _startTimerAtHead
+                  0x007628                  _timeout_flushAll
+                  0x007648                  _timeout_deleteHelper
+                  0x0076b6                  _timeout_delete
+                  0x0076d6                  _enqueueCallback
+                  0x007716                  _timeout_callNextCallback
+                  0x00776e                  _timeout_initialize
+                  0x007778                  _timeout_create
+                  0x0077aa                  _timeout_isr
+                  0x0077d6                  _timeout_startTimer
+                  0x0077f0                  _timeout_stopTimer
+ .text            0x007832        0x44e build/default/production/mcc_generated_files/winc/m2m/m2m_ssl.o
+                  0x007832                  _m2m_ssl_cb
+                  0x007970                  _m2m_ssl_init
+                  0x007986                  _m2m_ssl_handshake_rsp
+                  0x0079aa                  _m2m_ssl_send_certs_to_winc
+                  0x007ae6                  _m2m_ssl_retrieve_cert
+                  0x007c1e                  _m2m_ssl_retrieve_hash
+                  0x007c4a                  _m2m_ssl_stop_processing_certs
+                  0x007c50                  _m2m_ssl_ecc_process_done
+                  0x007c5a                  _m2m_ssl_set_active_ciphersuites
+ .text            0x007c80        0x432 build/default/production/mcc_generated_files/winc/m2m/m2m_ota.o
+                  0x007c80                  _m2m_ota_cb
+                  0x007df4                  _m2m_ota_init
+                  0x007e10                  _m2m_ota_notif_set_url
+                  0x007e32                  _m2m_ota_notif_check_for_update
+                  0x007e4a                  _m2m_ota_notif_sched
+                  0x007e66                  _m2m_ota_start_update
+                  0x007e88                  _m2m_ota_rollback
+                  0x007ea0                  _m2m_ota_abort
+                  0x007eb8                  _m2m_ota_switch_firmware
+                  0x007ed0                  _m2m_ota_get_firmware_version
+                  0x007f00                  _m2m_ota_host_file_get
+                  0x007f5a                  _m2m_ota_host_file_read_hif
+                  0x007fae                  _m2m_ota_host_file_read_spi
+                  0x00807e                  _m2m_ota_host_file_erase
+ .text            0x0080b2        0x3a6 build/default/production/mcc_generated_files/winc/driver/winc_hif.o
+                  0x0080b2                  build/default/production/mcc_generated_files/winc/driver/winc_hif.o:_hif_null_cb
+                  0x0080c0                  _winc_hif_chip_wake
+                  0x0080f0                  _winc_hif_set_power_save
+                  0x0080fe                  _winc_hif_chip_sleep
+                  0x00812a                  _winc_hif_init
+                  0x008136                  _winc_hif_deinit
+                  0x00813e                  _winc_hif_send
+                  0x0082d8                  _winc_hif_send_no_data
+                  0x0082f6                  _winc_hif_handle_isr
+                  0x008402                  _winc_hif_receive
 
-.dinit            0x008418        0x1b0
- .dinit           0x008418        0x1b0 data_init
+.dinit            0x008458        0x1b6
+ .dinit           0x008458        0x1b6 data_init
 
-.text             0x0085c8        0xd18
- .text            0x0085c8        0x172 build/default/production/mcc_generated_files/mqtt/mqtt_exchange_buffer/mqtt_exchange_buffer.o
-                  0x0085c8                  _MQTT_ExchangeBufferInit
-                  0x0085de                  _MQTT_ExchangeBufferWrite
-                  0x008672                  _MQTT_ExchangeBufferPeek
-                  0x0086d0                  _MQTT_ExchangeBufferRead
- .text            0x00873a        0x172 build/default/production/buttons.o
-                  0x00873a                  _CallBack
-                  0x00888a                  _BtnStateInit
-                  0x008898                  _AskForState
- .text            0x0088ac        0x14c build/default/production/mcc_generated_files/winc/m2m/m2m_fwinfo.o
-                  0x0088ec                  _m2m_fwinfo_version_check
-                  0x00896c                  _m2m_fwinfo_get_firmware_info
- .text            0x0089f8        0x146 build/default/production/mcc_generated_files/spi1_driver.o
-                  0x0089f8                  _spi1_close
-                  0x008a00                  _spi1_open
-                  0x008a56                  _spi1_exchangeByte
-                  0x008a70                  _spi1_exchangeBlock
-                  0x008aa2                  _spi1_writeBlock
-                  0x008ad0                  _spi1_readBlock
-                  0x008b00                  _spi1_writeByte
-                  0x008b0c                  _spi1_readByte
-                  0x008b16                  _spi1_isr
-                  0x008b32                  _spi1_setSpiISR
- .text            0x008b3e         0xea build/default/production/mcc_generated_files/winc/driver/winc_adapter.o
-                  0x008b3e                  build/default/production/mcc_generated_files/winc/driver/winc_adapter.o:_winc_interrupt_handler
-                  0x008b4a                  _winc_adapter_interrupt_request_pending
-                  0x008b5a                  _winc_adapter_interrupt_serviced
-                  0x008b7a                  _winc_adapter_init
-                  0x008b88                  _winc_adapter_deinit
-                  0x008b90                  _winc_adapter_sleep
-                  0x008bb8                  _winc_adapter_chip_enable_assert
-                  0x008bc0                  _winc_adapter_chip_enable_deassert
-                  0x008bc8                  _winc_adapter_reset_assert
-                  0x008bd0                  _winc_adapter_reset_deassert
-                  0x008bd8                  _winc_adapter_spi_open
-                  0x008be0                  _winc_adapter_spi_write
-                  0x008c00                  _winc_adapter_spi_read
-                  0x008c20                  _winc_adapter_spi_close
- .text            0x008c28         0xc2 build/default/production/main.o
-                  0x008c28                  _main
-                  0x008c66                  _app_buttonsScheduler
- .text            0x008cea         0xc0 build/default/production/mcc_generated_files/winc/spi_flash/flexible_flash.o
-                  0x008cea                  _spi_flexible_flash_find_section
- .text            0x008daa         0xc0 build/default/production/mcc_generated_files/pin_manager.o
-                  0x008daa                  _PIN_MANAGER_Initialize
-                  0x008e48                  _INT_CallBack
-                  0x008e4e                  _INT_SetInterruptHandler
-                  0x008e5e                  _INT_SetIOCInterruptHandler
- .text            0x008e6a         0xba build/default/production/mcc_generated_files/uart1.o
-                  0x008e6a                  _UART1_Initialize
-                  0x008e80                  _UART1_Read
-                  0x008e9e                  _UART1_Write
-                  0x008eb6                  _UART1_IsRxReady
-                  0x008ece                  _UART1_IsTxReady
-                  0x008ef0                  _UART1_IsTxDone
-                  0x008f08                  _UART1_StatusGet
-                  0x008f10                  _UART1_Enable
-                  0x008f1a                  _UART1_Disable
- .text            0x008f24         0xb8 build/default/production/mcc_generated_files/tmr1.o
-                  0x008f24                  _TMR1_Initialize
-                  0x008f48                  _TMR1_Period16BitSet
-                  0x008f5a                  _TMR1_Period16BitGet
-                  0x008f62                  _TMR1_Counter16BitSet
-                  0x008f74                  _TMR1_Counter16BitGet
-                  0x008f7c                  _TMR1_CallBack
-                  0x008f82                  _TMR1_SetInterruptHandler
-                  0x008f92                  _TMR1_Start
-                  0x008fa2                  _TMR1_Stop
-                  0x008fac                  _TMR1_GetElapsedThenClear
-                  0x008fc4                  _TMR1_SoftwareCounterGet
-                  0x008fd0                  _TMR1_SoftwareCounterClear
- .text            0x008fdc         0xb8 build/default/production/mcc_generated_files/tmr2.o
-                  0x008fdc                  _TMR2_Initialize
-                  0x009000                  _TMR2_Period16BitSet
-                  0x009012                  _TMR2_Period16BitGet
-                  0x00901a                  _TMR2_Counter16BitSet
-                  0x00902c                  _TMR2_Counter16BitGet
-                  0x009034                  _TMR2_CallBack
-                  0x00903a                  _TMR2_SetInterruptHandler
-                  0x00904a                  _TMR2_Start
-                  0x00905a                  _TMR2_Stop
-                  0x009064                  _TMR2_GetElapsedThenClear
-                  0x00907c                  _TMR2_SoftwareCounterGet
-                  0x009088                  _TMR2_SoftwareCounterClear
- .text            0x009094         0xb4 build/default/production/mcc_generated_files/mqtt/mqtt_comm_bsd/mqtt_comm_layer.o
-                  0x009094                  _MQTT_ClientInitialise
-                  0x0090d0                  _MQTT_GetClientConnectionInfo
-                  0x0090d8                  _MQTT_Send
-                  0x009106                  _MQTT_LastSentSize
-                  0x00910e                  _MQTT_Close
-                  0x00912e                  _MQTT_GetReceivedData
- .text            0x009148         0xa4 build/default/production/mcc_generated_files/winc/driver/winc_drv.o
-                  0x009148                  _winc_drv_init
-                  0x00919a                  _winc_drv_start
-                  0x0091c0                  _winc_drv_deinit
- .text            0x0091ec         0x5c build/default/production/mcc_generated_files/clock.o
-                  0x0091ec                  _CLOCK_Initialize
- .text            0x009248         0x56 build/default/production/mcc_generated_files/delay.o
-                  0x009248                  _DELAY_milliseconds
-                  0x00926a                  _DELAY_microseconds
- .text            0x00929e         0x24 build/default/production/mcc_generated_files/interrupt_manager.o
-                  0x00929e                  _INTERRUPT_Initialize
- .text            0x0092c2         0x1e build/default/production/mcc_generated_files/drivers/spi_master.o
-                  0x0092c2                  _WINC_open
-                  0x0092cc                  _spi_master_open
+.text             0x00860e        0xd48
+ .text            0x00860e        0x172 build/default/production/mcc_generated_files/mqtt/mqtt_exchange_buffer/mqtt_exchange_buffer.o
+                  0x00860e                  _MQTT_ExchangeBufferInit
+                  0x008624                  _MQTT_ExchangeBufferWrite
+                  0x0086b8                  _MQTT_ExchangeBufferPeek
+                  0x008716                  _MQTT_ExchangeBufferRead
+ .text            0x008780        0x172 build/default/production/buttons.o
+                  0x008780                  _CallBack
+                  0x0088d0                  _BtnStateInit
+                  0x0088de                  _AskForState
+ .text            0x0088f2        0x14c build/default/production/mcc_generated_files/winc/m2m/m2m_fwinfo.o
+                  0x008932                  _m2m_fwinfo_version_check
+                  0x0089b2                  _m2m_fwinfo_get_firmware_info
+ .text            0x008a3e        0x146 build/default/production/mcc_generated_files/spi1_driver.o
+                  0x008a3e                  _spi1_close
+                  0x008a46                  _spi1_open
+                  0x008a9c                  _spi1_exchangeByte
+                  0x008ab6                  _spi1_exchangeBlock
+                  0x008ae8                  _spi1_writeBlock
+                  0x008b16                  _spi1_readBlock
+                  0x008b46                  _spi1_writeByte
+                  0x008b52                  _spi1_readByte
+                  0x008b5c                  _spi1_isr
+                  0x008b78                  _spi1_setSpiISR
+ .text            0x008b84         0xf2 build/default/production/main.o
+                  0x008b84                  _main
+                  0x008baa                  _app_buttonsScheduler
+ .text            0x008c76         0xea build/default/production/mcc_generated_files/winc/driver/winc_adapter.o
+                  0x008c76                  build/default/production/mcc_generated_files/winc/driver/winc_adapter.o:_winc_interrupt_handler
+                  0x008c82                  _winc_adapter_interrupt_request_pending
+                  0x008c92                  _winc_adapter_interrupt_serviced
+                  0x008cb2                  _winc_adapter_init
+                  0x008cc0                  _winc_adapter_deinit
+                  0x008cc8                  _winc_adapter_sleep
+                  0x008cf0                  _winc_adapter_chip_enable_assert
+                  0x008cf8                  _winc_adapter_chip_enable_deassert
+                  0x008d00                  _winc_adapter_reset_assert
+                  0x008d08                  _winc_adapter_reset_deassert
+                  0x008d10                  _winc_adapter_spi_open
+                  0x008d18                  _winc_adapter_spi_write
+                  0x008d38                  _winc_adapter_spi_read
+                  0x008d58                  _winc_adapter_spi_close
+ .text            0x008d60         0xc0 build/default/production/mcc_generated_files/winc/spi_flash/flexible_flash.o
+                  0x008d60                  _spi_flexible_flash_find_section
+ .text            0x008e20         0xc0 build/default/production/mcc_generated_files/pin_manager.o
+                  0x008e20                  _PIN_MANAGER_Initialize
+                  0x008ebe                  _INT_CallBack
+                  0x008ec4                  _INT_SetInterruptHandler
+                  0x008ed4                  _INT_SetIOCInterruptHandler
+ .text            0x008ee0         0xba build/default/production/mcc_generated_files/uart1.o
+                  0x008ee0                  _UART1_Initialize
+                  0x008ef6                  _UART1_Read
+                  0x008f14                  _UART1_Write
+                  0x008f2c                  _UART1_IsRxReady
+                  0x008f44                  _UART1_IsTxReady
+                  0x008f66                  _UART1_IsTxDone
+                  0x008f7e                  _UART1_StatusGet
+                  0x008f86                  _UART1_Enable
+                  0x008f90                  _UART1_Disable
+ .text            0x008f9a         0xb8 build/default/production/mcc_generated_files/tmr1.o
+                  0x008f9a                  _TMR1_Initialize
+                  0x008fbe                  _TMR1_Period16BitSet
+                  0x008fd0                  _TMR1_Period16BitGet
+                  0x008fd8                  _TMR1_Counter16BitSet
+                  0x008fea                  _TMR1_Counter16BitGet
+                  0x008ff2                  _TMR1_CallBack
+                  0x008ff8                  _TMR1_SetInterruptHandler
+                  0x009008                  _TMR1_Start
+                  0x009018                  _TMR1_Stop
+                  0x009022                  _TMR1_GetElapsedThenClear
+                  0x00903a                  _TMR1_SoftwareCounterGet
+                  0x009046                  _TMR1_SoftwareCounterClear
+ .text            0x009052         0xb8 build/default/production/mcc_generated_files/tmr2.o
+                  0x009052                  _TMR2_Initialize
+                  0x009076                  _TMR2_Period16BitSet
+                  0x009088                  _TMR2_Period16BitGet
+                  0x009090                  _TMR2_Counter16BitSet
+                  0x0090a2                  _TMR2_Counter16BitGet
+                  0x0090aa                  _TMR2_CallBack
+                  0x0090b0                  _TMR2_SetInterruptHandler
+                  0x0090c0                  _TMR2_Start
+                  0x0090d0                  _TMR2_Stop
+                  0x0090da                  _TMR2_GetElapsedThenClear
+                  0x0090f2                  _TMR2_SoftwareCounterGet
+                  0x0090fe                  _TMR2_SoftwareCounterClear
+ .text            0x00910a         0xb4 build/default/production/mcc_generated_files/mqtt/mqtt_comm_bsd/mqtt_comm_layer.o
+                  0x00910a                  _MQTT_ClientInitialise
+                  0x009146                  _MQTT_GetClientConnectionInfo
+                  0x00914e                  _MQTT_Send
+                  0x00917c                  _MQTT_LastSentSize
+                  0x009184                  _MQTT_Close
+                  0x0091a4                  _MQTT_GetReceivedData
+ .text            0x0091be         0xa4 build/default/production/mcc_generated_files/winc/driver/winc_drv.o
+                  0x0091be                  _winc_drv_init
+                  0x009210                  _winc_drv_start
+                  0x009236                  _winc_drv_deinit
+ .text            0x009262         0x5c build/default/production/mcc_generated_files/clock.o
+                  0x009262                  _CLOCK_Initialize
+ .text            0x0092be         0x56 build/default/production/mcc_generated_files/delay.o
+                  0x0092be                  _DELAY_milliseconds
+                  0x0092e0                  _DELAY_microseconds
+ .text            0x009314         0x24 build/default/production/mcc_generated_files/interrupt_manager.o
+                  0x009314                  _INTERRUPT_Initialize
+ .text            0x009338         0x1e build/default/production/mcc_generated_files/drivers/spi_master.o
+                  0x009338                  _WINC_open
+                  0x009342                  _spi_master_open
 
-.init.delay32     0x0092e0         0x1c
- .init.delay32    0x0092e0         0x1c c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(delay32da.Meo)
-                  0x0092e0                  ___delay32
+.init.delay32     0x009356         0x1c
+ .init.delay32    0x009356         0x1c c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(delay32da.Meo)
+                  0x009356                  ___delay32
 
-.text             0x0092fc         0x3e
- .text            0x0092fc         0x18 build/default/production/mcc_generated_files/traps.o
-                  0x0092fc                  _TRAPS_halt_on_error
- .text            0x009314         0x14 build/default/production/mcc_generated_files/mqtt/mqtt_packetTransfer_interface.o
-                  0x009314                  _MQTT_SetPublishReceptionCallback
-                  0x009320                  _MQTT_GetPublishReceptionCallback
- .text            0x009328         0x12 build/default/production/mcc_generated_files/system.o
-                  0x009328                  _SYSTEM_Initialize
+.text             0x009372         0x3e
+ .text            0x009372         0x18 build/default/production/mcc_generated_files/traps.o
+                  0x009372                  _TRAPS_halt_on_error
+ .text            0x00938a         0x14 build/default/production/mcc_generated_files/mqtt/mqtt_packetTransfer_interface.o
+                  0x00938a                  _MQTT_SetPublishReceptionCallback
+                  0x009396                  _MQTT_GetPublishReceptionCallback
+ .text            0x00939e         0x12 build/default/production/mcc_generated_files/system.o
+                  0x00939e                  _SYSTEM_Initialize

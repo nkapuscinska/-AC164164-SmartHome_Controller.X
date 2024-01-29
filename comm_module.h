@@ -21,7 +21,9 @@
 #define PUB_TOPIC "home/data"
 
 void app_updateTemperature(float temp);
+void app_updateLight(float light);
 void app_updateSwitchState(uint8_t switchNum, uint8_t value);
+
 
 
 void app_commModuleInit(void);

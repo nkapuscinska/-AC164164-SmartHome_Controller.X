@@ -54,6 +54,7 @@ typedef enum
 
 typedef struct MQTT_sensorsValues {
     float Temperature;
+    float Light;
 }MQTT_sensorsValue;
 
 
@@ -92,6 +93,10 @@ void MQTT_prepareJsonData(char * buffer)
     sprintf(temporaryBuffer, "%.2f", (double)tSensors.Temperature);
     strcat(buffer, temporaryBuffer);
     
+    strcat(buffer, "\"light\":\"");
+    sprintf(temporaryBuffer, "%.2f", (double)tSensors.Light);
+    strcat(buffer, temporaryBuffer);
+    
     strcat(buffer, "\",\"bool0\":\"");
     sprintf(temporaryBuffer, "%d", MQTT_switchesValues[0]);
     strcat(buffer, temporaryBuffer);
@@ -123,6 +128,11 @@ void MQTT_prepareJsonData(char * buffer)
 void app_updateTemperature(float temp)
 {
     tSensors.Temperature = temp;
+}
+
+void app_updateLight(float light)
+{
+    tSensors.Light = light;
 }
 
 void app_updateSwitchState(uint8_t switchNum, uint8_t value)
