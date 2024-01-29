@@ -66,43 +66,44 @@ void app_buttonsScheduler(void)
 {
     ButtonsState = AskForState();            //Pobranie informacji o stanie przyciskow
     
-    printf("Buttons state   -->   ");
+    //printf("Buttons state   -->   ");
     switch(ButtonsState)
     {
         case Released:
-            printf("Released \n\r");
+            //printf("Released \n\r");
             break;
             
         case SW1Press:
-            //switchesStates[0] ^= 1;
+            switchesStates[0] ^= 1;
             printf("SW1Press \n\r");
             break;
             
         case SW1Hold:
-            //switchesStates[1] ^= 1;
+            switchesStates[1] ^= 1;
             printf("SW1Hold \n\r");
             break;
             
         case SW1Double:
-            //switchesStates[2] ^= 1;
+            switchesStates[2] ^= 1;
             printf("SW1Double");
             break;
             
         case SW2Press:
-            //switchesStates[3] ^= 1;
+            switchesStates[3] ^= 1;
             printf("SW2Press \n\r");
             break;
             
         case SW2Hold:
-            //switchesStates[4] ^= 1;
+            switchesStates[4] ^= 1;
             printf("SW2Hold \n\r");
             break;
             
         case SW2Double:
-            //switchesStates[5] ^= 1;
+            switchesStates[5] ^= 1;
             printf("SW2Double \n\r");
             break;
-            
+        case Wait:
+            break;
         default:
             printf("Default \n\r");
             break;
