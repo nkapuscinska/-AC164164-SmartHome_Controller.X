@@ -10,8 +10,9 @@
 #include "buttons.h"
 #include "mcc_generated_files/pin_manager.h"
 #include "mcc_generated_files/tmr2.h"
+#include "mcc_generated_files/delay.h"
 
-volatile uint16_t Counter = 0;
+volatile int Stopper = 0;
 uint16_t HighCounter = 0;
 uint16_t LowCounter = 0;
 uint16_t HighCounter2 = 0;
@@ -35,10 +36,13 @@ InState eInState;
 volatile eState MyState;
 
 void CallBack(void){
+    //printf("Przerwanie");
+    DELAY_microseconds(500);
+    Stopper++;
+    //printf("%d \n\r", Counter);
     Flag1 = SW1_GetValue();
     Flag2 = SW2_GetValue();
-    Counter++;
-    printf("%d \n\r", Counter);
+    
     switch(eInState){
         case Idle:
 
@@ -55,32 +59,39 @@ void CallBack(void){
             break;
             
         case Read1:
-             if((Flag1 == 0)&&(Counter < AKWISITION)){
-                HighCounter++;
-                eInState = Read1;
-            }
-            else if ((Flag1 == 1)&&(Counter < AKWISITION)){
-                LowCounter++;
-                eInState = Read1;
+            if(Stopper < AKWISITION){
+             
+                if(Flag1 == 0){
+                   HighCounter++;
+                   eInState = Read1;
+               }
+                else if (Flag1 == 1){
+                   LowCounter++;
+                   eInState = Read1;
+               }
+                else{
+                    MyState = Released;
+                }
             }
             else {
+                printf("Stopper &d \n\r", Stopper);
                 if(HighCounter >= HOLDTIME){
                     MyState = SW1Hold;
-                    //printf("SW1Hold \n\r");
+                    printf("SW1Hold \n\r");
                 }
                 else if((HighCounter >= PRESSTIME)&&(HighCounter <= MAXPRESSTIME)){
                     MyState = SW1Press;
-                    //printf("SW1Press \n\r");
+                    printf("SW1Press \n\r");
                 }
                 else if((HighCounter >= DOUBLETIMEMIN)&&(HighCounter < DOUBLETIMEMAX)){
                     MyState = SW1Double;
-                    //printf("SW1Double \n\r");
+                    printf("SW1Double \n\r");
                 }
                 else {
                     MyState = Released;
-                    //printf("Released \n\r");
+                    printf("Released \n\r");
                 }
-                Counter = 0;
+                Stopper = 0;
                 HighCounter = 0;
                 LowCounter = 0;
                 eInState = Idle;
@@ -88,15 +99,21 @@ void CallBack(void){
             break;
             
         case Read2:
-            if((Flag2 == 0)&&(Counter < AKWISITION)){
-                HighCounter++;
-                eInState = Read2;
-            }
-            else if ((Flag2 == 1)&&(Counter < AKWISITION)){
-                LowCounter++;
-                eInState = Read2;
+            if(Stopper < AKWISITION){
+                if(Flag2 == 0){
+                    HighCounter++;
+                    eInState = Read2;
+                }
+                else if (Flag2 == 1){
+                    LowCounter++;
+                    eInState = Read2;
+                }
+                else{
+                    
+                }
             }
             else {
+                printf("Else2, HighCounter: %d, LowCounter: %d, Stopper: %d", HighCounter, LowCounter, Stopper);
                 if(HighCounter >= HOLDTIME){
                     MyState = SW2Hold;
                 }
@@ -109,16 +126,16 @@ void CallBack(void){
                 else {
                     MyState = Released;
                 }
-                Counter = 0;
+                Stopper = 0;
                 HighCounter = 0;
                 LowCounter = 0;
                 eInState = Idle;
-                printf("State %d \n\r", MyState);
+                //printf("State %d \n\r", MyState);
             }
             break;
-            
-        }
-            
+        default:
+            break;
+        }    
     }
     
 
@@ -136,13 +153,14 @@ void BtnStateInit(void){
 eState PreviousState = Wait;
 
 eState AskForState(void){
-    if(PreviousState == MyState){
-        printf("MyState 1 ----->   %d", MyState);
-        return Released;
-    }
-    else{
-        PreviousState = MyState;
-        printf("MyState 2 ----->   %d", MyState);
+//    if(PreviousState == MyState){
+//        printf("MyState 1 ----->   %d", MyState);
+//        return Released;
+//    }
+//    else{
+//        PreviousState = MyState;
+//        printf("MyState 2 ----->   %d", MyState);
+    //printf("MyState = %d \n\r", MyState);
         return MyState;
-    }
+    //}
 }
