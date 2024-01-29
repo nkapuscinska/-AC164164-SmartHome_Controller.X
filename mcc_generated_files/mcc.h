@@ -51,6 +51,8 @@
 #include <stdint.h>
 #include <stdbool.h>
 
+#include "uart1.h"
+#include "MCP9808Drivers/MCP9808.h"
 #include "tmr2.h"
 #include "tmr1.h"
 #include "drivers/spi_master.h"

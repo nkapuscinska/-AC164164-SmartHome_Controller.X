@@ -51,8 +51,8 @@
 #define CFG_MQTT_USERNAME ""
 #define CFG_MQTT_PASSWORD ""
 #define CFG_QOS 0
-#define CFG_PUBTOPIC "home/test"
-#define CFG_SUBTOPIC "home/test"
+#define CFG_PUBTOPIC "home/data"
+#define CFG_SUBTOPIC "home/data"
 #define TCPIP_BSD 1
 
 /********************MQTT Client configurations*(END)***********************/

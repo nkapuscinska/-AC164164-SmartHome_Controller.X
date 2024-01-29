@@ -55,6 +55,12 @@ void INTERRUPT_Initialize (void)
     //    IOCI: IOC -  Interrupt On Change Interrupt
     //    Priority: 1
         IPC4bits.IOCIP = 1;
+    //    MICI: MI2C2 - I2C2 Master Events
+    //    Priority: 1
+        IPC12bits.MI2C2IP = 1;
+    //    SICI: SI2C2 - I2C2 Slave Events
+    //    Priority: 1
+        IPC12bits.SI2C2IP = 1;
     //    TI: T2 - Timer2
     //    Priority: 1
         IPC1bits.T2IP = 1;

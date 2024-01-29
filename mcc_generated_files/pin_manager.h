@@ -1078,6 +1078,152 @@
 #define WAKE_SetDigitalOutput() (_TRISA8 = 0)
 /**
   @Summary
+    Sets the GPIO pin, RB12, high using LATB12.
+
+  @Description
+    Sets the GPIO pin, RB12, high using LATB12.
+
+  @Preconditions
+    The RB12 must be set to an output.
+
+  @Returns
+    None.
+
+  @Param
+    None.
+
+  @Example
+    <code>
+    // Set RB12 high (1)
+    channel_AN8_SetHigh();
+    </code>
+
+*/
+#define channel_AN8_SetHigh()          (_LATB12 = 1)
+/**
+  @Summary
+    Sets the GPIO pin, RB12, low using LATB12.
+
+  @Description
+    Sets the GPIO pin, RB12, low using LATB12.
+
+  @Preconditions
+    The RB12 must be set to an output.
+
+  @Returns
+    None.
+
+  @Param
+    None.
+
+  @Example
+    <code>
+    // Set RB12 low (0)
+    channel_AN8_SetLow();
+    </code>
+
+*/
+#define channel_AN8_SetLow()           (_LATB12 = 0)
+/**
+  @Summary
+    Toggles the GPIO pin, RB12, using LATB12.
+
+  @Description
+    Toggles the GPIO pin, RB12, using LATB12.
+
+  @Preconditions
+    The RB12 must be set to an output.
+
+  @Returns
+    None.
+
+  @Param
+    None.
+
+  @Example
+    <code>
+    // Toggle RB12
+    channel_AN8_Toggle();
+    </code>
+
+*/
+#define channel_AN8_Toggle()           (_LATB12 ^= 1)
+/**
+  @Summary
+    Reads the value of the GPIO pin, RB12.
+
+  @Description
+    Reads the value of the GPIO pin, RB12.
+
+  @Preconditions
+    None.
+
+  @Returns
+    None.
+
+  @Param
+    None.
+
+  @Example
+    <code>
+    uint16_t portValue;
+
+    // Read RB12
+    postValue = channel_AN8_GetValue();
+    </code>
+
+*/
+#define channel_AN8_GetValue()         _RB12
+/**
+  @Summary
+    Configures the GPIO pin, RB12, as an input.
+
+  @Description
+    Configures the GPIO pin, RB12, as an input.
+
+  @Preconditions
+    None.
+
+  @Returns
+    None.
+
+  @Param
+    None.
+
+  @Example
+    <code>
+    // Sets the RB12 as an input
+    channel_AN8_SetDigitalInput();
+    </code>
+
+*/
+#define channel_AN8_SetDigitalInput()  (_TRISB12 = 1)
+/**
+  @Summary
+    Configures the GPIO pin, RB12, as an output.
+
+  @Description
+    Configures the GPIO pin, RB12, as an output.
+
+  @Preconditions
+    None.
+
+  @Returns
+    None.
+
+  @Param
+    None.
+
+  @Example
+    <code>
+    // Sets the RB12 as an output
+    channel_AN8_SetDigitalOutput();
+    </code>
+
+*/
+#define channel_AN8_SetDigitalOutput() (_TRISB12 = 0)
+/**
+  @Summary
     Sets the GPIO pin, RB4, high using LATB4.
 
   @Description
