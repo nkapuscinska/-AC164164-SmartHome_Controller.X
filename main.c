@@ -3,7 +3,7 @@
 */
 #include "mcc_generated_files/system.h"
 #include "mcc_generated_files/pin_manager.h"
-#include "mcc_generated_files/examples/comm_module.h"
+#include "comm_module.h"
 #include "mcc_generated_files/uart1.h"
 #include "mcc_generated_files/delay.h"
 #include "mcc_generated_files/drivers/timeout.h"
@@ -14,21 +14,61 @@
 /*
                          Main application
  */
+
+/* ------- Application Functions -------- */
+void app_buttonsScheduler(void);                //Funckja obslugujaca akcje przyciskow SW1 i SW2
+
+/* -------------------------------------- */
+
+
+
+
+/* ---------- Global Variables ---------- */
 extern eState MyState;
+
+/* -------------------------------------- */
+
+
+
+
+
+/* ---------- Main Application ---------- */
 int main(void)
 {
-    //initialize the device
+    printf("Application Start ............\n\r");
     SYSTEM_Initialize();
-    printf("Start");
-    BtnStateInit();
-    eState ReturnedState;
-
-    app_commModuleInit();               //inicjalizacja modulu komunikacyjnego (mqtt))
-    app_updateTemperature(0.5);         //ustawienie wartosci temoratury do wyslania
     
-    while(1){
-        ReturnedState = AskForState();
-        switch(ReturnedState){
+    printf("Buttons module init ............\n\r");
+    BtnStateInit();
+    
+    printf("Communication module init ............\n\r");
+    app_commModuleInit();               //inicjalizacja modulu komunikacyjnego (mqtt)
+    
+    
+    
+    
+    while(1)
+    {
+        app_buttonsScheduler();
+        app_mqttScheduler();
+        
+        DELAY_milliseconds(200);
+    }
+    
+    return 1;
+}
+
+
+void app_buttonsScheduler(void)
+{
+    eState ButtonsState = AskForState();            //Pobranie informacji o stanie przyciskow
+    
+    printf("Buttons state   -->   ");
+    switch(ButtonsState)
+    {
+        case Released:
+            printf("Released \n\r");
+            break;
         case SW1Press:
             printf("SW1Press \n\r");
             break;
@@ -45,15 +85,15 @@ int main(void)
             printf("SW2Hold \n\r");
             break;
         case SW2Double:
-            printf("SW2Double");
+            printf("SW2Double \n\r");
             break;
         default:
-            printf("default");
+            printf("Default \n\r");
             break;
-        }
     }
-    return 1;
 }
+
+
 //        switch(MyState){
 //            case Released:
 //                   
